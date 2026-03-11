@@ -1,51 +1,63 @@
-import { VercelLogo } from '@/components/TechLogos'
-import { motion } from 'framer-motion'
-import { Github, Linkedin, MessageCircle, Copy, Check, FileDown, User } from 'lucide-react'
-import { Link } from 'react-router-dom'
-import { useState } from 'react'
-import useSWR from 'swr'
-import cvPdf from '@/assets/files/cv_pdf/Niladri_Chatterjee(CV).pdf'
+import { VercelLogo } from "@/components/TechLogos";
+import { motion } from "framer-motion";
+import {
+  Github,
+  Linkedin,
+  MessageCircle,
+  Copy,
+  Check,
+  FileDown,
+  User,
+} from "lucide-react";
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import useSWR from "swr";
+import cvPdf from "@/assets/files/cv_pdf/Niladri_Chatterjee(CV).pdf";
 
-const fetcher = (url) => fetch(url).then((res) => res.json())
+const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const Home = () => {
-  const [copied, setCopied] = useState(false)
-  const email = 'code.niladri@gmail.com'
-  const whatsappNumber = '+916296554939'
+  const [copied, setCopied] = useState(false);
+  const email = "code.niladri@gmail.com";
+  const whatsappNumber = "+916296554939";
 
-  const { data: githubData } = useSWR('https://api.github.com/users/niladri-1', fetcher, {
-    revalidateOnFocus: false,
-    dedupingInterval: 60000,
-    shouldRetryOnError: true,
-    errorRetryCount: 3,
-  })
+  const { data: githubData } = useSWR(
+    "https://api.github.com/users/niladri-1",
+    fetcher,
+    {
+      revalidateOnFocus: false,
+      dedupingInterval: 60000,
+      shouldRetryOnError: true,
+      errorRetryCount: 3,
+    },
+  );
 
   function formatRepoCount(count) {
-    if (count < 5) return count.toString()
-    return `${Math.floor(count / 5) * 5}+`
+    if (count < 5) return count.toString();
+    return `${Math.floor(count / 5) * 5}+`;
   }
 
-  const githubRepos = githubData?.public_repos || 0
-  const displayRepos = formatRepoCount(githubRepos)
+  const githubRepos = githubData?.public_repos || 0;
+  const displayRepos = formatRepoCount(githubRepos);
 
   const copyToClipboard = async () => {
     try {
-      await navigator.clipboard.writeText(email)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
+      await navigator.clipboard.writeText(email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
     } catch (err) {
-      console.error('Failed to copy:', err)
+      console.error("Failed to copy:", err);
     }
-  }
+  };
 
   const handleEmailClick = (e) => {
     if (window.innerWidth <= 640) {
-      window.location.href = `mailto:${email}`
-      e.preventDefault()
+      window.location.href = `mailto:${email}`;
+      e.preventDefault();
     } else {
-      copyToClipboard()
+      copyToClipboard();
     }
-  }
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4 mt-7 sm:mt-0 md:mt-3 lg:mt-5">
@@ -73,8 +85,8 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          Software Developer specializing in Full Stack Development with expertise in React.js,
-          Node.js and modern Web Technologies.
+          Software Developer specializing in Full Stack Development with
+          expertise in React.js, Node.js and modern Web Technologies.
         </motion.p>
 
         <motion.div
@@ -154,8 +166,12 @@ const Home = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8 }}
             >
-              <span className="text-base sm:text-lg font-semibold">{displayRepos}</span>
-              <span className="text-xs sm:text-sm text-gray-400">GitHub Projects</span>
+              <span className="text-base sm:text-lg font-semibold">
+                {displayRepos}
+              </span>
+              <span className="text-xs sm:text-sm text-gray-400">
+                GitHub Projects
+              </span>
             </motion.div>
           </motion.a>
 
@@ -177,7 +193,9 @@ const Home = () => {
               transition={{ delay: 0.8 }}
             >
               <span className="text-base sm:text-lg font-semibold">4000+</span>
-              <span className="text-xs sm:text-sm text-gray-400">LinkedIn Followers</span>
+              <span className="text-xs sm:text-sm text-gray-400">
+                LinkedIn Followers
+              </span>
             </motion.div>
           </motion.a>
 
@@ -199,13 +217,15 @@ const Home = () => {
               transition={{ delay: 0.8 }}
             >
               <span className="text-base sm:text-lg font-semibold">24x7</span>
-              <span className="text-xs sm:text-sm text-gray-400">WhatsApp Me</span>
+              <span className="text-xs sm:text-sm text-gray-400">
+                WhatsApp Me
+              </span>
             </motion.div>
           </motion.a>
         </motion.div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

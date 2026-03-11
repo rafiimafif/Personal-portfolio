@@ -13,7 +13,6 @@ const Skills = lazy(() => import("./pages/Skills"));
 const Projects = lazy(() => import("./pages/Projects"));
 const Certificates = lazy(() => import("./pages/Certificates"));
 const Contact = lazy(() => import("./pages/Contact"));
-const Kali = lazy(() => import("./pages/Kali"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 // Per-page SEO metadata
@@ -57,11 +56,6 @@ const pageMeta = {
     title: "Contact - Niladri Chatterjee | Hire a Full Stack Developer",
     description:
       "Get in touch with Niladri Chatterjee for freelance projects, job opportunities or collaborations. Based in Kolkata, India.",
-  },
-  "/kali": {
-    title: "Kali Linux - Niladri Chatterjee | Cybersecurity Enthusiast",
-    description:
-      "Niladri Chatterjee explores Kali Linux and cybersecurity tools as part of his technical interests.",
   },
 };
 
@@ -123,7 +117,6 @@ function App() {
               <Route path="/projects" element={<Projects />} />
               <Route path="/certificates" element={<Certificates />} />
               <Route path="/contact" element={<Contact />} />
-              <Route path="/kali" element={<Kali />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>

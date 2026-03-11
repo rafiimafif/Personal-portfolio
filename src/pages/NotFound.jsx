@@ -1,7 +1,7 @@
-import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
-import { Home } from 'lucide-react'
-import { ScrollAnimation } from '@/components/ScrollAnimation'
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { Home } from "lucide-react";
+import { ScrollAnimation } from "@/components/ScrollAnimation";
 
 const NotFound = () => {
   return (
@@ -17,7 +17,7 @@ const NotFound = () => {
             <motion.div
               className="text-[12rem] font-bold leading-none gradient-text"
               animate={{ y: [0, -20, 0], rotate: [0, -5, 5, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             >
               404
             </motion.div>
@@ -48,7 +48,8 @@ const NotFound = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
           >
-            Oops! The page you're looking for seems to have vanished into the digital void.
+            Oops! The page you're looking for seems to have vanished into the
+            digital void.
           </motion.p>
         </ScrollAnimation>
 
@@ -72,16 +73,16 @@ const NotFound = () => {
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] h-[200%] -z-10 pointer-events-none"
           animate={{
             background: [
-              'radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 50%)',
-              'radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, transparent 50%)',
-              'radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 50%)',
+              "radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 50%)",
+              "radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, transparent 50%)",
+              "radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 50%)",
             ],
           }}
-          transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
         />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default NotFound
+export default NotFound;

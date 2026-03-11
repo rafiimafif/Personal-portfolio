@@ -16,12 +16,12 @@ const Education = () => {
       grade: 'CGPA: 8.48 (80%)',
       image: collegeImg,
       resultUrl: bTechPdf,
-      coursework: ['DSA', 'OOPs', 'DBMS', 'AI', 'ML', 'OS', 'Networking'],
+      coursework: ["Software Development", 'DSA', 'OOPs', 'DBMS', 'AI', 'ML', 'OS', 'Networking'],
       description:
         'During my time at BCET, I have built a strong foundation in computer science, focusing on software development, problem-solving, and real-world applications. Engaging in hands-on projects, internships, and coding challenges has helped me enhance my technical and analytical skills.',
     },
     {
-      school: 'Birsingha Bhagabati Vidyalaya',
+      school: 'Birsingha Bhagabati Vidyalaya (H.S)',
       location: 'Medinipur, WB, India',
       duration: 'June 2018 - July 2019',
       degree: 'Higher Secondary (WBSC)',
@@ -62,9 +62,9 @@ const Education = () => {
                 <span className="text-gray-300">{edu.duration}</span>
               </div>
 
-              <div className="grid md:grid-cols-[300px,1fr] gap-6">
+              <div className="grid md:grid-cols-[350px,1fr]">
                 {/* Left Column - Image */}
-                <div className="relative h-64 md:h-full">
+                <div className="relative h-96 md:h-full">
                   <img
                     src={edu.image}
                     alt={edu.school}

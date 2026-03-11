@@ -13,7 +13,6 @@ const Footer = () => {
     { name: 'Projects', path: '/projects' },
     { name: 'Certificates', path: '/certificates' },
     { name: 'Contact', path: '/contact' },
-    { name: 'Kali Linux', path: '/kali' },
   ]
 
   const column1 = pageLinks.slice(0, 3)

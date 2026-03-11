@@ -1,69 +1,75 @@
-import { motion } from 'framer-motion'
-import { Briefcase, MapPin, Building2, ExternalLink, ArrowRight } from 'lucide-react'
-import { ScrollAnimation } from '@/components/ScrollAnimation'
-import codeAlphaImg from '@/assets/experience/codeAlpha_page.jpg'
-import bharatInternImg from '@/assets/experience/bharatIntern_page.jpg'
-import codeClauseImg from '@/assets/experience/codeClause_page.jpg'
-import oasisInfobyteImg from '@/assets/experience/oasisInfobyte_page.jpg'
-import codeAlphaPdf from '@/assets/files/experience_pdf/codeAlpha.pdf'
-import bharatInternPdf from '@/assets/files/experience_pdf/bharatIntern.pdf'
-import codeClausePdf from '@/assets/files/experience_pdf/codeClause.pdf'
-import oasisInfobytePdf from '@/assets/files/experience_pdf/oasisInfobyte.pdf'
+import { motion } from "framer-motion";
+import {
+  Briefcase,
+  MapPin,
+  Building2,
+  ExternalLink,
+  ArrowRight,
+} from "lucide-react";
+import { ScrollAnimation } from "@/components/ScrollAnimation";
+import codeAlphaImg from "@/assets/experience/codeAlpha_page.jpg";
+import bharatInternImg from "@/assets/experience/bharatIntern_page.jpg";
+import codeClauseImg from "@/assets/experience/codeClause_page.jpg";
+import oasisInfobyteImg from "@/assets/experience/oasisInfobyte_page.jpg";
+import codeAlphaPdf from "@/assets/files/experience_pdf/codeAlpha.pdf";
+import bharatInternPdf from "@/assets/files/experience_pdf/bharatIntern.pdf";
+import codeClausePdf from "@/assets/files/experience_pdf/codeClause.pdf";
+import oasisInfobytePdf from "@/assets/files/experience_pdf/oasisInfobyte.pdf";
 
 const experiences = [
   {
-    title: 'Software Engineering Intern',
-    company: 'Code Alpha',
-    location: 'Remote',
-    period: 'Jun 2024 - Aug 2024',
-    type: 'Internship',
+    title: "Software Engineering Intern",
+    company: "Code Alpha",
+    location: "Remote",
+    period: "Jun 2024 - Aug 2024",
+    type: "Internship",
     image: codeAlphaImg,
     certificateUrl: codeAlphaPdf,
     description: [
-      'Optimized web application performance with JavaScript and React.js, achieving a 98% error-free rate',
-      'Implemented advanced features on a React.js platform, resulting in a 40% surge in user interaction',
+      "Optimized web application performance with JavaScript and React.js, achieving a 98% error-free rate",
+      "Implemented advanced features on a React.js platform, resulting in a 40% surge in user interaction",
     ],
   },
   {
-    title: 'Full Stack Development Intern',
-    company: 'Bharat Intern',
-    location: 'Remote',
-    period: 'Jun 2024 - Jul 2024',
-    type: 'Internship',
+    title: "Full Stack Development Intern",
+    company: "Bharat Intern",
+    location: "Remote",
+    period: "Jun 2024 - Jul 2024",
+    type: "Internship",
     image: bharatInternImg,
     certificateUrl: bharatInternPdf,
     description: [
-      'Designed 3 websites with CSS, JavaScript, React.js, Node.js and MongoDB, resulting in a 30% increase in user engagement',
-      'Built a money tracker app using HTML, CSS, React.js, Node.js, and MongoDB, improving user financial tracking by 25%',
+      "Designed 3 websites with CSS, JavaScript, React.js, Node.js and MongoDB, resulting in a 30% increase in user engagement",
+      "Built a money tracker app using HTML, CSS, React.js, Node.js, and MongoDB, improving user financial tracking by 25%",
     ],
   },
   {
-    title: 'Web Applications Intern',
-    company: 'CodeClause',
-    location: 'Remote',
-    period: 'Jun 2023 - Jul 2023',
-    type: 'Internship',
+    title: "Web Applications Intern",
+    company: "CodeClause",
+    location: "Remote",
+    period: "Jun 2023 - Jul 2023",
+    type: "Internship",
     image: codeClauseImg,
     certificateUrl: codeClausePdf,
     description: [
-      'Engineered a real-time collaborative document editor using Next.js, TypeScript, and Liveblocks, reducing latency by 30%',
-      'Implemented and optimized a personal portfolio with Next.js and Tailwind CSS, improving performance by 40%',
+      "Engineered a real-time collaborative document editor using Next.js, TypeScript, and Liveblocks, reducing latency by 30%",
+      "Implemented and optimized a personal portfolio with Next.js and Tailwind CSS, improving performance by 40%",
     ],
   },
   {
-    title: 'Junior Software Engineer',
-    company: 'Oasis Infobyte',
-    location: 'Remote',
-    period: 'Jun 2023 - Jul 2023',
-    type: 'Internship',
+    title: "Junior Web Developer",
+    company: "Oasis Infobyte",
+    location: "Remote",
+    period: "Jun 2023 - Jul 2023",
+    type: "Internship",
     image: oasisInfobyteImg,
     certificateUrl: oasisInfobytePdf,
     description: [
-      'Engineered a real-time collaborative document editor using Next.js, TypeScript, and Liveblocks, reducing latency by 30%',
-      'Implemented and optimized a personal portfolio with Next.js and Tailwind CSS, improving performance by 40%',
+      "Engineered a real-time collaborative document editor using Next.js, TypeScript, and Liveblocks, reducing latency by 30%",
+      "Implemented and optimized a personal portfolio with Next.js and Tailwind CSS, improving performance by 40%",
     ],
   },
-]
+];
 
 const Experience = () => {
   return (
@@ -86,8 +92,12 @@ const Experience = () => {
                       <Building2 className="w-6 h-6 sm:w-7 sm:h-7" />
                     </div>
                     <div>
-                      <h3 className="text-xl sm:text-2xl font-bold mb-1">{exp.title}</h3>
-                      <p className="text-gray-400 text-base sm:text-lg">{exp.company}</p>
+                      <h3 className="text-xl sm:text-2xl font-bold mb-1">
+                        {exp.title}
+                      </h3>
+                      <p className="text-gray-400 text-base sm:text-lg">
+                        {exp.company}
+                      </p>
                     </div>
                   </div>
 
@@ -100,7 +110,10 @@ const Experience = () => {
 
                   <ul className="space-y-3 sm:space-y-4">
                     {exp.description.map((item, i) => (
-                      <li key={i} className="flex items-start gap-3 text-gray-300 text-sm sm:text-base">
+                      <li
+                        key={i}
+                        className="flex items-start gap-3 text-gray-300 text-sm sm:text-base"
+                      >
                         <ArrowRight className="w-5 h-5 mt-0.5 text-gray-400 flex-shrink-0" />
                         <span className="leading-relaxed">{item}</span>
                       </li>
@@ -147,7 +160,7 @@ const Experience = () => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Experience
+export default Experience;

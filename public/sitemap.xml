@@ -69,12 +69,4 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Kali Linux Page - Additional Content -->
-  <url>
-    <loc>https://niladri1.vercel.app/kali</loc>
-    <lastmod>2026-03-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
 </urlset>

@@ -100,7 +100,6 @@ A modern, fully responsive personal portfolio built with **React 18 + Vite 5** a
     │   ├── Education.jsx
     │   ├── Certificates.jsx
     │   ├── Contact.jsx
-    │   ├── Kali.jsx
     │   └── NotFound.jsx
     ├── config/
     │   └── contact.js
