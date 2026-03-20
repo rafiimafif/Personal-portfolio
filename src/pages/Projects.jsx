@@ -11,8 +11,8 @@ const projects = [
     description:
       "AI-powered Gmail client that detects spam, summarises emails, and lets you chat with your inbox — built with React, Node.js & Gemini API.",
     image: project4,
-    github: "https://github.com/niladri-1/EMail-Spam-Detector",
-    live: "https://spam-detector1.vercel.app",
+    github: "https://github.com/rafiimafif/EMail-Spam-Detector",
+    live: "#",
     tags: [
       "MongoDB",
       "Express",
@@ -28,8 +28,8 @@ const projects = [
     description:
       "A modern Book Management System built with the MERN stack (React 19 & Tailwind 4.0). Features secure JWT authentication, protected routes, and full CRUD functionality.",
     image: project3,
-    github: "https://github.com/niladri-1/Bookstore-Auth-MERN",
-    live: "https://curd-auth-app.vercel.app",
+    github: "https://github.com/rafiimafif/Bookstore-Auth-MERN",
+    live: "#",
     tags: [
       "MongoDB",
       "Express",
@@ -46,7 +46,7 @@ const projects = [
     description:
       "Bash-based network scanning tool that provides live host discovery, port scanning, traceroute, and ping tests, featuring visually appealing ASCII banners and 80+ star at GitHub",
     image: project2,
-    github: "https://github.com/niladri-1/NetScan-Pro",
+    github: "https://github.com/rafiimafif/NetScan-Pro",
     live: "",
     tags: ["Linux", "Bash", "Networking", "Monitoring", "NMAP", "Scripting"],
   },
@@ -55,8 +55,8 @@ const projects = [
     description:
       "A professional portfolio template for engineering students. Easy to set up, fully customizable, and perfect for showcasing projects and skills.",
     image: project1,
-    github: "https://github.com/niladri-1/Frontend-develope-portfolio",
-    live: "https://techfolio1.vercel.app",
+    github: "https://github.com/rafiimafif/Frontend-develope-portfolio",
+    live: "#",
     tags: ["Next", "Tailwind CSS", "TypeScript", "ThreeJS", "Responsive"],
   },
 ];

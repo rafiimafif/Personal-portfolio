@@ -33,16 +33,16 @@ const Contact = () => {
   }
 
   const contactInfo = [
-    { icon: <Mail className="w-5 h-5" />, label: 'Email', value: 'code.niladri@gmail.com', link: 'mailto:code.niladri@gmail.com' },
+    { icon: <Mail className="w-5 h-5" />, label: 'Email', value: 'rafii.afif@gmail.com', link: 'mailto:rafii.afif@gmail.com' },
     { icon: <Phone className="w-5 h-5" />, label: 'Phone', value: '+916296554939', link: 'tel:+916296554939' },
     { icon: <MapPin className="w-5 h-5" />, label: 'Location', value: 'Kolkata, West Bengal, India' },
     { icon: <Clock className="w-5 h-5" />, label: 'Time Zone', value: 'IST (UTC+5:30)' },
   ]
 
   const socialLinks = [
-    { icon: <Github className="w-5 h-5" />, label: 'GitHub', link: 'https://github.com/niladri-1' },
-    { icon: <Linkedin className="w-5 h-5" />, label: 'LinkedIn', link: 'https://linkedin.com/in/niladri1' },
-    { icon: <MessageCircle className="w-5 h-5" />, label: 'WhatsApp', link: 'https://wa.me/+916296554939' },
+    { icon: <Github className="w-5 h-5" />, label: 'GitHub', link: 'https://github.com/rafiimafif' },
+    { icon: <Linkedin className="w-5 h-5" />, label: 'LinkedIn', link: 'https://linkedin.com/in/rafii-muhammad-afif' },
+    { icon: <MessageCircle className="w-5 h-5" />, label: 'WhatsApp', link: 'https://wa.me/+6285155103214' },
   ]
 
   return (

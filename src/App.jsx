@@ -85,14 +85,14 @@ function SEOUpdater() {
     if (ogUrl)
       ogUrl.setAttribute(
         "content",
-        `https://niladri1.vercel.app${location.pathname}`,
+        `https://rafiimafif.github.io/Personal-portfolio${location.pathname}`,
       );
 
     const canonical = document.querySelector('link[rel="canonical"]');
     if (canonical)
       canonical.setAttribute(
         "href",
-        `https://niladri1.vercel.app${location.pathname}`,
+        `https://rafiimafif.github.io/Personal-portfolio${location.pathname}`,
       );
   }, [location]);
 

@@ -2,10 +2,10 @@
 
 # Rafii Afif — Portfolio 🚀
 
-[![Website](https://img.shields.io/website?label=Live%20Portfolio&style=for-the-badge&url=https%3A%2F%2Fniladri1.vercel.app)](https://niladri1.vercel.app)
-[![GitHub followers](https://img.shields.io/github/followers/niladri-1?logo=github&style=for-the-badge)](https://github.com/niladri-1)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-4000%2B%20Followers-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/niladri1)
-[![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://niladri1.vercel.app)
+[![Website](https://img.shields.io/website?label=Live%20Portfolio&style=for-the-badge&url=https%3A%2F%2Frafiimafif.github.io/Personal-portfolio)](https://rafiimafif.github.io/Personal-portfolio)
+[![GitHub followers](https://img.shields.io/github/followers/rafiimafif?logo=github&style=for-the-badge)](https://github.com/rafiimafif)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-4000%2B%20Followers-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/rafii-muhammad-afif)
+[![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://rafiimafif.github.io/Personal-portfolio)
 
 <p align="center">
   <img src="https://skillicons.dev/icons?i=react,vite,typescript,tailwind,nodejs,mongodb,express,git" alt="Tech Stack Icons" />
@@ -13,11 +13,11 @@
 
 <h3>DevOps Engineer · Cloud Infrastructure Specialist · Kolkata, India</h3>
 
-[🌐 View Live](https://niladri1.vercel.app) · [🐛 Report Bug](https://github.com/niladri-1/Software-Dev-Portfolio/issues) · [✨ Request Feature](https://github.com/niladri-1/Software-Dev-Portfolio/issues)
+[🌐 View Live](https://rafiimafif.github.io/Personal-portfolio) · [🐛 Report Bug](https://github.com/rafiimafif/Software-Dev-Portfolio/issues) · [✨ Request Feature](https://github.com/rafiimafif/Software-Dev-Portfolio/issues)
 
 <br/>
 
-<img src="https://niladri1.vercel.app/og-image.png" alt="Rafii Afif Portfolio Preview" width="80%" style="border-radius: 12px;" />
+<img src="https://rafiimafif.github.io/Personal-portfolio/og-image.png" alt="Rafii Afif Portfolio Preview" width="80%" style="border-radius: 12px;" />
 
 </div>
 
@@ -114,7 +114,7 @@ A modern, fully responsive personal portfolio built with **React 18 + Vite 5** a
 
 ```bash
 # Clone the repository
-git clone https://github.com/niladri-1/niladri-1/Personal-portfolio
+git clone https://github.com/rafiimafif/rafiimafif/Personal-portfolio
 
 # Navigate to project
 cd Personal-portfolio
@@ -173,9 +173,9 @@ This portfolio is fully SEO-optimized:
 
 <div align="center">
 
-[![Email](https://img.shields.io/badge/Email-code.niladri%40gmail.com-red?style=for-the-badge&logo=gmail)](mailto:code.niladri@gmail.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-niladri1-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/niladri1)
-[![Portfolio](https://img.shields.io/badge/Portfolio-niladri1.vercel.app-orange?style=for-the-badge&logo=vercel)](https://niladri1.vercel.app)
+[![Email](https://img.shields.io/badge/Email-code.niladri%40gmail.com-red?style=for-the-badge&logo=gmail)](mailto:rafii.afif@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-niladri1-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/rafii-muhammad-afif)
+[![Portfolio](https://img.shields.io/badge/Portfolio-rafiimafif.github.io/Personal-portfolio-orange?style=for-the-badge&logo=vercel)](https://rafiimafif.github.io/Personal-portfolio)
 
 </div>
 
@@ -185,9 +185,9 @@ This portfolio is fully SEO-optimized:
 
 <div align="center">
 
-[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=niladri-1&theme=dark&hide_border=true)](https://github.com/niladri-1)
+[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=rafiimafif&theme=dark&hide_border=true)](https://github.com/rafiimafif)
 
-[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=niladri-1&layout=compact&theme=dark&hide_border=true)](https://github.com/niladri-1)
+[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=rafiimafif&layout=compact&theme=dark&hide_border=true)](https://github.com/rafiimafif)
 
 </div>
 
@@ -200,7 +200,7 @@ This portfolio is fully SEO-optimized:
 This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
-[![Visitors](https://api.visitorbadge.io/api/visitors?path=niladri-1%2FSoftware-Dev-Portfolio&label=Visitors&labelColor=%23000000&countColor=%2322d3ee)](https://visitorbadge.io/status?path=niladri-1%2FSoftware-Dev-Portfolio)
+[![Visitors](https://api.visitorbadge.io/api/visitors?path=rafiimafif%2FSoftware-Dev-Portfolio&label=Visitors&labelColor=%23000000&countColor=%2322d3ee)](https://visitorbadge.io/status?path=rafiimafif%2FSoftware-Dev-Portfolio)
 
 <h3>⭐ Star this repo if you found it helpful!</h3>
 

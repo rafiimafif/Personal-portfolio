@@ -42,12 +42,12 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="mailto:code.niladri@gmail.com"
+                  href="mailto:rafii.afif@gmail.com"
                   className="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-2"
                   aria-label="Email Rafii Afif"
                 >
                   <Mail className="w-4 h-4" aria-hidden="true" />
-                  code.niladri@gmail.com
+                  rafii.afif@gmail.com
                 </a>
               </li>
               <li>
@@ -108,7 +108,7 @@ const Footer = () => {
             <h3 className="text-sm font-semibold text-white">Social</h3>
             <div className="flex space-x-4">
               <a
-                href="https://github.com/niladri-1"
+                href="https://github.com/rafiimafif"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -117,7 +117,7 @@ const Footer = () => {
                 <Github className="w-5 h-5" aria-hidden="true" />
               </a>
               <a
-                href="https://linkedin.com/in/niladri1"
+                href="https://linkedin.com/in/rafii-muhammad-afif"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -126,7 +126,7 @@ const Footer = () => {
                 <Linkedin className="w-5 h-5" aria-hidden="true" />
               </a>
               <a
-                href="mailto:code.niladri@gmail.com"
+                href="mailto:rafii.afif@gmail.com"
                 className="text-gray-400 hover:text-white transition-colors"
                 aria-label="Email"
               >
