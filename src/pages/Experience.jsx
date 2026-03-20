@@ -7,14 +7,6 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { ScrollAnimation } from "@/components/ScrollAnimation";
-import codeAlphaImg from "@/assets/experience/codeAlpha_page.jpg";
-import bharatInternImg from "@/assets/experience/bharatIntern_page.jpg";
-import codeClauseImg from "@/assets/experience/codeClause_page.jpg";
-import oasisInfobyteImg from "@/assets/experience/oasisInfobyte_page.jpg";
-import codeAlphaPdf from "@/assets/files/experience_pdf/codeAlpha.pdf";
-import bharatInternPdf from "@/assets/files/experience_pdf/bharatIntern.pdf";
-import codeClausePdf from "@/assets/files/experience_pdf/codeClause.pdf";
-import oasisInfobytePdf from "@/assets/files/experience_pdf/oasisInfobyte.pdf";
 
 const experiences = [
   {
@@ -23,8 +15,6 @@ const experiences = [
     location: "Bandung, West Java",
     period: "05/2025 - Present",
     type: "Full-time",
-    image: codeAlphaImg,
-    certificateUrl: codeAlphaPdf,
     description: [
       "Reduced deployment time dramatically by introducing automated Jenkins–OpenShift pipeline, replacing manual steps with a streamlined CI/CD flow",
       "Accelerated developer onboarding by creating standardized Jenkinsfile templates",
@@ -38,8 +28,6 @@ const experiences = [
     location: "Bandung, West Java",
     period: "12/2024 - 05/2025",
     type: "Full-time",
-    image: bharatInternImg,
-    certificateUrl: bharatInternPdf,
     description: [
       "Managed laptops, desktops, printers, peripherals, and software, providing application support for Teams, Office, and Outlook",
       "Implemented data security protocols, managed user access permissions, and handled Active Directory accounts",
@@ -52,8 +40,6 @@ const experiences = [
     location: "Bandung, West Java",
     period: "01/2023 - 11/2024",
     type: "Full-time",
-    image: codeClauseImg,
-    certificateUrl: codeClausePdf,
     description: [
       "Addressed hardware, software, and network issues, assisting users using tools like Jira and NinjaRMM",
       "Developed automation scripts, monitored system performance, and reported issues using NinjaRMM",
@@ -66,8 +52,6 @@ const experiences = [
     location: "Bandung, West Java",
     period: "04/2021 - 12/2022",
     type: "Full-time",
-    image: oasisInfobyteImg,
-    certificateUrl: oasisInfobytePdf,
     description: [
       "Responded quickly to perform troubleshooting and technical assistance required by customers",
       "Provided professional technical solutions responsive to customer needs",
@@ -80,8 +64,6 @@ const experiences = [
     location: "Bandung, West Java",
     period: "01/2020 - 06/2020",
     type: "Full-time",
-    image: codeAlphaImg,
-    certificateUrl: codeAlphaPdf,
     description: [
       "Developed and maintained functioning platforms with databases using PHP and CodeIgniter Framework",
       "Worked on both front-end and back-end development processes",
@@ -104,7 +86,7 @@ const Experience = () => {
         {experiences.map((exp) => (
           <ScrollAnimation key={exp.title}>
             <div className="group relative bg-gray-800/50 rounded-xl sm:rounded-2xl overflow-hidden backdrop-blur-sm hover:bg-gray-800/70 transition-all border border-white/5">
-              <div className="grid grid-cols-1 md:grid-cols-[1fr,300px]">
+              <div>
                 <div className="p-6 sm:p-8">
                   <div className="flex items-center gap-3 mb-4 sm:mb-6">
                     <div className="p-2 sm:p-3 bg-white/10 rounded-lg sm:rounded-xl group-hover:bg-white/20 transition-colors">
@@ -138,40 +120,6 @@ const Experience = () => {
                       </li>
                     ))}
                   </ul>
-
-                  <motion.a
-                    href={exp.certificateUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="md:hidden mt-6 inline-flex items-center gap-2 px-6 py-2.5 text-white bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-lg transition-all duration-300 text-sm font-medium"
-                    whileHover={{ scale: 1.02 }}
-                  >
-                    View Certificate
-                    <ExternalLink className="w-4 h-4" />
-                  </motion.a>
-                </div>
-
-                <div className="relative hidden md:block">
-                  <div className="absolute inset-0 group-hover:scale-105 transition-transform duration-500">
-                    <img
-                      src={exp.image}
-                      alt={exp.company}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-r from-gray-800/80 to-transparent" />
-                  </div>
-                  <div className="relative h-full flex items-center justify-center">
-                    <motion.a
-                      href={exp.certificateUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-8 py-3 text-white font-bold bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-xl flex items-center gap-2 transition-all duration-300 hover:scale-105 border border-white/10 hover:border-white/20"
-                      whileHover={{ y: -5 }}
-                    >
-                      View Certificate
-                      <ExternalLink className="w-4 h-4" />
-                    </motion.a>
-                  </div>
                 </div>
               </div>
             </div>
