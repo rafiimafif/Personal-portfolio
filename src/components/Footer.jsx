@@ -32,7 +32,7 @@ const Footer = () => {
               <span className="text-xl font-bold text-white">Rafii Afif</span>
             </Link>
             <p className="text-sm text-gray-400">
-              Software Developer based in Kolkata, WB, India.
+              DevOps Engineer based in Bandung, Indonesia.
             </p>
           </div>
 
