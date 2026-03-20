@@ -38,80 +38,58 @@ import {
 
 const skills = [
   {
-    category: "Programming Languages",
-    icon: <Code2 className="w-6 h-6" />,
-    items: [
-      { name: "JavaScript", icon: <JavaScriptLogo /> },
-      { name: "TypeScript", icon: <TypeScriptLogo /> },
-      { name: "Python", icon: <PythonLogo /> },
-      { name: "Bash", icon: <BashLogo /> },
-    ],
-  },
-  {
-    category: "Front-End Development",
-    icon: <Layout className="w-6 h-6" />,
-    items: [
-      { name: "React.js", icon: <ReactLogo /> },
-      { name: "Next.js", icon: <NextjsLogo /> },
-      { name: "Tailwind", icon: <TailwindLogo /> },
-      { name: "Redux", icon: <ReduxLogo /> },
-    ],
-  },
-  {
-    category: "Back-End Development",
+    category: "CI/CD & Automation",
     icon: <Server className="w-6 h-6" />,
     items: [
-      { name: "Node.js", icon: <NodeLogo /> },
-      { name: "Express", icon: <ExpressLogo /> },
-      { name: "JWT", icon: <JWTLogo /> },
-      { name: "Bcrypt", icon: <BcryptLogo /> },
-    ],
-  },
-  {
-    category: "Databases & Cloud Storage",
-    icon: <Database className="w-6 h-6" />,
-    items: [
-      { name: "MongoDB", icon: <MongoDBLogo /> },
-      { name: "Cloudinary", icon: <Cloud className="w-4 h-4" /> },
-      { name: "AWS", icon: <AWSLogo /> },
-    ],
-  },
-  {
-    category: "Version Control & DevOps",
-    icon: <GitLogo />,
-    items: [
-      { name: "Git", icon: <GitLogo /> },
+      { name: "Jenkins", icon: <Wrench className="w-4 h-4" /> },
       { name: "GitHub", icon: <GitLogo /> },
-      { name: "Vercel", icon: <VercelLogo /> },
-      { name: "Render", icon: <RenderLogo /> },
+      { name: "Git", icon: <GitLogo /> },
     ],
   },
   {
-    category: "Tools & Platforms",
-    icon: <Wrench className="w-6 h-6" />,
+    category: "Containerization",
+    icon: <Layout className="w-6 h-6" />,
     items: [
-      { name: "VS Code", icon: <VSCodeLogo /> },
-      { name: "Git Desktop", icon: <GitLogo /> },
-      { name: "Compass", icon: <MongoDBLogo /> },
-      { name: "Postman", icon: <PostmanLogo /> },
+      { name: "Docker", icon: <Server className="w-4 h-4" /> },
+      { name: "OpenShift", icon: <Cloud className="w-4 h-4" /> },
     ],
   },
   {
-    category: "Operating Systems",
+    category: "Scripting & Languages",
+    icon: <Code2 className="w-6 h-6" />,
+    items: [
+      { name: "Bash", icon: <BashLogo /> },
+      { name: "Shell Scripting", icon: <Terminal className="w-4 h-4" /> },
+      { name: "PHP", icon: <Code2 className="w-4 h-4" /> },
+    ],
+  },
+  {
+    category: "Cloud & Monitoring",
+    icon: <Cloud className="w-6 h-6" />,
+    items: [
+      { name: "AWS", icon: <AWSLogo /> },
+      { name: "Grafana", icon: <Database className="w-4 h-4" /> },
+      { name: "SonarQube", icon: <Wrench className="w-4 h-4" /> },
+    ],
+  },
+  {
+    category: "IT Support & OS",
     icon: <Terminal className="w-6 h-6" />,
     items: [
-      { name: "Windows", icon: <WindowsLogo className="w-4 h-4" /> },
-      { name: "Ubuntu", icon: <UbuntuLogo className="w-4 h-4" /> },
       { name: "Linux", icon: <LinuxLogo className="w-4 h-4" /> },
+      { name: "Windows", icon: <WindowsLogo className="w-4 h-4" /> },
+      { name: "Active Directory", icon: <Users className="w-4 h-4" /> },
+      { name: "Troubleshooting", icon: <Wrench className="w-4 h-4" /> },
     ],
   },
   {
-    category: "Soft Skills",
-    icon: <Brain className="w-6 h-6" />,
+    category: "Collaboration Tools",
+    icon: <Users className="w-6 h-6" />,
     items: [
-      { name: "Teamwork", icon: <Users className="w-4 h-4" /> },
-      { name: "Communication", icon: <MessageSquare className="w-4 h-4" /> },
-      { name: "Debugging", icon: <Wrench className="w-4 h-4" /> },
+      { name: "Jira", icon: <Layout className="w-4 h-4" /> },
+      { name: "Slack", icon: <MessageSquare className="w-4 h-4" /> },
+      { name: "Teams", icon: <MessageSquare className="w-4 h-4" /> },
+      { name: "Confluence", icon: <Layout className="w-4 h-4" /> },
     ],
   },
 ];

@@ -4,14 +4,14 @@
  */
 
 export const CONTACT_INFO = {
-  email: 'code.niladri@gmail.com',
-  phone: '+916296554939',
-  whatsapp: '+916296554939',
-  location: 'Kolkata, West Bengal, India',
-  timezone: 'IST (UTC+5:30)',
-  github: 'https://github.com/niladri-1',
-  linkedin: 'https://linkedin.com/in/niladri1',
-  twitter: '@niladri_dev',
+  email: 'rafii.afif@gmail.com',
+  phone: '+6285155103214',
+  whatsapp: '+6285155103214',
+  location: 'Bandung, West Java',
+  timezone: 'WIB (UTC+7)',
+  github: '#',
+  linkedin: 'https://www.linkedin.com/in/rafii-muhammad-afif/',
+  twitter: '#',
 }
 
 export const OFFICE_HOURS = {

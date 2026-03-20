@@ -10,63 +10,40 @@ import cybersecurityPdf from "@/assets/files/certificates_pdf/cybersecurity_virt
 
 const certificates = [
   {
-    title: "Typescript Programming",
-    issuer: "Geekster",
-    date: "22th April 2025",
-    link: typescriptPdf,
-    description:
-      "Covers TypeScript fundamentals, including syntax, types. Includes practical examples and real-world applications.",
-    skills: [
-      "TypeScript",
-      "JavaScript",
-      "Frontend Development",
-      "Backend Development",
-    ],
-  },
-  {
-    title: "AWS ECS Deployment and Management",
-    issuer: "KodeKloud",
-    date: "20th March 2025",
+    title: "End to End DevOps Implementation",
+    issuer: "Abhishek Veeramalla",
+    date: "03/2025",
     link: awsEcsPdf,
     description:
-      "Covers deploying and managing containers on AWS using ECS, including cluster management, load balancing, auto-scaling, and CI/CD integration.",
-    skills: ["AWS ECS", "Cloud Computing", "DevOps", "CI/CD"],
+      "Comprehensive guide to setting up, configuring, and managing projects using AWS and Docker. Covers infrastructure as code, containerization, and CI/CD.",
+    skills: ["AWS", "Docker", "CI/CD", "Infrastructure as Code"],
   },
   {
-    title: "JavaScript Programming",
-    issuer: "HackerRank",
-    date: "18th February 2025",
-    link: javascriptPdf,
+    title: "JIRA Software & Confluence Expertise",
+    issuer: "Kosh Sarkar",
+    date: "11/2024",
+    link: typescriptPdf,
     description:
-      "Validates JavaScript fundamentals, including syntax, functions, and problem-solving.",
-    skills: ["JavaScript", "ES6", "Asynchronous Programming"],
+      "Learn to work on, manage & administer agile projects with this comprehensive course on JIRA Software & Confluence.",
+    skills: ["Jira", "Confluence", "Agile Management", "Project Management"],
   },
   {
-    title: "Docker Fundamentals",
-    issuer: "KodeKloud",
-    date: "18th February 2025",
-    link: dockerPdf,
-    description:
-      "Teaches containerization, networking, security, and CI/CD with Docker.",
-    skills: ["Docker", "Containerization", "CI/CD"],
-  },
-  {
-    title: "Python Programming",
-    issuer: "HackerRank",
-    date: "10 Oct 2023",
-    link: pythonPdf,
-    description:
-      "Validates Python basics, including loops, functions, and data structures.",
-    skills: ["Python", "Functions", "Data Structures"],
-  },
-  {
-    title: "Cybersecurity Virtual Program",
-    issuer: "Forage",
-    date: "10 Jul 2023",
+    title: "CCNA 200-301 Enterprise",
+    issuer: "Nixtrain",
+    date: "12/2022",
     link: cybersecurityPdf,
     description:
-      "Focuses on cybersecurity threats, vulnerabilities, and risk mitigation.",
-    skills: ["Cybersecurity", "Threat Mitigation", "Ransomware"],
+      "A certification exam offered by Cisco designed to validate the skills and knowledge of networking professionals in modern networking technologies.",
+    skills: ["Networking", "Cisco", "Infrastructure", "Routing/Switching"],
+  },
+  {
+    title: "ITIL® v4 Foundation",
+    issuer: "AXELOS Global Best Practice",
+    date: "12/2023",
+    link: dockerPdf,
+    description:
+      "A set of best practices for IT service management (ITSM) that helps organizations align their IT services with the needs of the business.",
+    skills: ["ITSM", "ITIL", "Service Management", "Best Practices"],
   },
 ];
 

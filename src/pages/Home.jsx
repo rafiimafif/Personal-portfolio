@@ -18,11 +18,11 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const Home = () => {
   const [copied, setCopied] = useState(false);
-  const email = "code.niladri@gmail.com";
-  const whatsappNumber = "+916296554939";
+  const email = "rafii.afif@gmail.com";
+  const whatsappNumber = "+6285155103214";
 
   const { data: githubData } = useSWR(
-    "https://api.github.com/users/niladri-1",
+    "https://api.github.com/users/rafii",
     fetcher,
     {
       revalidateOnFocus: false,
@@ -68,7 +68,7 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          Niladri Chatterjee
+          Rafii Afif
         </motion.h1>
         <motion.h1
           className="text-2xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-6 relative tracking-tighter"
@@ -76,7 +76,7 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          I design & code for web
+          I automate Everything & build infrastructure
         </motion.h1>
 
         <motion.p
@@ -85,8 +85,7 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          Software Developer specializing in Full Stack Development with
-          expertise in React.js, Node.js and modern Web Technologies.
+          DevOps Engineer specializing in Cloud Infrastructure, CI/CD, and Automation with expertise in Jenkins, Docker, and OpenShift.
         </motion.p>
 
         <motion.div
@@ -150,7 +149,7 @@ const Home = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           <motion.a
-            href="https://github.com/niladri-1"
+            href="#"
             target="_blank"
             rel="noopener noreferrer"
             className="flex flex-col items-center group w-full"
@@ -176,7 +175,7 @@ const Home = () => {
           </motion.a>
 
           <motion.a
-            href="https://linkedin.com/in/niladri1"
+            href="https://www.linkedin.com/in/rafii-muhammad-afif/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex flex-col items-center group w-full"
@@ -192,9 +191,9 @@ const Home = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8 }}
             >
-              <span className="text-base sm:text-lg font-semibold">4000+</span>
+              <span className="text-base sm:text-lg font-semibold">Connect</span>
               <span className="text-xs sm:text-sm text-gray-400">
-                LinkedIn Followers
+                on LinkedIn
               </span>
             </motion.div>
           </motion.a>

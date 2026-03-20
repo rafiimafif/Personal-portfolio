@@ -8,29 +8,29 @@ import cvPdf from "@/assets/files/cv_pdf/Niladri_Chatterjee(CV).pdf";
 const About = () => {
   const achievements = [
     {
-      icon: <Code2 className="w-6 h-6" />,
-      title: "10+ Projects",
-      description: "Completed full-stack web applications",
+      icon: <Briefcase className="w-6 h-6" />,
+      title: "4+ Years",
+      description: "Professional IT & DevOps Experience",
     },
     {
-      icon: <Briefcase className="w-6 h-6" />,
-      title: "3+ Internships",
-      description: "Professional work experience",
+      icon: <Code2 className="w-6 h-6" />,
+      title: "5+ Positions",
+      description: "Across Support, Operations, and DevOps",
     },
     {
       icon: <GraduationCap className="w-6 h-6" />,
-      title: "8.48 CGPA",
-      description: "Academic excellence",
+      title: "3.41 GPA",
+      description: "Informatics Engineering",
     },
   ];
 
   const interests = [
-    "Web Development",
-    "UI/UX Design",
-    "Cloud Computing",
-    "DevOps",
-    "Open Source",
-    "Artificial Intelligence",
+    "CI/CD Pipelines",
+    "Containerization",
+    "Cloud Architecture",
+    "Infrastructure as Code",
+    "IT Automation",
+    "System Monitoring",
   ];
 
   return (
@@ -46,7 +46,7 @@ const About = () => {
           <div className="aspect-square overflow-hidden rounded-2xl">
             <img
               src={profileImg}
-              alt="Niladri Chatterjee"
+              alt="Rafii Muhammad Afif"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
             />
           </div>
@@ -55,23 +55,13 @@ const About = () => {
         <ScrollAnimation className="space-y-6">
           <div className="space-y-4">
             <p className="text-gray-300 leading-relaxed">
-              Hi! I'm a passionate full-stack developer with expertise in
-              building modern web applications. My journey in tech started
-              during my college years, where I discovered my love for creating
-              innovative solutions through code.
+              Hi! I'm Rafii Muhammad Afif, a DevOps Engineer with a solid background in IT Support and over 4 years of hands-on experience keeping systems stable, users happy, and tech hiccups at bay. These days, I'm all-in on automation, CI/CD, and building smoother workflows.
             </p>
             <p className="text-gray-300 leading-relaxed">
-              I completed my B.Tech in Computer Science, maintaining a strong
-              academic record while actively engaging in real-world projects and
-              internships. This blend of theoretical knowledge and practical
-              experience has shaped my approach to problem-solving and software
-              development.
+              Before diving into DevOps, I was the go-to person for hardware fixes, network setups, and troubleshooting practically anything that blinked or beeped. That foundation helps me understand both infrastructure and development needs, allowing me to bridge gaps between teams and keep deployments stress-free.
             </p>
             <p className="text-gray-300 leading-relaxed">
-              I specialize in React, Node.js, and modern web technologies, with
-              a keen interest in creating performant and user-friendly
-              applications. My experience includes working with various startups
-              and contributing to open-source projects.
+              I specialize in tools like Jenkins, GitHub, Docker, SonarQube, and OpenShift. Whether it's scripting smarter builds or rolling out updates with zero downtime, I bring a practical mindset, solid communication skills, and a good dose of curiosity to every project.
             </p>
           </div>
 
@@ -82,9 +72,9 @@ const About = () => {
               </h3>
               <ul className="list-none space-y-3">
                 {[
-                  "Based in Kolkata, WB, India",
-                  "B.Tech in Computer Science",
-                  "CGPA: 8.48",
+                  "Based in Bandung, West Java",
+                  "B.Sc. in Informatics Engineering",
+                  "GPA: 3.41",
                 ].map((fact) => (
                   <motion.li
                     key={fact}

@@ -9,28 +9,28 @@ import hsMarkSheetPdf from '@/assets/files/education_pdf/HS MARK SHEET.pdf'
 const Education = () => {
   const educationData = [
     {
-      school: 'Bengal College of Engineering and Technology',
-      location: 'Durgapur, WB, India',
-      duration: 'July 2020 - June 2024',
-      degree: 'B.Tech (Computer Science and Engineering)',
-      grade: 'CGPA: 8.48 (80%)',
+      school: 'Universitas Jenderal Achmad Yani',
+      location: 'Bandung, West Java',
+      duration: 'Sept 2016 - Oct 2020',
+      degree: 'Bachelor of Informatics Engineering',
+      grade: 'GPA: 3.41 / 4.00',
       image: collegeImg,
       resultUrl: bTechPdf,
-      coursework: ["Software Development", 'DSA', 'OOPs', 'DBMS', 'AI', 'ML', 'OS', 'Networking'],
+      coursework: ["Data Software Engineering", 'Computer Science', 'Information Technology', 'Data Analysis'],
       description:
-        'During my time at BCET, I have built a strong foundation in computer science, focusing on software development, problem-solving, and real-world applications. Engaging in hands-on projects, internships, and coding challenges has helped me enhance my technical and analytical skills.',
+        'Informatics Engineering specializing in Data Software Engineering is a dynamic and rapidly evolving field combining computer science, information technology, and data analysis.',
     },
     {
-      school: 'Birsingha Bhagabati Vidyalaya (H.S)',
-      location: 'Medinipur, WB, India',
-      duration: 'June 2018 - July 2019',
-      degree: 'Higher Secondary (WBSC)',
-      grade: 'Percentage: 79%',
+      school: 'High School',
+      location: 'Indonesia',
+      duration: 'Prior to 2016',
+      degree: 'High School Diploma',
+      grade: '-',
       image: schoolImg,
       resultUrl: hsMarkSheetPdf,
-      subjects: ['Physics', 'Chemistry', 'Mathematics', 'Biology', 'Computer Science'],
+      subjects: ['Science', 'Mathematics'],
       description:
-        'My higher secondary education laid the foundation for my technical journey, strengthening my analytical thinking and problem-solving abilities. The strong emphasis on mathematics and computer science has been instrumental in shaping my passion for software development.',
+        'Foundational education preparing for higher studies in Engineering and Technology.',
     },
   ]
 
