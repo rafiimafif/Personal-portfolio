@@ -147,7 +147,7 @@ const Footer = () => {
                 <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
                   <path d="M12 1L24 22H0L12 1Z" />
                 </svg>
-                Niladri's Portfolio
+                Rafii's Portfolio
               </span>
             </div>
           </div>

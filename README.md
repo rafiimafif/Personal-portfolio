@@ -173,8 +173,8 @@ This portfolio is fully SEO-optimized:
 
 <div align="center">
 
-[![Email](https://img.shields.io/badge/Email-code.niladri%40gmail.com-red?style=for-the-badge&logo=gmail)](mailto:rafii.afif@gmail.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-niladri1-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/rafii-muhammad-afif)
+[![Email](https://img.shields.io/badge/Email-rafii.afif%40gmail.com-red?style=for-the-badge&logo=gmail)](mailto:rafii.afif@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-rafiimafif-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/rafii-muhammad-afif)
 [![Portfolio](https://img.shields.io/badge/Portfolio-rafiimafif.github.io/Personal-portfolio-orange?style=for-the-badge&logo=vercel)](https://rafiimafif.github.io/Personal-portfolio)
 
 </div>
