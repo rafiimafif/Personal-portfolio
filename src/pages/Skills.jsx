@@ -35,6 +35,8 @@ import {
   UbuntuLogo,
   LinuxLogo,
 } from "@/components/TechLogos";
+import virtualboxLogo from "@/assets/profile/Virtualbox_logo.png";
+import kaliLogo from "@/assets/profile/kali_logo.png";
 
 const skills = [
   {
@@ -77,6 +79,8 @@ const skills = [
     icon: <Terminal className="w-6 h-6" />,
     items: [
       { name: "Linux", icon: <LinuxLogo className="w-4 h-4" /> },
+      { name: "Kali Linux", icon: <img src={kaliLogo} alt="Kali" className="w-4 h-4 object-contain brightness-0 invert opacity-70 group-hover:opacity-100 group-hover:brightness-100" /> },
+      { name: "VirtualBox", icon: <img src={virtualboxLogo} alt="VirtualBox" className="w-4 h-4 object-contain brightness-0 invert opacity-70 group-hover:opacity-100 group-hover:brightness-100" /> },
       { name: "Windows", icon: <WindowsLogo className="w-4 h-4" /> },
       { name: "Active Directory", icon: <Users className="w-4 h-4" /> },
       { name: "Troubleshooting", icon: <Wrench className="w-4 h-4" /> },

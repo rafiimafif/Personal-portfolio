@@ -2,9 +2,7 @@ import { motion } from 'framer-motion'
 import { GraduationCap, Calendar, MapPin, BookOpen, Award, FileText, ExternalLink } from 'lucide-react'
 import { ScrollAnimation } from '@/components/ScrollAnimation'
 import collegeImg from '@/assets/education/college_img.jpg'
-import schoolImg from '@/assets/education/school_img.jpg'
-import bTechPdf from '@/assets/files/education_pdf/B Tech.pdf'
-import hsMarkSheetPdf from '@/assets/files/education_pdf/HS MARK SHEET.pdf'
+import bTechPdf from '@/assets/files/education_pdf/Transkrip Nilai.pdf'
 
 const Education = () => {
   const educationData = [
@@ -26,8 +24,8 @@ const Education = () => {
       duration: 'Prior to 2016',
       degree: 'High School Diploma',
       grade: '-',
-      image: schoolImg,
-      resultUrl: hsMarkSheetPdf,
+      image: collegeImg,
+      resultUrl: null,
       subjects: ['Science', 'Mathematics'],
       description:
         'Foundational education preparing for higher studies in Engineering and Technology.',
@@ -121,16 +119,18 @@ const Education = () => {
                     </div>
                   )}
 
-                  <motion.a
-                    href={edu.resultUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-2.5 bg-white/10 hover:bg-white/20 rounded-lg transition-all text-sm font-medium"
-                    whileHover={{ scale: 1.02 }}
-                  >
-                    View Result
-                    <ExternalLink className="w-4 h-4" />
-                  </motion.a>
+                  {edu.resultUrl && (
+                    <motion.a
+                      href={edu.resultUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-6 py-2.5 bg-white/10 hover:bg-white/20 rounded-lg transition-all text-sm font-medium"
+                      whileHover={{ scale: 1.02 }}
+                    >
+                      View Result
+                      <ExternalLink className="w-4 h-4" />
+                    </motion.a>
+                  )}
                 </div>
               </div>
             </motion.div>
