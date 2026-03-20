@@ -85,14 +85,14 @@ function SEOUpdater() {
     if (ogUrl)
       ogUrl.setAttribute(
         "content",
-        `https://personal-portfolio-six-wine-46.vercel.app${location.pathname}`,
+        `https://rafii-afif.vercel.app${location.pathname}`,
       );
 
     const canonical = document.querySelector('link[rel="canonical"]');
     if (canonical)
       canonical.setAttribute(
         "href",
-        `https://personal-portfolio-six-wine-46.vercel.app${location.pathname}`,
+        `https://rafii-afif.vercel.app${location.pathname}`,
       );
   }, [location]);
 

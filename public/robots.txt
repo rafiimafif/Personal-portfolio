@@ -1,4 +1,4 @@
-# robots.txt for https://personal-portfolio-six-wine-46.vercel.app/
+# robots.txt for https://rafii-afif.vercel.app/
 # Optimized for maximum SEO crawling
 
 # Allow all search engines
@@ -36,4 +36,4 @@ Allow: /favicon.ico
 Allow: /*.pdf$
 
 # Sitemap
-Sitemap: https://personal-portfolio-six-wine-46.vercel.app/sitemap.xml
+Sitemap: https://rafii-afif.vercel.app/sitemap.xml
