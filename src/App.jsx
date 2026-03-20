@@ -18,44 +18,44 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 // Per-page SEO metadata
 const pageMeta = {
   "/": {
-    title: "Niladri Chatterjee - Full Stack Developer | MERN Stack Expert",
+    title: "Rafii Afif - DevOps Engineer | Cloud & Automation Expert",
     description:
-      "Niladri Chatterjee — Full Stack Developer specializing in MERN stack, React.js, Node.js, Next.js and TypeScript. Based in Kolkata, India.",
+      "Rafii Afif — DevOps Engineer specializing in Cloud Infrastructure, Jenkins, Docker, Linux and AWS. Based in Bandung, Indonesia.",
   },
   "/about": {
-    title: "About - Niladri Chatterjee | Full Stack Developer",
+    title: "About - Rafii Afif | DevOps Engineer",
     description:
-      "Learn about Niladri Chatterjee — B.Tech Computer Science graduate, Full Stack Developer with 3+ internships and 10+ projects. Based in Kolkata, India.",
+      "Learn about Rafii Afif — B.Sc. Informatics Engineering graduate, DevOps Engineer with 4+ years of IT experience. Based in Bandung, Indonesia.",
   },
   "/projects": {
-    title: "Projects - Niladri Chatterjee | Full Stack Developer Portfolio",
+    title: "Projects - Rafii Afif | DevOps Engineer Portfolio",
     description:
-      "Explore full-stack web projects built by Niladri Chatterjee using React.js, Node.js, MongoDB, Next.js and TypeScript.",
+      "Explore infrastructure and automation projects built by Rafii Afif using Docker, Kubernetes, AWS, and CI/CD pipelines.",
   },
   "/skills": {
-    title: "Skills - Niladri Chatterjee | React, Node.js, MERN Stack",
+    title: "Skills - Rafii Afif | React, Node.js, Cloud Infrastructure",
     description:
-      "Technical skills of Niladri Chatterjee — React.js, Node.js, Express, MongoDB, Next.js, TypeScript, AWS, Docker and more.",
+      "Technical skills of Rafii Afif — React.js, Node.js, Express, MongoDB, Next.js, TypeScript, AWS, Docker and more.",
   },
   "/experience": {
-    title: "Experience - Niladri Chatterjee | Full Stack Developer",
+    title: "Experience - Rafii Afif | DevOps Engineer",
     description:
-      "Professional experience of Niladri Chatterjee including 3+ internships in full stack web development.",
+      "Professional experience of Rafii Afif including 4+ years of experience in DevOps and Cloud Infrastructure.",
   },
   "/education": {
-    title: "Education - Niladri Chatterjee | B.Tech Computer Science",
+    title: "Education - Rafii Afif | B.Tech Computer Science",
     description:
-      "Educational background of Niladri Chatterjee — B.Tech in Computer Science with 8.48 CGPA.",
+      "Educational background of Rafii Afif — B.Sc. in Informatics Engineering with 3.41 GPA.",
   },
   "/certificates": {
-    title: "Certificates - Niladri Chatterjee | Developer Certifications",
+    title: "Certificates - Rafii Afif | Developer Certifications",
     description:
-      "Professional certifications and achievements of Niladri Chatterjee in web development and cloud technologies.",
+      "Professional certifications and achievements of Rafii Afif in web development and cloud technologies.",
   },
   "/contact": {
-    title: "Contact - Niladri Chatterjee | Hire a Full Stack Developer",
+    title: "Contact - Rafii Afif | Hire a DevOps Engineer",
     description:
-      "Get in touch with Niladri Chatterjee for freelance projects, job opportunities or collaborations. Based in Kolkata, India.",
+      "Get in touch with Rafii Afif for freelance projects, job opportunities or collaborations. Based in Bandung, Indonesia.",
   },
 };
 
@@ -65,9 +65,9 @@ function SEOUpdater() {
 
   useEffect(() => {
     const meta = pageMeta[location.pathname] || {
-      title: "Niladri Chatterjee - Full Stack Developer",
+      title: "Rafii Afif - DevOps Engineer",
       description:
-        "Portfolio of Niladri Chatterjee — Full Stack Developer specializing in MERN stack and modern web technologies.",
+        "Portfolio of Rafii Afif — DevOps Engineer specializing in Cloud Infrastructure and modern web technologies.",
     };
 
     document.title = meta.title;

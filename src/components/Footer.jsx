@@ -29,7 +29,7 @@ const Footer = () => {
           <div className="space-y-4">
             <Link to="/" className="flex items-center space-x-3">
               <Code2 className="w-8 h-8 text-white" aria-hidden="true" />
-              <span className="text-xl font-bold text-white">Niladri Chatterjee</span>
+              <span className="text-xl font-bold text-white">Rafii Afif</span>
             </Link>
             <p className="text-sm text-gray-400">
               Software Developer based in Kolkata, WB, India.
@@ -44,7 +44,7 @@ const Footer = () => {
                 <a
                   href="mailto:code.niladri@gmail.com"
                   className="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-2"
-                  aria-label="Email Niladri Chatterjee"
+                  aria-label="Email Rafii Afif"
                 >
                   <Mail className="w-4 h-4" aria-hidden="true" />
                   code.niladri@gmail.com
@@ -54,7 +54,7 @@ const Footer = () => {
                 <a
                   href="tel:+916296554939"
                   className="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-2"
-                  aria-label="Call Niladri Chatterjee"
+                  aria-label="Call Rafii Afif"
                 >
                   <Phone className="w-4 h-4" aria-hidden="true" />
                   +916296554939
@@ -140,7 +140,7 @@ const Footer = () => {
         <div className="border-t border-white/10 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-gray-400">
-              © {currentYear} Niladri Chatterjee. All rights reserved.
+              © {currentYear} Rafii Afif. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <span className="text-sm text-gray-400 flex items-center gap-2">
