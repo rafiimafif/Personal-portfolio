@@ -2,10 +2,10 @@
 
 # Rafii Afif — Portfolio 🚀
 
-[![Website](https://img.shields.io/website?label=Live%20Portfolio&style=for-the-badge&url=https%3A%2F%2Frafiimafif.github.io/Personal-portfolio)](https://rafiimafif.github.io/Personal-portfolio)
+[![Website](https://img.shields.io/website?label=Live%20Portfolio&style=for-the-badge&url=https%3A%2F%2Fpersonal-portfolio-six-wine-46.vercel.app)](https://personal-portfolio-six-wine-46.vercel.app)
 [![GitHub followers](https://img.shields.io/github/followers/rafiimafif?logo=github&style=for-the-badge)](https://github.com/rafiimafif)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-4000%2B%20Followers-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/rafii-muhammad-afif)
-[![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://rafiimafif.github.io/Personal-portfolio)
+[![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://personal-portfolio-six-wine-46.vercel.app)
 
 <p align="center">
   <img src="https://skillicons.dev/icons?i=react,vite,typescript,tailwind,nodejs,mongodb,express,git" alt="Tech Stack Icons" />
@@ -13,11 +13,11 @@
 
 <h3>DevOps Engineer · Cloud Infrastructure Specialist · Kolkata, India</h3>
 
-[🌐 View Live](https://rafiimafif.github.io/Personal-portfolio) · [🐛 Report Bug](https://github.com/rafiimafif/Software-Dev-Portfolio/issues) · [✨ Request Feature](https://github.com/rafiimafif/Software-Dev-Portfolio/issues)
+[🌐 View Live](https://personal-portfolio-six-wine-46.vercel.app) · [🐛 Report Bug](https://github.com/rafiimafif/Software-Dev-Portfolio/issues) · [✨ Request Feature](https://github.com/rafiimafif/Software-Dev-Portfolio/issues)
 
 <br/>
 
-<img src="https://rafiimafif.github.io/Personal-portfolio/og-image.png" alt="Rafii Afif Portfolio Preview" width="80%" style="border-radius: 12px;" />
+<img src="https://personal-portfolio-six-wine-46.vercel.app/og-image.png" alt="Rafii Afif Portfolio Preview" width="80%" style="border-radius: 12px;" />
 
 </div>
 
@@ -175,7 +175,7 @@ This portfolio is fully SEO-optimized:
 
 [![Email](https://img.shields.io/badge/Email-rafii.afif%40gmail.com-red?style=for-the-badge&logo=gmail)](mailto:rafii.afif@gmail.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-rafiimafif-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/rafii-muhammad-afif)
-[![Portfolio](https://img.shields.io/badge/Portfolio-rafiimafif.github.io/Personal-portfolio-orange?style=for-the-badge&logo=vercel)](https://rafiimafif.github.io/Personal-portfolio)
+[![Portfolio](https://img.shields.io/badge/Portfolio-personal-portfolio-six-wine-46.vercel.app-orange?style=for-the-badge&logo=vercel)](https://personal-portfolio-six-wine-46.vercel.app)
 
 </div>
 
