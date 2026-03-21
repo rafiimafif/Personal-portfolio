@@ -20,12 +20,12 @@ const pageMeta = {
   "/": {
     title: "Rafii Afif - DevOps Engineer | Cloud & Automation Expert",
     description:
-      "Rafii Afif — DevOps Engineer specializing in Cloud Infrastructure, Jenkins, Docker, Linux and AWS. Based in Bandung, Indonesia.",
+      "Rafii Afif — DevOps Engineer specializing in Cloud Infrastructure, Jenkins, Docker, Linux and AWS. Based in Jakarta, Indonesia.",
   },
   "/about": {
     title: "About - Rafii Afif | DevOps Engineer",
     description:
-      "Learn about Rafii Afif — B.Sc. Informatics Engineering graduate, DevOps Engineer with 4+ years of IT experience. Based in Bandung, Indonesia.",
+      "Learn about Rafii Afif — B.Sc. Informatics Engineering graduate, DevOps Engineer with 4+ years of IT experience. Based in Jakarta, Indonesia.",
   },
   "/projects": {
     title: "Projects - Rafii Afif | DevOps Engineer Portfolio",
@@ -55,7 +55,7 @@ const pageMeta = {
   "/contact": {
     title: "Contact - Rafii Afif | Hire a DevOps Engineer",
     description:
-      "Get in touch with Rafii Afif for freelance projects, job opportunities or collaborations. Based in Bandung, Indonesia.",
+      "Get in touch with Rafii Afif for freelance projects, job opportunities or collaborations. Based in Jakarta, Indonesia.",
   },
 };
 

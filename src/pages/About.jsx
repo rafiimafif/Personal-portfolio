@@ -72,7 +72,7 @@ const About = () => {
               </h3>
               <ul className="list-none space-y-3">
                 {[
-                  "Based in Bandung, West Java",
+                  "Based in Jakarta, West Java",
                   "B.Sc. in Informatics Engineering",
                   "GPA: 3.41",
                 ].map((fact) => (
