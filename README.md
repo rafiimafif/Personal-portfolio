@@ -4,20 +4,20 @@
 
 [![Website](https://img.shields.io/website?label=Live%20Portfolio&style=for-the-badge&url=https%3A%2F%2Frafii-afif.vercel.app)](https://rafii-afif.vercel.app)
 [![GitHub followers](https://img.shields.io/github/followers/rafiimafif?logo=github&style=for-the-badge)](https://github.com/rafiimafif)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-4000%2B%20Followers-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/rafii-muhammad-afif)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/rafii-muhammad-afif)
 [![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://rafii-afif.vercel.app)
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=react,vite,typescript,tailwind,nodejs,mongodb,express,git" alt="Tech Stack Icons" />
+  <img src="https://skillicons.dev/icons?i=linux,docker,jenkins,aws,bash,python,git" alt="Tech Stack Icons" />
 </p>
 
-<h3>DevOps Engineer · Cloud Infrastructure Specialist · Kolkata, India</h3>
+<h3>DevOps Engineer · Cloud Infrastructure Specialist · Bandung, Indonesia</h3>
 
-[🌐 View Live](https://rafii-afif.vercel.app) · [🐛 Report Bug](https://github.com/rafiimafif/Software-Dev-Portfolio/issues) · [✨ Request Feature](https://github.com/rafiimafif/Software-Dev-Portfolio/issues)
+[🌐 View Live](https://rafii-afif.vercel.app) · [🐛 Report Bug](https://github.com/rafiimafif/Personal-portfolio/issues)
 
 <br/>
 
-<img src="https://rafii-afif.vercel.app/og-image.png" alt="Rafii Afif Portfolio Preview" width="80%" style="border-radius: 12px;" />
+<img src="./src/assets/profile/profile.jpg" alt="Rafii Afif Profile" width="250px" style="border-radius: 50%; border: 4px solid #fff; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
 
 </div>
 
@@ -25,7 +25,7 @@
 
 ## 🌟 Overview
 
-A modern, fully responsive personal portfolio built with **React 18 + Vite 5** and **Tailwind CSS**, featuring smooth animations, a real-time GitHub integration, smart search, and complete SEO optimization. Designed to showcase my skills, projects, and experience as a DevOps Engineer.
+A modern, fully responsive personal portfolio built with **React 18 + Vite** and **Tailwind CSS**. Designed to showcase my skills, projects, and professional experience as a **DevOps Engineer**, focusing on Cloud Infrastructure, CI/CD, Containerization, and Automation.
 
 ---
 
@@ -35,102 +35,31 @@ A modern, fully responsive personal portfolio built with **React 18 + Vite 5** a
 
 | Feature | Description |
 |---------|-------------|
-| 🎨 Dark Theme | Sleek dark UI with subtle 3D background and gradient accents |
-| 📱 Fully Responsive | Optimized for mobile, tablet and desktop |
-| ⚡ Vite Powered | Lightning-fast HMR development and optimized production builds |
-| 🔍 Smart Search | Real-time search across all portfolio sections |
+| 🎨 Dark Theme | Sleek dark UI with subtle background and gradient accents |
+| 📱 Fully Responsive | Optimized for mobile, tablet and desktop viewing |
+| ⚡ Vite Powered | Lightning-fast development and optimized production builds |
 | 🎭 Framer Motion | Smooth scroll animations and page transitions |
-| 🐙 GitHub Live Data | Real-time repo count fetched from GitHub API via SWR |
-| 🤖 SEO Optimized | Per-page meta tags, OG image, JSON-LD structured data, sitemap |
-| 📲 PWA Ready | Installable on mobile with full manifest and favicon set |
+| 🤖 SEO Optimized | Per-page meta tags, JSON-LD structured data, sitemap |
+| 🚀 Vercel Deployment | CI/CD enabled seamless deployments |
 
 </div>
 
 ---
 
-## 🚀 Tech Stack
+## 🚀 Tech Stack & Skills
 
 <div align="center">
 
 | Category | Technologies |
 |----------|-------------|
-| **Frontend** | React 18, Vite 5, Tailwind CSS 3, Framer Motion 11 |
-| **Routing** | React Router DOM 6 |
-| **Data Fetching** | SWR (GitHub API) |
-| **Icons** | Lucide React |
-| **Backend/DB** | Node.js, Express.js, MongoDB, MySQL |
-| **Auth** | JWT |
-| **Cloud** | AWS, Render, Vercel |
-| **Tools** | Git, GitHub, Postman, VS Code |
+| **CI/CD & Automation** | Jenkins, GitHub Actions |
+| **Containerization** | Docker, OpenShift |
+| **Cloud & Infrastructure** | AWS |
+| **Scripting & OS** | Linux (Ubuntu, Kali), Windows, Bash, Python, PHP |
+| **Collaboration & ITSM** | Jira, Confluence, ServiceNow, Active Directory |
+| **Frontend Framework** | React 18, Vite, Tailwind CSS |
 
 </div>
-
----
-
-## 📁 Project Structure
-
-```
-├── public/
-│   ├── favicon.ico
-│   ├── favicon-16x16.png
-│   ├── favicon-32x32.png
-│   ├── favicon-192.png
-│   ├── favicon-512.png
-│   ├── apple-touch-icon.png
-│   ├── og-image.png
-│   ├── manifest.json
-│   ├── robots.txt
-│   └── sitemap.xml
-└── src/
-    ├── assets/
-    ├── components/
-    │   ├── Background3D.jsx
-    │   ├── Footer.jsx
-    │   ├── Loading.jsx
-    │   ├── Navbar.jsx
-    │   ├── ScrollAnimation.jsx
-    │   ├── SearchDialog.jsx
-    │   └── TechLogos.jsx
-    ├── pages/
-    │   ├── Home.jsx
-    │   ├── About.jsx
-    │   ├── Projects.jsx
-    │   ├── Skills.jsx
-    │   ├── Experience.jsx
-    │   ├── Education.jsx
-    │   ├── Certificates.jsx
-    │   ├── Contact.jsx
-    │   └── NotFound.jsx
-    ├── config/
-    │   └── contact.js
-    ├── App.jsx
-    ├── main.jsx
-    └── index.css
-```
-
----
-
-## 🛠️ Quick Start
-
-```bash
-# Clone the repository
-git clone https://github.com/rafiimafif/rafiimafif/Personal-portfolio
-
-# Navigate to project
-cd Personal-portfolio
-
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
-```
 
 ---
 
@@ -140,32 +69,33 @@ npm run preview
 
 | Section | Description |
 |---------|-------------|
-| 🏠 Home | Introduction, live GitHub stats, social links |
-| 👨‍💻 About | Background, achievements, areas of interest |
-| 📂 Projects | Full stack projects with tech stack details |
-| 💼 Experience | Internships and professional work history |
-| 🎓 Education | B.Tech Computer Science — 8.48 CGPA |
-| 🛠️ Skills | Categorized technical skills with icons |
-| 🏆 Certificates | Professional certifications |
-| 📞 Contact | Email, WhatsApp, LinkedIn, GitHub |
+| 🏠 Home | Introduction and quick links |
+| 👨‍💻 About | Background, professional achievements |
+| 📂 Projects | Infrastructure and automation projects |
+| 💼 Experience | Professional roles (AXA Insurance, Great Eastern, Accelbyte, Hubster) |
+| 🎓 Education | B.Sc. Informatics Engineering — Universitas Jenderal Achmad Yani |
+| 🛠️ Skills | Categorized technical skills |
+| 🏆 Certificates | CCNA, ITIL v4, Jira, End-to-End DevOps |
 
 </div>
 
 ---
 
-## 🔍 SEO
+## 🛠️ Quick Start
 
-This portfolio is fully SEO-optimized:
+```bash
+# Clone the repository
+git clone https://github.com/rafiimafif/Personal-portfolio.git
 
-- ✅ Per-page dynamic `<title>` and `<meta description>` via `SEOUpdater` component
-- ✅ Open Graph + Twitter Card tags for rich link previews
-- ✅ JSON-LD structured data (`Person` schema)
-- ✅ XML sitemap with all pages
-- ✅ `robots.txt` correctly configured
-- ✅ PWA manifest with correct icons
-- ✅ Google Search Console verified
-- ✅ Custom `og-image.png` (1200×630) for social sharing
-- ✅ Full favicon set (16, 32, 192, 512, ICO, Apple Touch)
+# Navigate to project
+cd Personal-portfolio
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
 
 ---
 
@@ -175,7 +105,6 @@ This portfolio is fully SEO-optimized:
 
 [![Email](https://img.shields.io/badge/Email-rafii.afif%40gmail.com-red?style=for-the-badge&logo=gmail)](mailto:rafii.afif@gmail.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-rafiimafif-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/rafii-muhammad-afif)
-[![Portfolio](https://img.shields.io/badge/Portfolio-rafii-afif.vercel.app-orange?style=for-the-badge&logo=vercel)](https://rafii-afif.vercel.app)
 
 </div>
 
@@ -197,11 +126,8 @@ This portfolio is fully SEO-optimized:
 
 <div align="center">
 
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT License**.
 
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
-[![Visitors](https://api.visitorbadge.io/api/visitors?path=rafiimafif%2FSoftware-Dev-Portfolio&label=Visitors&labelColor=%23000000&countColor=%2322d3ee)](https://visitorbadge.io/status?path=rafiimafif%2FSoftware-Dev-Portfolio)
-
-<h3>⭐ Star this repo if you found it helpful!</h3>
+[![Visitors](https://api.visitorbadge.io/api/visitors?path=rafiimafif%2FPersonal-portfolio&label=Visitors&labelColor=%23000000&countColor=%2322d3ee)](https://visitorbadge.io/status?path=rafiimafif%2FPersonal-portfolio)
 
 </div>
