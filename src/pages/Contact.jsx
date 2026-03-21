@@ -34,9 +34,9 @@ const Contact = () => {
 
   const contactInfo = [
     { icon: <Mail className="w-5 h-5" />, label: 'Email', value: 'rafii.afif@gmail.com', link: 'mailto:rafii.afif@gmail.com' },
-    { icon: <Phone className="w-5 h-5" />, label: 'Phone', value: '+916296554939', link: 'tel:+916296554939' },
-    { icon: <MapPin className="w-5 h-5" />, label: 'Location', value: 'Kolkata, West Bengal, India' },
-    { icon: <Clock className="w-5 h-5" />, label: 'Time Zone', value: 'IST (UTC+5:30)' },
+    { icon: <Phone className="w-5 h-5" />, label: 'Phone', value: '+6285155103214', link: 'tel:+6285155103214' },
+    { icon: <MapPin className="w-5 h-5" />, label: 'Location', value: 'Bandung, Jawa Barat, Indonesia' },
+    { icon: <Clock className="w-5 h-5" />, label: 'Time Zone', value: 'WIB (UTC+7)' },
   ]
 
   const socialLinks = [
@@ -125,19 +125,6 @@ const Contact = () => {
               </div>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="bg-gray-800/50 p-5 sm:p-6 rounded-xl backdrop-blur-sm"
-            >
-              <h3 className="text-lg sm:text-xl font-semibold mb-4">Office Hours</h3>
-              <div className="space-y-2 text-gray-400 text-sm sm:text-base">
-                <p>Monday - Friday: 9:00 AM - 6:00 PM (IST)</p>
-                <p>Saturday: 10:00 AM - 2:00 PM (IST)</p>
-                <p>Sunday: Closed</p>
-              </div>
-            </motion.div>
           </div>
 
           {/* Right Column - Form */}

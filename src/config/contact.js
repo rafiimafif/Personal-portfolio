@@ -14,8 +14,3 @@ export const CONTACT_INFO = {
   twitter: '#',
 }
 
-export const OFFICE_HOURS = {
-  weekday: 'Monday - Friday: 9:00 AM - 6:00 PM (IST)',
-  saturday: 'Saturday: 10:00 AM - 2:00 PM (IST)',
-  sunday: 'Sunday: Closed',
-}
