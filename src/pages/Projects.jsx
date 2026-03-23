@@ -8,20 +8,20 @@ import project5 from "@/assets/projects_img/project-5.png";
 
 const projects = [
   {
+    title: "Android CI/CD Pipeline",
+    description:
+      "A zero-cost automated CI/CD pipeline for Android apps using GitHub Actions, SonarCloud, and Firebase App Distribution.",
+    image: project5,
+    github: "https://github.com/rafiimafif/cicd-pipeline-android-apps-with-github-actions",
+    tags: ["Android", "CI/CD", "GitHub Actions", "Firebase", "SonarCloud", "Automation"],
+  },
+  {
     title: "E-Mail Spam Detector",
     description:
       "AI-powered Gmail client that detects spam, summarises emails, and lets you chat with your inbox — built with React, Node.js & Gemini API.",
     image: project4,
     github: "https://github.com/rafiimafif/EMail-Spam-Detector",
-    tags: [
-      "MongoDB",
-      "Express",
-      "React",
-      "Node",
-      "JavaScript",
-      "Gmail API",
-      "OAuth2",
-    ],
+    tags: ["MongoDB", "Express", "React", "Node", "JavaScript", "Gmail API", "OAuth2",],
   },
   {
     title: "Book Store",
@@ -29,16 +29,7 @@ const projects = [
       "A modern Book Management System built with the MERN stack (React 19 & Tailwind 4.0). Features secure JWT authentication, protected routes, and full CRUD functionality.",
     image: project3,
     github: "https://github.com/rafiimafif/Bookstore-Auth-MERN",
-    tags: [
-      "MongoDB",
-      "Express",
-      "React",
-      "Node",
-      "Tailwind",
-      "JWT",
-      "Bcrypt",
-      "REST API",
-    ],
+    tags: ["MongoDB", "Express", "React", "Node", "Tailwind", "JWT", "Bcrypt", "REST API",],
   },
   {
     title: "NetScan-Pro",
@@ -56,14 +47,6 @@ const projects = [
     github: "https://github.com/rafiimafif/Frontend-develope-portfolio",
     live: "",
     tags: ["Next", "Tailwind CSS", "TypeScript", "ThreeJS", "Responsive"],
-  },
-  {
-    title: "Android CI/CD Pipeline",
-    description:
-      "A zero-cost automated CI/CD pipeline for Android apps using GitHub Actions, SonarCloud, and Firebase App Distribution.",
-    image: project5,
-    github: "https://github.com/rafiimafif/cicd-pipeline-android-apps-with-github-actions",
-    tags: ["Android", "CI/CD", "GitHub Actions", "Firebase", "SonarCloud", "Automation"],
   },
 ];
 
