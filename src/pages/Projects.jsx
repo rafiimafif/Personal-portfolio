@@ -4,6 +4,7 @@ import project1 from "@/assets/projects_img/project-1.png";
 import project2 from "@/assets/projects_img/project-2.png";
 import project3 from "@/assets/projects_img/project-3.png";
 import project4 from "@/assets/projects_img/project-4.png";
+import project5 from "@/assets/projects_img/project-5.png";
 
 const projects = [
   {
@@ -58,6 +59,15 @@ const projects = [
     github: "https://github.com/rafiimafif/Frontend-develope-portfolio",
     live: "#",
     tags: ["Next", "Tailwind CSS", "TypeScript", "ThreeJS", "Responsive"],
+  },
+  {
+    title: "Android CI/CD Pipeline",
+    description:
+      "A zero-cost automated CI/CD pipeline for Android apps using GitHub Actions, SonarCloud, and Firebase App Distribution.",
+    image: project5,
+    github: "https://github.com/rafiimafif/cicd-pipeline-android-apps-with-github-actions",
+    live: "",
+    tags: ["Android", "CI/CD", "GitHub Actions", "Firebase", "SonarCloud", "Automation"],
   },
 ];
 
