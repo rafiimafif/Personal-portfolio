@@ -13,7 +13,6 @@ const projects = [
       "AI-powered Gmail client that detects spam, summarises emails, and lets you chat with your inbox — built with React, Node.js & Gemini API.",
     image: project4,
     github: "https://github.com/rafiimafif/EMail-Spam-Detector",
-    live: "",
     tags: [
       "MongoDB",
       "Express",
@@ -30,7 +29,6 @@ const projects = [
       "A modern Book Management System built with the MERN stack (React 19 & Tailwind 4.0). Features secure JWT authentication, protected routes, and full CRUD functionality.",
     image: project3,
     github: "https://github.com/rafiimafif/Bookstore-Auth-MERN",
-    live: "",
     tags: [
       "MongoDB",
       "Express",
@@ -48,7 +46,6 @@ const projects = [
       "Bash-based network scanning tool that provides live host discovery, port scanning, traceroute, and ping tests, featuring visually appealing ASCII banners and 80+ star at GitHub",
     image: project2,
     github: "https://github.com/rafiimafif/NetScan-Pro",
-    live: "",
     tags: ["Linux", "Bash", "Networking", "Monitoring", "NMAP", "Scripting"],
   },
   {
@@ -66,7 +63,6 @@ const projects = [
       "A zero-cost automated CI/CD pipeline for Android apps using GitHub Actions, SonarCloud, and Firebase App Distribution.",
     image: project5,
     github: "https://github.com/rafiimafif/cicd-pipeline-android-apps-with-github-actions",
-    live: "",
     tags: ["Android", "CI/CD", "GitHub Actions", "Firebase", "SonarCloud", "Automation"],
   },
 ];
