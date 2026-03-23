@@ -13,7 +13,7 @@ const projects = [
       "AI-powered Gmail client that detects spam, summarises emails, and lets you chat with your inbox — built with React, Node.js & Gemini API.",
     image: project4,
     github: "https://github.com/rafiimafif/EMail-Spam-Detector",
-    live: "#",
+    live: "",
     tags: [
       "MongoDB",
       "Express",
@@ -30,7 +30,7 @@ const projects = [
       "A modern Book Management System built with the MERN stack (React 19 & Tailwind 4.0). Features secure JWT authentication, protected routes, and full CRUD functionality.",
     image: project3,
     github: "https://github.com/rafiimafif/Bookstore-Auth-MERN",
-    live: "#",
+    live: "",
     tags: [
       "MongoDB",
       "Express",
@@ -57,7 +57,7 @@ const projects = [
       "A professional portfolio template for engineering students. Easy to set up, fully customizable, and perfect for showcasing projects and skills.",
     image: project1,
     github: "https://github.com/rafiimafif/Frontend-develope-portfolio",
-    live: "#",
+    live: "",
     tags: ["Next", "Tailwind CSS", "TypeScript", "ThreeJS", "Responsive"],
   },
   {
@@ -114,15 +114,17 @@ const Projects = () => {
                     <Github className="w-4 h-4" />
                     <span>Code</span>
                   </a>
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-1 text-gray-300 hover:text-white transition-colors"
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                    <span>Live</span>
-                  </a>
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-1 text-gray-300 hover:text-white transition-colors"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      <span>Live</span>
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
