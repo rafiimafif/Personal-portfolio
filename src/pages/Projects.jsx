@@ -5,8 +5,17 @@ import project2 from "@/assets/projects_img/project-2.png";
 import project3 from "@/assets/projects_img/project-3.png";
 import project4 from "@/assets/projects_img/project-4.png";
 import project5 from "@/assets/projects_img/project-5.png";
+import project6 from "@/assets/projects_img/project-6.png";
 
 const projects = [
+  {
+    title: "ASP.NET Core MVC DevOps Upgrade",
+    description:
+      "A comprehensive DevOps infrastructure showcase transforming a .NET application using multi-stage Docker builds, Terraform for AWS, and GitHub Actions CI/CD with SonarCloud & Trivy.",
+    image: project6,
+    github: "https://github.com/rafiimafif/aspnet-core-mvc",
+    tags: [".NET Core", "Docker", "Nginx", "GitHub Actions", "GHCR", "SonarCloud", "Trivy", "Terraform"],
+  },
   {
     title: "Android CI/CD Pipeline",
     description:
@@ -14,39 +23,6 @@ const projects = [
     image: project5,
     github: "https://github.com/rafiimafif/cicd-pipeline-android-apps-with-github-actions",
     tags: ["Android", "CI/CD", "GitHub Actions", "Firebase", "SonarCloud", "Automation"],
-  },
-  {
-    title: "E-Mail Spam Detector",
-    description:
-      "AI-powered Gmail client that detects spam, summarises emails, and lets you chat with your inbox — built with React, Node.js & Gemini API.",
-    image: project4,
-    github: "https://github.com/rafiimafif/EMail-Spam-Detector",
-    tags: ["MongoDB", "Express", "React", "Node", "JavaScript", "Gmail API", "OAuth2",],
-  },
-  {
-    title: "Book Store",
-    description:
-      "A modern Book Management System built with the MERN stack (React 19 & Tailwind 4.0). Features secure JWT authentication, protected routes, and full CRUD functionality.",
-    image: project3,
-    github: "https://github.com/rafiimafif/Bookstore-Auth-MERN",
-    tags: ["MongoDB", "Express", "React", "Node", "Tailwind", "JWT", "Bcrypt", "REST API",],
-  },
-  {
-    title: "NetScan-Pro",
-    description:
-      "Bash-based network scanning tool that provides live host discovery, port scanning, traceroute, and ping tests, featuring visually appealing ASCII banners and 80+ star at GitHub",
-    image: project2,
-    github: "https://github.com/rafiimafif/NetScan-Pro",
-    tags: ["Linux", "Bash", "Networking", "Monitoring", "NMAP", "Scripting"],
-  },
-  {
-    title: "Student Portfolio",
-    description:
-      "A professional portfolio template for engineering students. Easy to set up, fully customizable, and perfect for showcasing projects and skills.",
-    image: project1,
-    github: "https://github.com/rafiimafif/Frontend-develope-portfolio",
-    live: "",
-    tags: ["Next", "Tailwind CSS", "TypeScript", "ThreeJS", "Responsive"],
   },
 ];
 
