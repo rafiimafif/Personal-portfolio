@@ -9,7 +9,7 @@ import project6 from "@/assets/projects_img/project-6.png";
 
 const projects = [
   {
-    title: "ASP.NET Core MVC Web Applicaiton with CI/CD",
+    title: "ASP.NET Core MVC Web Application with CI/CD",
     description:
       "A comprehensive DevOps infrastructure showcase transforming a .NET application using multi-stage Docker builds, Terraform for AWS, and GitHub Actions CI/CD with SonarCloud & Trivy.",
     image: project6,
@@ -38,46 +38,50 @@ const Projects = () => {
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project) => (
           <ScrollAnimation key={project.title}>
-            <div className="bg-gray-800/50 rounded-lg overflow-hidden backdrop-blur-sm h-full flex flex-col">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-48 object-cover"
-              />
+            <div className="bg-gray-800/40 rounded-lg overflow-hidden border border-gray-700 h-full flex flex-col transition-all duration-300 hover:border-gray-600">
+              <div className="h-48 overflow-hidden bg-gray-900">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-300"
+                />
+              </div>
               <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                <p className="text-gray-400 mb-4 flex-grow">
+                <h3 className="text-xl font-semibold mb-3 text-white">
+                  {project.title}
+                </h3>
+                <p className="text-gray-400 mb-6 flex-grow text-sm leading-relaxed">
                   {project.description}
                 </p>
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2 mb-6">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2 py-1 text-sm bg-purple-500/20 rounded"
+                      className="px-2 py-1 text-[10px] tracking-wider uppercase font-semibold bg-gray-700/50 text-gray-300 rounded border border-gray-600"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
-                <div className="flex space-x-4">
+                <div className="flex items-center space-x-6 pt-4 border-t border-gray-700">
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center space-x-1 text-gray-300 hover:text-white transition-colors"
+                    className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors text-sm"
                   >
                     <Github className="w-4 h-4" />
-                    <span>Code</span>
+                    <span>Source Code</span>
                   </a>
                   {project.live && (
                     <a
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center space-x-1 text-gray-300 hover:text-white transition-colors"
+                      className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors text-sm"
                     >
                       <ExternalLink className="w-4 h-4" />
-                      <span>Live</span>
+                      <span>Live Demo</span>
                     </a>
                   )}
                 </div>
