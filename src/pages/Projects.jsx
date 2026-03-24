@@ -9,7 +9,7 @@ import project6 from "@/assets/projects_img/project-6.png";
 
 const projects = [
   {
-    title: "ASP.NET Core MVC DevOps Upgrade",
+    title: "ASP.NET Core MVC Web Applicaiton with CI/CD",
     description:
       "A comprehensive DevOps infrastructure showcase transforming a .NET application using multi-stage Docker builds, Terraform for AWS, and GitHub Actions CI/CD with SonarCloud & Trivy.",
     image: project6,
