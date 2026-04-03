@@ -6,8 +6,17 @@ import project3 from "@/assets/projects_img/project-3.png";
 import project4 from "@/assets/projects_img/project-4.png";
 import project5 from "@/assets/projects_img/project-5.png";
 import project6 from "@/assets/projects_img/project-6.png";
+import project7 from "@/assets/projects_img/project-7.png";
 
 const projects = [
+  {
+    title: "automateCRM CI/CD Pipeline",
+    description:
+      "A production-ready Laravel CRM platform with a full DevOps pipeline — containerized with Docker, automated with Jenkins, quality-gated with SonarCloud, and infrastructure-provisioned with Terraform on AWS.",
+    image: project7,
+    github: "https://github.com/rafiimafif/automatecrm-cicd-pipeline",
+    tags: ["Laravel", "Vue.js", "Docker", "Jenkins", "SonarCloud", "Trivy", "Terraform", "AWS"],
+  },
   {
     title: "ASP.NET Core MVC Web Application with CI/CD",
     description:
