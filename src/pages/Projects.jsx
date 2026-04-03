@@ -1,12 +1,8 @@
 import { Github, ExternalLink } from "lucide-react";
 import { ScrollAnimation } from "@/components/ScrollAnimation";
-import project1 from "@/assets/projects_img/project-1.png";
-import project2 from "@/assets/projects_img/project-2.png";
-import project3 from "@/assets/projects_img/project-3.png";
-import project4 from "@/assets/projects_img/project-4.png";
 import project5 from "@/assets/projects_img/project-5.png";
 import project6 from "@/assets/projects_img/project-6.png";
-import project7 from "@/assets/projects_img/project-7.png";
+import project7 from "@/assets/projects_img/project-7.svg";
 
 const projects = [
   {
