@@ -11,34 +11,14 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import useSWR from "swr";
+import { projects } from "@/data/projects";
 import cvPdf from "@/assets/files/cv_pdf/Rafii Muhammad Afif - DevOps Engineer - CV.pdf";
-
-const fetcher = (url) => fetch(url).then((res) => res.json());
-
 const Home = () => {
   const [copied, setCopied] = useState(false);
   const email = "rafii.afif@gmail.com";
   const whatsappNumber = "+6285155103214";
 
-  const { data: githubData } = useSWR(
-    "https://api.github.com/users/rafii",
-    fetcher,
-    {
-      revalidateOnFocus: false,
-      dedupingInterval: 60000,
-      shouldRetryOnError: true,
-      errorRetryCount: 3,
-    },
-  );
-
-  function formatRepoCount(count) {
-    if (count < 5) return count.toString();
-    return `${Math.floor(count / 5) * 5}+`;
-  }
-
-  const githubRepos = githubData?.public_repos || 0;
-  const displayRepos = formatRepoCount(githubRepos);
+  const displayRepos = projects.length.toString();
 
   const copyToClipboard = async () => {
     try {
@@ -149,7 +129,7 @@ const Home = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           <motion.a
-            href="#"
+            href="https://github.com/rafiimafif"
             target="_blank"
             rel="noopener noreferrer"
             className="flex flex-col items-center group w-full"
