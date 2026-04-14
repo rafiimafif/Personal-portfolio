@@ -30,16 +30,33 @@ const Projects = () => {
   return (
     <div className="min-h-screen pt-20 px-4 max-w-6xl mx-auto pb-20">
       <ScrollAnimation>
-        <h2 className="text-4xl font-bold mb-12 gradient-text">
-          Featured Projects
+        <h2 className="text-4xl font-bold mb-4 gradient-text">
+          Projects & Experience
         </h2>
+        <p className="text-gray-400 max-w-3xl leading-relaxed mb-12">
+          The top section highlights AXA DevOps work and the bottom section shows personal portfolio projects I built outside work.
+        </p>
       </ScrollAnimation>
 
       <ScrollAnimation>
         <div className="mb-16">
-          <div className="flex flex-col gap-4 mb-8 max-w-3xl">
+          <div className="flex items-center justify-between gap-4 mb-6 flex-wrap">
+            <div>
+              <p className="text-sm uppercase tracking-[0.3em] text-gray-500 mb-2">
+                AXA experience
+              </p>
+              <h3 className="text-2xl sm:text-3xl font-semibold text-white">
+                DevOps platform work at AXA Insurance Indonesia
+              </h3>
+            </div>
+            <span className="px-3 py-1 text-xs uppercase tracking-[0.25em] rounded-full border border-white/10 bg-white/5 text-gray-400">
+              Professional work
+            </span>
+          </div>
+
+          <div className="max-w-3xl mb-8">
             <p className="text-sm uppercase tracking-[0.3em] text-gray-500">
-              AXA delivery highlights
+              What this covers
             </p>
             <p className="text-gray-400 leading-relaxed">
               These are the platform and automation outcomes I help deliver at AXA Insurance Indonesia. I keep the code and configuration private here, so the section focuses on the systems and delivery patterns rather than internal source links.
@@ -74,6 +91,22 @@ const Projects = () => {
               </ScrollAnimation>
             ))}
           </div>
+        </div>
+      </ScrollAnimation>
+
+      <ScrollAnimation>
+        <div className="mb-8 flex items-center justify-between gap-4 flex-wrap">
+          <div>
+            <p className="text-sm uppercase tracking-[0.3em] text-gray-500 mb-2">
+              Personal portfolio
+            </p>
+            <h3 className="text-2xl sm:text-3xl font-semibold text-white">
+              Projects I built outside AXA
+            </h3>
+          </div>
+          <span className="px-3 py-1 text-xs uppercase tracking-[0.25em] rounded-full border border-white/10 bg-white/5 text-gray-400">
+            Personal work
+          </span>
         </div>
       </ScrollAnimation>
 
