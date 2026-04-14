@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="./src/assets/logo.png" alt="RMA Logo" width="100px" />
+
 # Rafii Afif — Portfolio 🚀
 
 [![Website](https://img.shields.io/website?label=Live%20Portfolio&style=for-the-badge&url=https%3A%2F%2Frafii-afif.vercel.app)](https://rafii-afif.vercel.app)

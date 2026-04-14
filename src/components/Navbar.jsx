@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Code2, Menu, X } from 'lucide-react'
 import SearchDialog from './SearchDialog'
+import logo from '../assets/logo.png'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -29,9 +30,8 @@ const Navbar = () => {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
             {/* Logo */}
-            <Link to="/" className="flex items-center space-x-3">
-              <Code2 className="w-8 h-8 text-white" aria-hidden="true" />
-              <span className="text-xl font-bold text-white">Rafii</span>
+            <Link to="/" className="flex items-center">
+              <img src={logo} alt="RMA Logo" className="w-10 h-10 object-contain rounded-full border border-white/20" />
             </Link>
 
             {/* Desktop Navigation */}
