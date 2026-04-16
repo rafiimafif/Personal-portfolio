@@ -1,8 +1,17 @@
 import project5 from "@/assets/projects_img/project-5.png";
 import project6 from "@/assets/projects_img/project-6.png";
 import project7 from "@/assets/projects_img/project-7-sync.png";
+import project8 from "@/assets/projects_img/project-8-erp.png";
 
 export const projects = [
+  {
+    title: "automateERP — Full-Featured ERP Platform",
+    description:
+      "A modern, full-featured ERP system for startups and SMEs. Built with a decoupled React + Vite frontend and Django REST Framework backend, fully containerized with Docker. Features 10 modules: Dashboard, Inventory, Sales, Customers, Kanban Pipeline, HR & Payroll, Suppliers, Financials, and an Integrations Hub with 32 pre-built connectors.",
+    image: project8,
+    github: "https://github.com/rafiimafif/automate-erp",
+    tags: ["React 19", "Vite", "Django", "DRF", "Docker", "Tailwind CSS v4", "Python", "SQLite", "REST API"],
+  },
   {
     title: "automateCRM — Hybrid Cloud Sync",
     description:
