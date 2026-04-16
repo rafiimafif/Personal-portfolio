@@ -7,10 +7,10 @@ export const projects = [
   {
     title: "automateERP — Full-Featured ERP Platform",
     description:
-      "A modern, full-featured ERP system for startups and SMEs. Built with a decoupled React + Vite frontend and Django REST Framework backend, fully containerized with Docker. Features 10 modules: Dashboard, Inventory, Sales, Customers, Kanban Pipeline, HR & Payroll, Suppliers, Financials, and an Integrations Hub with 32 pre-built connectors.",
+      "A modern, full-featured ERP system for startups and SMEs. Built with a decoupled React + Vite frontend and Django REST Framework backend, fully containerized with Docker. Features a robust CI/CD pipeline using GitHub Actions for automated linting, testing, Trivy security scanning, SonarCloud code quality analysis, and automated Docker image deployment to GHCR.",
     image: project8,
     github: "https://github.com/rafiimafif/automate-erp",
-    tags: ["React 19", "Vite", "Django", "DRF", "Docker", "Tailwind CSS v4", "Python", "SQLite", "REST API"],
+    tags: ["React 19", "Vite", "Django", "DRF", "Docker", "CI/CD", "GitHub Actions", "SonarCloud", "Trivy", "GHCR"],
   },
   {
     title: "automateCRM — Hybrid Cloud Sync",
