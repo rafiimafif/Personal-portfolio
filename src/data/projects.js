@@ -5,12 +5,12 @@ import project8 from "@/assets/projects_img/project-8-erp.png";
 
 export const projects = [
   {
-    title: "automateERP — Modular Enterprise Platform",
+    title: "automateERP — Premium SaaS Enterprise Platform",
     description:
-      "A high-fidelity, Odoo-inspired ERP ecosystem built with React 19 and Django. Features a modular 'App Launcher' UI with 12 core business modules including a real-time POS Terminal, Kanban Project Management, SaaS Subscription tracking, and automated Expense workflows. Engineered with a professional DevOps toolchain: Dockerized architecture, automated CI/CD via GitHub Actions, and deep security/quality analysis with SonarCloud, Trivy, and GHCR.",
+      "A Stripe/Linear-grade ERP ecosystem built with React 19 and Django. Features a premium UI with glassmorphism, AI-powered insights, a reusable shadcn-style component library, and 14 core business modules including a real-time POS Terminal, Kanban Project Management, SaaS Subscription tracking, and automated Expense workflows. Fully Dockerized with CI/CD via GitHub Actions, SonarCloud, Trivy, and GHCR.",
     image: project8,
     github: "https://github.com/rafiimafif/automate-erp",
-    tags: ["React 19", "Vite", "Django", "DRF", "Docker", "CI/CD", "POS", "Kanban", "SaaS", "Tailwind v4", "SonarCloud", "Trivy", "GHCR"],
+    tags: ["React 19", "Vite", "Django", "DRF", "Docker", "CI/CD", "Glassmorphism", "AI Insights", "POS", "Kanban", "SaaS", "Tailwind v4", "SonarCloud", "GHCR"],
   },
   {
     title: "automateCRM — Hybrid Cloud Sync",
