@@ -7,10 +7,10 @@ export const projects = [
   {
     title: "automateERP — Full-Stack Enterprise Platform",
     description:
-      "A premium, production-ready ERP ecosystem built with a decoupled architecture (React 19 + Django REST Framework). Features a stable, full-stack integration for 14 core business modules including a real-time POS Terminal with automatic tax/discount calculations, Kanban project management, and automated expense workflows. Optimized with comprehensive safety checks to ensure zero-crash UI rendering and high data integrity across all business operations. Fully containerized with a robust CI/CD pipeline.",
+      "A premium, production-ready ERP ecosystem built with a decoupled architecture (React 19 + Django REST Framework). Engineered a robust multi-layered testing ecosystem achieving 80%+ frontend coverage with Vitest/React Testing Library and synchronized end-to-end automation using Selenium. Unified quality metrics via SonarCloud integrated into GitHub Actions CI.",
     image: project8,
     github: "https://github.com/rafiimafif/automate-erp",
-    tags: ["React 19", "Vite", "Django", "REST API Integration", "Backend Stability", "Docker", "CI/CD", "Glassmorphism", "AI Insights", "POS", "Kanban", "SaaS", "Tailwind v4", "SonarCloud"],
+    tags: ["React 19", "Vite", "Django", "REST API Integration", "Vitest", "Selenium", "React Testing Library", "E2E Testing", "Docker", "CI/CD", "Glassmorphism", "AI Insights", "SaaS", "Tailwind v4", "SonarCloud"],
   },
   {
     title: "automateCRM — Hybrid Cloud Sync",
