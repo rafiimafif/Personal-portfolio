@@ -110,29 +110,29 @@ const Projects = () => {
         </div>
       </ScrollAnimation>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="flex flex-col gap-8">
         {projects.map((project) => (
           <ScrollAnimation key={project.title}>
-            <div className="bg-gray-800/40 rounded-lg overflow-hidden border border-gray-700 h-full flex flex-col transition-all duration-300 hover:border-gray-600">
-              <div className="h-48 overflow-hidden bg-gray-900">
+            <div className="bg-gray-800/40 rounded-lg overflow-hidden border border-gray-700 h-full flex flex-col md:flex-row transition-all duration-300 hover:border-gray-600">
+              <div className="w-full md:w-1/3 min-h-[200px] md:min-h-full flex-shrink-0 overflow-hidden bg-gray-900 relative">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-300"
+                  className="absolute inset-0 w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-300"
                 />
               </div>
-              <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-xl font-semibold mb-3 text-white">
+              <div className="p-6 md:p-8 flex flex-col flex-grow">
+                <h3 className="text-xl md:text-2xl font-semibold mb-3 text-white">
                   {project.title}
                 </h3>
-                <p className="text-gray-400 mb-6 flex-grow text-sm leading-relaxed">
+                <p className="text-gray-400 mb-6 flex-grow text-sm md:text-base leading-relaxed">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2 py-1 text-[10px] tracking-wider uppercase font-semibold bg-gray-700/50 text-gray-300 rounded border border-gray-600"
+                      className="px-2 py-1 text-[10px] md:text-xs tracking-wider uppercase font-semibold bg-gray-700/50 text-gray-300 rounded border border-gray-600"
                     >
                       {tag}
                     </span>
