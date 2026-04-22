@@ -5,12 +5,12 @@ import project8 from "@/assets/projects_img/project-8-erp.png";
 
 export const projects = [
   {
-    title: "automateERP — Full-Stack Enterprise Platform",
+    title: "automateERP — Full-Stack Enterprise SaaS Platform",
     description:
-      "A premium, production-ready ERP ecosystem built with a decoupled architecture (React 19 + Django REST Framework). Engineered a robust multi-layered testing ecosystem achieving 80%+ frontend coverage with Vitest/React Testing Library and synchronized end-to-end automation using Selenium. Unified quality metrics via SonarCloud integrated into GitHub Actions CI.",
+      "A high-performance enterprise ecosystem featuring 16+ modules including a POS Terminal, Kanban-based Sales Pipeline, and Subscription management. Built with a decoupled architecture (React 19 + Django 5), it delivers a premium Vercel-inspired UI with glassmorphism and AI insights. Engineered for security and reliability with Playwright-powered E2E automation, Trivy container scanning, and unified SonarCloud metrics achieving 80%+ test coverage.",
     image: project8,
     github: "https://github.com/rafiimafif/automate-erp",
-    tags: ["React 19", "Vite", "Django", "REST API Integration", "Vitest", "Selenium", "React Testing Library", "E2E Testing", "Docker", "CI/CD", "Glassmorphism", "AI Insights", "SaaS", "Tailwind v4", "SonarCloud"],
+    tags: ["React 19", "Vite", "Django 5", "DRF", "Playwright", "Vitest", "Tailwind v4", "Docker", "CI/CD", "SonarCloud", "Trivy", "Glassmorphism", "Kanban", "POS", "AI Insights", "uv"],
   },
   {
     title: "automateCRM — Hybrid Cloud Sync",
