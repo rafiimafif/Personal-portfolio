@@ -2,8 +2,17 @@ import project5 from "@/assets/projects_img/project-5.png";
 import project6 from "@/assets/projects_img/project-6.png";
 import project7 from "@/assets/projects_img/project-7-sync.png";
 import project8 from "@/assets/projects_img/project-8-erp.png";
+import project9 from "@/assets/projects_img/project-9-ai.png";
 
 export const projects = [
+  {
+    title: "Production AI System",
+    description:
+      "A production-grade, zero-cost AI ecosystem built with local LLMs, agentic orchestration, and full observability. It leverages local inference via Ollama, agentic workflows with LangGraph, and a standardized tool layer using the Model Context Protocol (MCP).",
+    image: project9,
+    github: "https://github.com/rafiimafif/production-ai",
+    tags: ["Next.js", "Tailwind CSS", "Ollama", "LangGraph", "LlamaIndex", "ChromaDB", "MCP", "Docker", "FastAPI"],
+  },
   {
     title: "automateERP — Full-Stack Enterprise SaaS Platform",
     description:
