@@ -8,10 +8,10 @@ export const projects = [
   {
     title: "Production AI System",
     description:
-      "A production-grade, zero-cost AI ecosystem built with local LLMs, agentic orchestration, and full observability. It leverages local inference via Ollama, agentic workflows with LangGraph, and a standardized tool layer using the Model Context Protocol (MCP).",
+      "A production-grade, GPU-accelerated AI ecosystem built exclusively with local Qwen 2.5 models. Fully containerized using Docker Compose, it features optimized memory management for NVIDIA RTX GPUs, agentic workflows via LangGraph, and a standardized tool layer using the Model Context Protocol (MCP).",
     image: project9,
     github: "https://github.com/rafiimafif/production-ai",
-    tags: ["Next.js", "Tailwind CSS", "Ollama", "LangGraph", "LlamaIndex", "ChromaDB", "MCP", "Docker", "FastAPI"],
+    tags: ["Next.js", "Ollama", "Qwen 2.5", "LangGraph", "ChromaDB", "Langfuse", "MCP", "Docker Compose", "FastAPI"],
   },
   {
     title: "automateERP — Full-Stack Enterprise SaaS Platform",
