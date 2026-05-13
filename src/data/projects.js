@@ -7,12 +7,12 @@ import project10 from "@/assets/projects_img/project-10-scrapelab.png";
 
 export const projects = [
   {
-    title: "ScrapeLab — Advanced Data Scraping & Visualization",
+    title: "ScrapeLab — Advanced Data Engineering & Monitoring",
     description:
-      "A Python-powered end-to-end data engineering platform that automates scraping, cleaning, and interactive visualization. Features a dual-engine scraper (BeautifulSoup & Selenium), a robust Pandas-based cleaning pipeline, and a premium Dash-based dashboard for real-time data analysis and scheduled automation.",
+      "A Python-powered end-to-end data engineering platform featuring an automated Data Watchdog for drift detection and anomaly alerts. Orchestrated with Docker, it integrates a dual-engine scraper, a robust Pandas-based cleaning pipeline, and a premium Dash dashboard. Engineered for reliability with automated scheduling and production-grade code quality monitored by SonarQube.",
     image: project10,
     github: "https://github.com/rafiimafif/scrapelab",
-    tags: ["Python", "Dash", "Plotly", "Pandas", "Selenium", "BeautifulSoup", "APScheduler", "YAML", "Automation"],
+    tags: ["Python", "Dash", "Docker", "Pandas", "Selenium", "BeautifulSoup", "APScheduler", "SonarQube", "Data Engineering", "Automation"],
   },
   {
     title: "Production AI System",
