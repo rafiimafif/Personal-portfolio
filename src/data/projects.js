@@ -5,8 +5,17 @@ import project8 from "@/assets/projects_img/project-8-erp.png";
 import project9 from "@/assets/projects_img/project-9-ai.png";
 import project10 from "@/assets/projects_img/project-10-scrapelab.png";
 import project11 from "@/assets/projects_img/project-11-traffic.png";
+import project12 from "@/assets/projects_img/project-12-cyberops.png";
 
 export const projects = [
+  {
+    title: "CyberOps AIO — Security Operations Center (SOC) Platform",
+    description:
+      "A modular, high-performance Security Operations Center (SOC) platform designed for real-time security analysis. Combines a secure login gateway, live SIEM event feed with CSV log ingestion (PapaParse), interactive MITRE ATT&CK STIX browser, IP-API threat intelligence proxy, WebCrypto browser-native forensics (SHA-256/SHA-512 & magic bytes detection), VirusTotal API integration, database-backed Incident Response Kanban Board, and automated Intelligence Report Generator (Executive and Technical outputs).",
+    image: project12,
+    github: "https://github.com/rafiimafif/aio-soc-platform",
+    tags: ["React 18", "Express.js", "PostgreSQL", "TailwindCSS", "Recharts", "WebCrypto", "MITRE ATT&CK", "STIX Feed", "VirusTotal API", "Docker", "Kanban Board", "SOC Platform"],
+  },
   {
     title: "AI Smart Traffic System — Computer Vision & Adaptive Control",
     description:
