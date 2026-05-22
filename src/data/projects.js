@@ -4,8 +4,17 @@ import project7 from "@/assets/projects_img/project-7-sync.png";
 import project8 from "@/assets/projects_img/project-8-erp.png";
 import project9 from "@/assets/projects_img/project-9-ai.png";
 import project10 from "@/assets/projects_img/project-10-scrapelab.png";
+import project11 from "@/assets/projects_img/project-11-traffic.png";
 
 export const projects = [
+  {
+    title: "AI Smart Traffic System — Computer Vision & Adaptive Control",
+    description:
+      "A production-grade, real-time traffic optimization platform powered by custom YOLOv8 computer vision. Features automated emergency vehicle prioritization using HSV color filtration, dynamically adjusting signal queues, multi-intersection 'green wave' coordination, and a premium dark-themed live Socket.IO monitoring dashboard.",
+    image: project11,
+    github: "https://github.com/rafiimafif/automateTraffic",
+    tags: ["Python", "YOLOv8", "OpenCV", "Flask", "Socket.IO", "MQTT", "Docker Compose", "PyTest", "Adaptive Control", "Computer Vision"],
+  },
   {
     title: "ScrapeLab — Advanced Data Engineering & Monitoring",
     description:
