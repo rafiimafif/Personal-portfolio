@@ -288,14 +288,6 @@ const About = () => {
     },
   ];
 
-  const axaAppExamples = [
-    "surrounding-system-api-gateway",
-    "surrounding-system-web-app",
-    "auth-gateway",
-    "factory-line-webapp",
-    "care-ftp",
-  ];
-
   return (
     <div className="min-h-screen pt-28 sm:pt-32 px-4 max-w-6xl mx-auto pb-20 overflow-x-hidden">
       {/* Profile Section */}
@@ -393,19 +385,6 @@ const About = () => {
                 </div>
               </ScrollAnimation>
             ))}
-          </div>
-
-          <div className="mt-8">
-            <p className="text-sm uppercase tracking-[0.25em] text-gray-500 mb-4">
-              Example applications
-            </p>
-            <div className="flex flex-wrap gap-3">
-              {axaAppExamples.map((app) => (
-                <span key={app} className="px-3 py-2 bg-white/5 rounded-full text-xs sm:text-sm text-gray-300 border border-white/5">
-                  {app}
-                </span>
-              ))}
-            </div>
           </div>
         </div>
       </ScrollAnimation>
