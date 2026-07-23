@@ -13,7 +13,7 @@
   <img src="https://skillicons.dev/icons?i=linux,docker,jenkins,aws,bash,python,git" alt="Tech Stack Icons" />
 </p>
 
-<h3>DevOps Engineer · Cloud Infrastructure Specialist · Bandung, Indonesia</h3>
+<h3>DevSecOps Engineer · Cloud Infrastructure Specialist · Bandung, Indonesia</h3>
 
 [🌐 View Live](https://rafii-afif.vercel.app) · [🐛 Report Bug](https://github.com/rafiimafif/Personal-portfolio/issues)
 
