@@ -58,12 +58,12 @@ const About = () => {
     {
       icon: <Briefcase className="w-6 h-6" />,
       title: "4+ Years",
-      description: "Professional IT & DevOps Experience",
+      description: "DevOps, DevSecOps & IT Experience",
     },
     {
       icon: <Code2 className="w-6 h-6" />,
-      title: "5+ Positions",
-      description: "Across Support, Operations, and DevOps",
+      title: "6 Positions",
+      description: "Across Support, Operations, DevOps & DevSecOps",
     },
     {
       icon: <GraduationCap className="w-6 h-6" />,
@@ -74,16 +74,45 @@ const About = () => {
 
   const experiences = [
     {
+      title: "DevSecOps Engineer",
+      company: "AXA Insurance Indonesia",
+      location: "Bandung, West Java",
+      period: "05/2026 - Present",
+      type: "Full-time",
+      description: [
+        "Integrated SAST, SCA, DAST, and container security into CI/CD pipelines, enabling early detection of vulnerabilities and shifting security left in the development lifecycle.",
+        "Implemented security gates in Jenkins pipelines to prevent insecure code and unauthorized vulnerabilities from reaching production.",
+        "Standardized SBOM generation using CycloneDX, providing complete visibility into third-party dependencies and protecting against supply chain vulnerabilities.",
+        "Automated vulnerability scanning using Trivy, Snyk, Checkmarx, and OWASP ZAP.",
+        "Implemented secret detection using Gitleaks, proactively protecting sensitive company credentials and preventing data exposure in public/private repositories.",
+        "Collaborated closely with development teams to remediate security findings, fostering a security-first culture and streamlining the path to secure releases.",
+        "Integrated SonarQube Quality Gates to enforce code quality and security standards.",
+        "Standardized security scanning across multiple applications to improve DevSecOps maturity.",
+        "Supported secure release processes by embedding automated security controls into the CI/CD lifecycle."
+      ],
+    },
+    {
       title: "DevOps Engineer",
       company: "AXA Insurance Indonesia",
       location: "Bandung, West Java",
-      period: "05/2025 - Present",
+      period: "05/2025 - 05/2026",
       type: "Full-time",
       description: [
-        "Maintained and extended a reusable Jenkins shared library that standardizes CI/CD flow for .NET applications on OpenShift",
-        "Built pipeline stages for checkout, NuGet restore, build, test, SonarQube analysis, quality gates, and OpenShift deployment",
-        "Integrated security and quality checks with secret scanning, dependency vulnerability scanning, coverage reporting, and image and web security scans where required",
-        "Supported both standard .NET services and legacy VB.NET pipelines with branch-aware deployment logic and environment-specific configuration"
+        "Designed and automated Jenkins CI/CD pipelines, eliminating manual deployment bottlenecks and accelerating the software delivery lifecycle.",
+        "Integrated Jenkins with OpenShift to streamline continuous integration and application deployment.",
+        "Created reusable Jenkins Shared Libraries, standardizing CI/CD across multiple teams and significantly reducing pipeline setup time for new projects.",
+        "Managed Kubernetes resources, including Deployments, Services, ConfigMaps, Secrets, Ingress, and Routes in OpenShift.",
+        "Configured rolling updates and Pod Disruption Budgets (PDBs) in OpenShift, ensuring continuous application availability and zero user disruption during releases.",
+        "Optimized cluster resource utilization through Kubernetes CronJobs and scheduled workloads.",
+        "Configured and managed JFrog Artifactory for centralized artifact storage, versioning, and dependency management.",
+        "Developed comprehensive Grafana dashboards, enabling real-time monitoring and proactive resolution of system anomalies before they impacted end users.",
+        "Automated build validation, smoke testing, and deployment processes to improve release reliability.",
+        "Collaborated with development teams to troubleshoot build failures, deployment issues, and runtime incidents.",
+        "Standardized CI/CD workflows across multiple projects to improve release consistency and developer productivity.",
+        "Managed application configuration across environments using Kubernetes ConfigMaps and Secrets.",
+        "Supported Git-based development workflows, including pull request validation and automated pipeline execution.",
+        "Replaced manual, error-prone deployment processes with automated pipelines, greatly increasing release reliability and reducing operational overhead.",
+        "Participated in troubleshooting production issues and performing root cause analysis to improve platform stability."
       ],
     },
     {
@@ -93,9 +122,11 @@ const About = () => {
       period: "12/2024 - 05/2025",
       type: "Full-time",
       description: [
-        "Managed laptops, desktops, printers, peripherals, and software, providing application support for Teams, Office, and Outlook",
-        "Implemented data security protocols, managed user access permissions, and handled Active Directory accounts",
-        "Created, monitored, and resolved ServiceNow tickets and provided remote support using LANDesk"
+        "Maintain and troubleshoot: Manage laptops, desktops, printers, peripherals, and software.",
+        "Application support: Manage and support email (Outlook), Teams, Office applications, and backup policies.",
+        "Security and user management: Implement data security protocols, manage user access permissions, and handle user accounts in Active Directory.",
+        "Ticketing and remote support: Create, monitor, and resolve ServiceNow tickets and provide remote support using LANDesk.",
+        "Asset management and monitoring: Track and maintain IT asset inventory, generate status reports, and perform regular security scans."
       ],
     },
     {
@@ -105,9 +136,12 @@ const About = () => {
       period: "01/2023 - 11/2024",
       type: "Full-time",
       description: [
-        "Addressed hardware, software, and network issues, assisting users using tools like Jira and NinjaRMM",
-        "Developed automation scripts, monitored system performance, and reported issues using NinjaRMM",
-        "Implemented system upgrades and migrations, tracked progress in Jira, and documented workflows in Confluence"
+        "Troubleshoot and Support: Address hardware, software, and network issues, escalate when needed, and assist users with technical problems using tools like Jira and NinjaRMM.",
+        "Setup and Maintenance: Install and configure systems, applications, and hardware, manage user accounts and permissions, and ensure system security.",
+        "IT Projects: Implement system upgrades and migrations, track progress in Jira, and document workflows in Confluence.",
+        "Automation and Monitoring: Develop automation scripts, monitor system performance, and report issues using NinjaRMM.",
+        "Asset and Vendor Management: Maintain IT asset inventory using Excel, track changes, and collaborate with vendors for support and procurement.",
+        "Performance and Security: Monitor system performance, ensure security through updates and protocols, and maintain records, user guides, and reports."
       ],
     },
     {
@@ -117,9 +151,11 @@ const About = () => {
       period: "04/2021 - 12/2022",
       type: "Full-time",
       description: [
-        "Responded quickly to perform troubleshooting and technical assistance required by customers",
-        "Provided professional technical solutions responsive to customer needs",
-        "Conducted online/offline technical training, presentations, and reported bugs to the product team"
+        "Respond quickly to perform troubleshooting or other technical assistance required by customers.",
+        "Analyze new ways to solve problems faster and more efficiently.",
+        "Provide professional technical solutions that are responsive to customer's needs.",
+        "Provide online or offline technical training and presentations.",
+        "Make reports/tickets if there are bugs to the product team."
       ],
     },
     {
@@ -129,68 +165,73 @@ const About = () => {
       period: "01/2020 - 06/2020",
       type: "Full-time",
       description: [
-        "Developed and maintained functioning platforms with databases using PHP and CodeIgniter Framework",
-        "Worked on both front-end and back-end development processes",
-        "Implemented a supply chain management method within the application"
+        "Responsible for working on both front-end and back-end development processes.",
+        "Created design, developed, and maintained fully-fledged and functioning platforms with databases using supply chain management method and PHP programming language with CodeIgniter Framework."
       ],
     },
   ];
 
   const skills = [
     {
-      category: "CI/CD & Automation",
+      category: "DevSecOps & Security",
+      icon: <Wrench className="w-6 h-6" />,
+      items: [
+        { name: "Snyk", icon: <Wrench className="w-4 h-4" /> },
+        { name: "Trivy", icon: <Wrench className="w-4 h-4" /> },
+        { name: "SonarQube", icon: <Wrench className="w-4 h-4" /> },
+        { name: "Gitleaks", icon: <Wrench className="w-4 h-4" /> },
+        { name: "OWASP ZAP", icon: <Wrench className="w-4 h-4" /> },
+        { name: "Checkmarx", icon: <Wrench className="w-4 h-4" /> },
+        { name: "CycloneDX (SBOM)", icon: <Wrench className="w-4 h-4" /> },
+      ],
+    },
+    {
+      category: "CI/CD & Orchestration",
       icon: <Server className="w-6 h-6" />,
       items: [
         { name: "Jenkins", icon: <Wrench className="w-4 h-4" /> },
+        { name: "Jenkins Shared Library", icon: <Code2 className="w-4 h-4" /> },
         { name: "GitHub", icon: <GitLogo /> },
-        { name: "Git", icon: <GitLogo /> },
+        { name: "GitOps", icon: <GitLogo /> },
       ],
     },
     {
-      category: "Containerization",
-      icon: <Layout className="w-6 h-6" />,
+      category: "Containerization & Cloud",
+      icon: <Cloud className="w-6 h-6" />,
       items: [
         { name: "Docker", icon: <Server className="w-4 h-4" /> },
         { name: "OpenShift", icon: <Cloud className="w-4 h-4" /> },
+        { name: "Kubernetes", icon: <Server className="w-4 h-4" /> },
+        { name: "AWS", icon: <AWSLogo /> },
       ],
     },
     {
-      category: "Scripting & Languages",
+      category: "Scripting & Automation",
       icon: <Code2 className="w-6 h-6" />,
       items: [
         { name: "Bash", icon: <BashLogo /> },
+        { name: "Node.js", icon: <NodeLogo /> },
         { name: "Shell Scripting", icon: <Terminal className="w-4 h-4" /> },
         { name: "PHP", icon: <Code2 className="w-4 h-4" /> },
       ],
     },
     {
-      category: "Cloud & Monitoring",
-      icon: <Cloud className="w-6 h-6" />,
+      category: "Observability & Registry",
+      icon: <Database className="w-6 h-6" />,
       items: [
-        { name: "AWS", icon: <AWSLogo /> },
         { name: "Grafana", icon: <Database className="w-4 h-4" /> },
-        { name: "SonarQube", icon: <Wrench className="w-4 h-4" /> },
+        { name: "JFrog Artifactory", icon: <Server className="w-4 h-4" /> },
       ],
     },
     {
-      category: "IT Support & OS",
-      icon: <Terminal className="w-6 h-6" />,
-      items: [
-        { name: "Linux", icon: <LinuxLogo className="w-4 h-4" /> },
-        { name: "Kali Linux", icon: <img src={kaliLogo} alt="Kali" className="w-4 h-4 object-contain brightness-0 invert opacity-70 group-hover:opacity-100 group-hover:brightness-100" /> },
-        { name: "VirtualBox", icon: <img src={virtualboxLogo} alt="VirtualBox" className="w-4 h-4 object-contain brightness-0 invert opacity-70 group-hover:opacity-100 group-hover:brightness-100" /> },
-        { name: "Windows", icon: <WindowsLogo className="w-4 h-4" /> },
-        { name: "Active Directory", icon: <Users className="w-4 h-4" /> },
-        { name: "Troubleshooting", icon: <Wrench className="w-4 h-4" /> },
-      ],
-    },
-    {
-      category: "Collaboration Tools",
+      category: "IT Support & Collaboration",
       icon: <Users className="w-6 h-6" />,
       items: [
+        { name: "Linux", icon: <LinuxLogo className="w-4 h-4" /> },
+        { name: "Windows", icon: <WindowsLogo className="w-4 h-4" /> },
+        { name: "Active Directory", icon: <Users className="w-4 h-4" /> },
+        { name: "ServiceNow", icon: <Wrench className="w-4 h-4" /> },
         { name: "Jira", icon: <Layout className="w-4 h-4" /> },
-        { name: "Slack", icon: <MessageSquare className="w-4 h-4" /> },
-        { name: "Teams", icon: <MessageSquare className="w-4 h-4" /> },
         { name: "Confluence", icon: <Layout className="w-4 h-4" /> },
       ],
     },
@@ -209,53 +250,41 @@ const About = () => {
       description:
         'Informatics Engineering specializing in Data Software Engineering is a dynamic and rapidly evolving field combining computer science, information technology, and data analysis.',
     },
-    {
-      school: 'High School',
-      location: 'Indonesia',
-      duration: 'Prior to 2016',
-      degree: 'High School Diploma',
-      grade: '-',
-      image: collegeImg,
-      resultUrl: null,
-      subjects: ['Science', 'Mathematics'],
-      description:
-        'Foundational education preparing for higher studies in Engineering and Technology.',
-    },
   ];
 
   const interests = [
-    "CI/CD Pipelines",
-    "Containerization",
-    "Cloud Architecture",
-    "Infrastructure as Code",
-    "IT Automation",
-    "System Monitoring",
+    "DevSecOps & Shift-Left Security",
+    "CI/CD Pipelines & Shared Libraries",
+    "Containerization & Kubernetes",
+    "Cloud Architecture (AWS & OpenShift)",
+    "Infrastructure as Code & Automation",
+    "Observability & Monitoring (Grafana)",
   ];
 
   const axaHighlights = [
     {
-      title: "Reusable Jenkins Platform",
-      icon: <Server className="w-6 h-6" />,
-      description:
-        "Centralized pipeline logic in a shared library so application teams can reuse the same delivery flow without rebuilding Jenkinsfiles from scratch.",
-    },
-    {
-      title: "OpenShift Delivery",
-      icon: <Cloud className="w-6 h-6" />,
-      description:
-        "Automated deployments to OpenShift namespaces with branch-aware promotion rules for development, release, and production workflows.",
-    },
-    {
-      title: "Quality & Security Controls",
+      title: "DevSecOps Security Controls",
       icon: <Wrench className="w-6 h-6" />,
       description:
-        "Added SonarQube quality gates, coverage handling, and security scans so releases follow the same repeatable controls every time.",
+        "Integrated SAST, SCA, DAST, secret scanning (Gitleaks), container security, and CycloneDX SBOM generation into CI/CD pipelines with automated security gates.",
     },
     {
-      title: "Multi-App Support",
+      title: "Reusable Jenkins Shared Library",
+      icon: <Server className="w-6 h-6" />,
+      description:
+        "Centralized pipeline logic in a shared library so application teams can reuse standardized build, test, security scanning, and deployment steps without rebuilding Jenkinsfiles.",
+    },
+    {
+      title: "OpenShift & Kubernetes Management",
+      icon: <Cloud className="w-6 h-6" />,
+      description:
+        "Automated deployment of Deployments, Services, ConfigMaps, Secrets, Ingress, and Routes on OpenShift with rolling updates, Pod Disruption Budgets, and CronJobs.",
+    },
+    {
+      title: "SonarQube & Grafana Observability",
       icon: <Layout className="w-6 h-6" />,
       description:
-        "Supported multiple AXA delivery streams, including surrounding-system services, gateways, and legacy VB.NET workloads.",
+        "Enforced Quality Gates with SonarQube and built real-time Grafana dashboards for proactive incident management and system anomaly tracking.",
     },
   ];
 
@@ -290,13 +319,13 @@ const About = () => {
         <ScrollAnimation className="space-y-6">
           <div className="space-y-4">
             <p className="text-gray-300 leading-relaxed">
-              Hi! I'm Rafii Muhammad Afif, a DevOps Engineer at AXA Insurance Indonesia with a solid background in IT Support and over 4 years of hands-on experience keeping systems stable, users happy, and release pipelines reliable. These days, I'm focused on automation, CI/CD, and building smoother delivery workflows.
+              Hi! I'm Rafii Muhammad Afif, a DevSecOps Engineer at AXA Insurance Indonesia with 4+ years of hands-on experience across DevOps, platform engineering, DevSecOps, and enterprise IT operations. Passionate about automating software delivery while embedding security, reliability, and developer productivity into every stage of the lifecycle.
             </p>
             <p className="text-gray-300 leading-relaxed">
-              Before diving into DevOps, I was the go-to person for hardware fixes, network setups, and troubleshooting practically anything that blinked or beeped. That foundation helps me understand both infrastructure and development needs, so I can bridge gaps between teams and keep deployments predictable.
+              With a solid foundation spanning full-stack development, IT operations, and cloud infrastructure, I bridge the gap between development, security, and operations. My work focuses on building secure CI/CD pipelines, standardizing release automation, and implementing shift-left security practices.
             </p>
             <p className="text-gray-300 leading-relaxed">
-              I specialize in tools like Jenkins, GitHub, Docker, SonarQube, and OpenShift. At AXA, I use those tools to standardize delivery, strengthen quality gates, and keep release automation practical for both modern .NET services and legacy workloads.
+              I specialize in tools like Jenkins, OpenShift, Kubernetes, Docker, SonarQube, Snyk, Trivy, Gitleaks, Checkmarx, OWASP ZAP, CycloneDX, and JFrog Artifactory to construct resilient, enterprise-grade delivery pipelines.
             </p>
           </div>
 
@@ -306,10 +335,10 @@ const About = () => {
             </h3>
             <ul className="list-none space-y-3">
               {[
-                "DevOps Engineer at AXA Insurance Indonesia",
+                "DevSecOps Engineer at AXA Insurance Indonesia",
                 "Based in Bandung, West Java",
-                "B.Sc. in Informatics Engineering",
-                "GPA: 3.41",
+                "B.Sc. in Informatics Engineering (GPA: 3.41)",
+                "4+ Years IT & Cloud Experience",
               ].map((fact) => (
                 <motion.li
                   key={fact}

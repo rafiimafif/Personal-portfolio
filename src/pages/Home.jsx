@@ -56,7 +56,7 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
         >
-          DevOps Engineer at AXA Insurance Indonesia
+          DevSecOps Engineer at AXA Insurance Indonesia
         </motion.p>
         <motion.h1
           className="text-2xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-6 relative tracking-tighter"
@@ -64,7 +64,7 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          I automate release pipelines & build infrastructure
+          I automate release pipelines, embed DevSecOps & build secure cloud infrastructure
         </motion.h1>
 
         <motion.p
@@ -73,7 +73,7 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          DevOps Engineer specializing in Cloud Infrastructure, CI/CD, and Automation with experience building Jenkins shared libraries, OpenShift deployments, and secure delivery workflows.
+          DevSecOps Engineer with 4+ years of experience building secure CI/CD pipelines using Jenkins, OpenShift, Kubernetes, Docker, SonarQube, Snyk, Trivy, Gitleaks, and Artifactory.
         </motion.p>
 
         <motion.div

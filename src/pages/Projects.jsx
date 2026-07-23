@@ -4,25 +4,39 @@ import { projects } from "@/data/projects";
 
 const axaHighlights = [
   {
-    title: "Jenkins Shared Library",
+    title: "DevSecOps & Vulnerability Scanning",
+    label: "Security Engineering",
+    description:
+      "Integrated SAST, SCA, DAST, Gitleaks secret detection, Trivy, Snyk, Checkmarx, and OWASP ZAP into Jenkins pipelines to shift security left and enforce quality gates.",
+    tags: ["SAST/DAST", "Snyk", "Trivy", "Gitleaks", "OWASP ZAP", "SonarQube"],
+  },
+  {
+    title: "CycloneDX SBOM Generation",
+    label: "Supply Chain Security",
+    description:
+      "Standardized SBOM (Software Bill of Materials) generation using CycloneDX across CI/CD pipelines, establishing clear visibility into third-party dependencies.",
+    tags: ["CycloneDX", "SBOM", "Supply Chain", "Governance", "Security"],
+  },
+  {
+    title: "Jenkins Shared Library Platform",
     label: "Platform Engineering",
     description:
-      "Built and maintained a reusable Groovy pipeline layer that standardizes checkout, NuGet restore, build, test, SonarQube analysis, quality gates, and OpenShift deployment for .NET applications.",
-    tags: ["Jenkins", "Groovy", "OpenShift", "SonarQube", ".NET"],
+      "Created reusable Jenkins Shared Libraries standardizing build, test, vulnerability scanning, SonarQube analysis, and deployment flows across multiple application teams.",
+    tags: ["Jenkins", "Shared Library", "Groovy", "CI/CD", "Automation"],
   },
   {
-    title: "Secure CI/CD Controls",
-    label: "Delivery Governance",
+    title: "OpenShift & Kubernetes Management",
+    label: "Cloud & Infrastructure",
     description:
-      "Integrated secret scanning, dependency vulnerability checks, coverage reporting, image scanning, and OWASP ZAP steps so releases follow the same quality and security gates every time.",
-    tags: ["Gitleaks", "SAST", "Coverage", "OWASP ZAP", "Security"],
+      "Managed Deployments, Services, ConfigMaps, Secrets, Ingress, and Routes in OpenShift with zero-downtime rolling updates, Pod Disruption Budgets, and CronJobs.",
+    tags: ["OpenShift", "Kubernetes", "Rolling Updates", "PDB", "CronJobs"],
   },
   {
-    title: "Multi-App Release Support",
-    label: "Operational Enablement",
+    title: "Artifact Management & Monitoring",
+    label: "Observability & Registry",
     description:
-      "Supported multiple AXA application streams, including surrounding-system services, gateways, and legacy VB.NET workloads, with branch-aware promotions and environment-specific configuration.",
-    tags: ["OpenShift", "VB.NET", "Branch Rules", "Config", "Automation"],
+      "Configured JFrog Artifactory for centralized package & container storage, alongside comprehensive Grafana monitoring dashboards for real-time system visibility.",
+    tags: ["JFrog Artifactory", "Grafana", "Monitoring", "Dashboards", "Metrics"],
   },
 ];
 
@@ -34,7 +48,7 @@ const Projects = () => {
           Projects & Experience
         </h2>
         <p className="text-gray-400 max-w-3xl leading-relaxed mb-12">
-          The top section highlights AXA DevOps work and the bottom section shows personal portfolio projects I built outside work.
+          The top section highlights AXA DevSecOps & Platform Engineering work, while the bottom section displays personal software projects.
         </p>
       </ScrollAnimation>
 
@@ -46,7 +60,7 @@ const Projects = () => {
                 AXA experience
               </p>
               <h3 className="text-2xl sm:text-3xl font-semibold text-white">
-                DevOps platform work at AXA Insurance Indonesia
+                DevSecOps & Platform Engineering work at AXA Insurance Indonesia
               </h3>
             </div>
             <span className="px-3 py-1 text-xs uppercase tracking-[0.25em] rounded-full border border-white/10 bg-white/5 text-gray-400">

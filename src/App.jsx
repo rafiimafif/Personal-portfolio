@@ -15,29 +15,29 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 // Per-page SEO metadata
 const pageMeta = {
   "/": {
-    title: "Rafii Afif - DevOps Engineer | Jenkins, OpenShift & CI/CD",
+    title: "Rafii Afif - DevSecOps Engineer | Security, OpenShift & CI/CD",
     description:
-      "Rafii Afif — DevOps Engineer at AXA Insurance Indonesia specializing in Jenkins shared libraries, OpenShift automation, SonarQube, Docker, and CI/CD delivery. Based in Jakarta, Indonesia.",
+      "Rafii Afif — DevSecOps Engineer at AXA Insurance Indonesia specializing in secure CI/CD pipelines, Snyk, Trivy, SonarQube, Jenkins shared libraries, and OpenShift/Kubernetes infrastructure.",
   },
   "/about": {
-    title: "About - Rafii Afif | AXA DevOps Engineer",
+    title: "About - Rafii Afif | AXA DevSecOps Engineer",
     description:
-      "Learn about Rafii Afif — DevOps Engineer at AXA Insurance Indonesia with 4+ years of IT experience in CI/CD automation, OpenShift deployments, and software delivery tooling.",
+      "Learn about Rafii Afif — DevSecOps Engineer at AXA Insurance Indonesia with 4+ years of experience across DevOps, DevSecOps, platform engineering, and enterprise IT operations.",
   },
   "/projects": {
-    title: "Projects - Rafii Afif | DevOps & Delivery Highlights",
+    title: "Projects - Rafii Afif | DevSecOps & Platform Highlights",
     description:
-      "Explore personal projects plus AXA delivery highlights around Jenkins shared libraries, OpenShift automation, and secure CI/CD pipelines.",
+      "Explore personal projects and AXA DevSecOps platform highlights including vulnerability scanning, CycloneDX SBOM generation, and OpenShift deployment automation.",
   },
   "/certificates": {
-    title: "Certificates - Rafii Afif | Developer Certifications",
+    title: "Certificates - Rafii Afif | Certifications & Courses",
     description:
-      "Professional certifications and achievements of Rafii Afif in web development and cloud technologies.",
+      "Professional certifications and achievements of Rafii Afif in DevOps, networking, ITSM (ITIL v4), and Agile project management.",
   },
   "/contact": {
-    title: "Contact - Rafii Afif | Hire a DevOps Engineer",
+    title: "Contact - Rafii Afif | DevSecOps Engineer",
     description:
-      "Get in touch with Rafii Afif for DevOps, CI/CD automation, OpenShift delivery, or collaboration opportunities. Based in Jakarta, Indonesia.",
+      "Get in touch with Rafii Afif for DevSecOps, CI/CD security automation, OpenShift/Kubernetes delivery, or collaboration opportunities.",
   },
 };
 
@@ -47,9 +47,9 @@ function SEOUpdater() {
 
   useEffect(() => {
     const meta = pageMeta[location.pathname] || {
-      title: "Rafii Afif - DevOps Engineer",
+      title: "Rafii Afif - DevSecOps Engineer",
       description:
-        "Portfolio of Rafii Afif — DevOps Engineer specializing in Jenkins, OpenShift, CI/CD automation, and modern web technologies.",
+        "Portfolio of Rafii Afif — DevSecOps Engineer specializing in Jenkins, OpenShift, Kubernetes, security scanning, and CI/CD automation.",
     };
 
     document.title = meta.title;
