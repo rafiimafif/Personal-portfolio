@@ -46,7 +46,7 @@ const Contact = () => {
   ]
 
   return (
-    <div className="min-h-screen pt-16 sm:pt-20 px-4 max-w-6xl mx-auto pb-16 sm:pb-20">
+    <div className="min-h-screen pt-28 sm:pt-32 px-4 max-w-6xl mx-auto pb-16 sm:pb-20">
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
         <motion.div
           className="flex items-center gap-3 mb-8 sm:mb-12"

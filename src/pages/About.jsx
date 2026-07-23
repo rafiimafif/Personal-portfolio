@@ -297,7 +297,7 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-20 px-4 max-w-6xl mx-auto pb-20 overflow-x-hidden">
+    <div className="min-h-screen pt-28 sm:pt-32 px-4 max-w-6xl mx-auto pb-20 overflow-x-hidden">
       {/* Profile Section */}
       <ScrollAnimation>
         <motion.h2 className="text-4xl font-bold mb-8 gradient-text">

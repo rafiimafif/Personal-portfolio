@@ -42,7 +42,7 @@ const axaHighlights = [
 
 const Projects = () => {
   return (
-    <div className="min-h-screen pt-20 px-4 max-w-6xl mx-auto pb-20">
+    <div className="min-h-screen pt-28 sm:pt-32 px-4 max-w-6xl mx-auto pb-20">
       <ScrollAnimation>
         <h2 className="text-4xl font-bold mb-4 gradient-text">
           Projects & Experience
