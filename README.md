@@ -27,7 +27,7 @@
 
 ## 🌟 Overview
 
-A modern, high-performance personal portfolio website built with **React 18 + Vite** and **Tailwind CSS**. Designed to showcase my **4+ years of professional experience** as a **DevSecOps Engineer** and **DevOps Specialist**, highlighting automated CI/CD security controls, shift-left governance, Kubernetes/OpenShift orchestration, and platform engineering.
+A modern, high-performance personal portfolio website built with **React 18 + Vite** and **Tailwind CSS**. Designed to showcase my **4+ years of professional experience across DevOps, platform engineering, and enterprise IT operations**, highlighting automated CI/CD security controls, shift-left governance, Kubernetes/OpenShift orchestration, and platform engineering.
 
 ---
 

@@ -85,7 +85,7 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          4+ years of experience constructing secure CI/CD pipelines with Jenkins, OpenShift, Kubernetes, Docker, SonarQube, Snyk, Trivy, Gitleaks, and Artifactory.
+          DevSecOps Engineer with 4+ years of experience across DevOps, platform engineering, and enterprise IT operations. Experienced in building secure CI/CD pipelines using Jenkins, OpenShift, Kubernetes, Docker, SonarQube, Snyk, Trivy, Gitleaks, and Artifactory.
         </motion.p>
 
         {/* Action Buttons & Terminal Email */}
