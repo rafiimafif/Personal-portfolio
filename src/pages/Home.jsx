@@ -7,13 +7,13 @@ import {
   Copy,
   Check,
   FileDown,
+  Eye,
   User,
   ShieldCheck,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { projects } from "@/data/projects";
-import cvPdf from "@/assets/files/cv_pdf/DevSecOps_RafiiMuhammadAfif_CV.pdf";
 
 const Home = () => {
   const [copied, setCopied] = useState(false);
@@ -95,9 +95,18 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <div className="flex justify-center space-x-3 sm:space-x-4">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
             <a
-              href={cvPdf}
+              href="/DevSecOps_RafiiMuhammadAfif_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 sm:px-6 py-2.5 sm:py-3 bg-white/10 border border-white/10 text-white rounded-full text-sm sm:text-base font-semibold hover:bg-white/20 transition-all hover:scale-105 backdrop-blur-md flex items-center gap-2"
+            >
+              <Eye className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
+              View CV
+            </a>
+            <a
+              href="/DevSecOps_RafiiMuhammadAfif_CV.pdf"
               download="DevSecOps_RafiiMuhammadAfif_CV.pdf"
               target="_blank"
               rel="noopener noreferrer"

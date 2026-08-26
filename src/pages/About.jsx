@@ -12,6 +12,8 @@ import {
   Calendar,
   BookOpen,
   FileText,
+  FileDown,
+  Eye,
   Award,
   Server,
   Layout,
@@ -41,13 +43,9 @@ import {
   AWSLogo,
   RenderLogo,
   PostmanLogo,
-  BashLogo,
-  WindowsLogo,
-  UbuntuLogo,
   LinuxLogo,
 } from "@/components/TechLogos";
 import profileImg from "@/assets/profile/profile.jpg";
-import cvPdf from "@/assets/files/cv_pdf/DevSecOps_RafiiMuhammadAfif_CV.pdf";
 import collegeImg from "@/assets/education/college_img.jpg";
 import bTechPdf from "@/assets/files/education_pdf/Transkrip Nilai.pdf";
 import virtualboxLogo from "@/assets/profile/Virtualbox_logo.png";
@@ -348,14 +346,24 @@ const About = () => {
             </ul>
           </div>
 
-          <div className="flex justify-start space-x-4">
+          <div className="flex flex-wrap gap-4">
             <a
-              href={cvPdf}
+              href="/DevSecOps_RafiiMuhammadAfif_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 bg-white/10 border border-white/10 text-white rounded-full font-medium hover:bg-white/20 transition-all flex items-center gap-2 backdrop-blur-md"
+            >
+              <Eye className="w-5 h-5" aria-hidden="true" />
+              View CV
+            </a>
+            <a
+              href="/DevSecOps_RafiiMuhammadAfif_CV.pdf"
               download="DevSecOps_RafiiMuhammadAfif_CV.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 bg-white text-black rounded-full font-medium hover:bg-gray-100 transition-colors"
+              className="px-6 py-3 bg-white text-black rounded-full font-medium hover:bg-gray-100 transition-all flex items-center gap-2 shadow-lg"
             >
+              <FileDown className="w-5 h-5" aria-hidden="true" />
               Download CV
             </a>
           </div>
