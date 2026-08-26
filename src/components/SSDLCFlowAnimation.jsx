@@ -457,43 +457,82 @@ export const SSDLCFlowAnimation = () => {
           </div>
 
           {/* Right: Live Groovy Terminal Log Ticker */}
-          <div className="lg:col-span-7 bg-slate-950 rounded-xl p-4 border border-slate-800 font-mono text-xs overflow-hidden flex flex-col shadow-inner">
-            <div className="flex items-center justify-between pb-2 mb-3 border-b border-slate-800 text-slate-400 text-[11px]">
+          <div
+            className={`lg:col-span-7 rounded-xl p-4 border font-mono text-xs overflow-hidden flex flex-col transition-colors duration-300 ${
+              isLight
+                ? "bg-slate-50 border-slate-200 shadow-sm"
+                : "bg-slate-950 border-slate-800 shadow-inner"
+            }`}
+          >
+            <div
+              className={`flex items-center justify-between pb-2 mb-3 border-b text-[11px] ${
+                isLight
+                  ? "border-slate-200 text-slate-600"
+                  : "border-slate-800 text-slate-400"
+              }`}
+            >
               <div className="flex items-center gap-2">
-                <Terminal className="w-4 h-4 text-cyan-400" />
-                <span>Jenkins Pipeline Console Log</span>
+                <Terminal
+                  className={`w-4 h-4 ${
+                    isLight ? "text-cyan-600" : "text-cyan-400"
+                  }`}
+                />
+                <span className="font-semibold">Jenkins Pipeline Console Log</span>
               </div>
-              <span className="text-emerald-400 flex items-center gap-1">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+              <span
+                className={`flex items-center gap-1 font-semibold ${
+                  isLight ? "text-emerald-600" : "text-emerald-400"
+                }`}
+              >
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
                 STREAMING
               </span>
             </div>
 
-            <div className="space-y-1.5 overflow-y-auto max-h-48 scrollbar-thin text-slate-300 pr-1">
-              {currentStageObj.logs.map((log, i) => (
-                <div
-                  key={i}
-                  className={`leading-relaxed ${
-                    log.includes("[SUCCESS]") ||
-                    log.includes("[QUALITY GATE]") ||
-                    log.includes("[SBOM]") ||
-                    log.includes("[COSIGN]") ||
-                    log.includes("[RELEASE]")
-                      ? "text-emerald-400 font-semibold"
-                      : log.includes("git") ||
-                        log.includes("checkov") ||
-                        log.includes("mvn") ||
-                        log.includes("snyk") ||
-                        log.includes("trivy") ||
-                        log.includes("oc")
-                      ? "text-cyan-300"
-                      : "text-slate-400"
-                  }`}
-                >
-                  <span className="text-slate-600 select-none mr-2">$</span>
-                  {log}
-                </div>
-              ))}
+            <div className="space-y-1.5 overflow-y-auto max-h-48 scrollbar-thin pr-1">
+              {currentStageObj.logs.map((log, i) => {
+                const isSuccess =
+                  log.includes("[SUCCESS]") ||
+                  log.includes("[QUALITY GATE]") ||
+                  log.includes("[SBOM]") ||
+                  log.includes("[COSIGN]") ||
+                  log.includes("[RELEASE]");
+                const isCommand =
+                  log.includes("git") ||
+                  log.includes("checkov") ||
+                  log.includes("mvn") ||
+                  log.includes("snyk") ||
+                  log.includes("trivy") ||
+                  log.includes("oc");
+
+                return (
+                  <div
+                    key={i}
+                    className={`leading-relaxed ${
+                      isSuccess
+                        ? isLight
+                          ? "text-emerald-700 font-bold"
+                          : "text-emerald-400 font-semibold"
+                        : isCommand
+                        ? isLight
+                          ? "text-cyan-700 font-semibold"
+                          : "text-cyan-300"
+                        : isLight
+                        ? "text-slate-700"
+                        : "text-slate-400"
+                    }`}
+                  >
+                    <span
+                      className={`select-none mr-2 ${
+                        isLight ? "text-slate-400" : "text-slate-600"
+                      }`}
+                    >
+                      $
+                    </span>
+                    {log}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </motion.div>
