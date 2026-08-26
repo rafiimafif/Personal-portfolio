@@ -4,24 +4,14 @@ import {
   Play,
   Pause,
   RotateCcw,
-  CheckCircle2,
   ShieldCheck,
-  Lock,
-  Server,
   Cloud,
   Terminal,
-  FileCode,
-  Zap,
   Activity,
-  Layers,
   ArrowRight,
   Sparkles,
   GitBranch,
-  KeyRound,
-  FileSearch,
   Box,
-  Globe,
-  UploadCloud,
   Check
 } from "lucide-react";
 
@@ -35,11 +25,11 @@ const stages = [
     color: "from-cyan-500 to-blue-500",
     borderColor: "border-cyan-500/50",
     glowColor: "rgba(6, 182, 212, 0.4)",
-    tools: ["GitHub Enterprise", "Gitleaks Secret Scan", "Checkov IaC Audit"],
+    tools: ["Source Control", "Gitleaks Secret Scan", "Checkov IaC Audit"],
     metrics: "0 Credentials Leaked • IaC Compliance 100%",
     description: "Repository check-in triggers automated commit history secret detection & Infrastructure-as-Code policy validation.",
     logs: [
-      "git clone https://github.axa.com/repo.git --branch master",
+      "git clone https://scm.internal/org/app-repository.git --branch main",
       "gitleaks detect --source=. --report-format=json --verbose",
       "[SUCCESS] Gitleaks: 0 plain-text credentials or private keys found.",
       "checkov -d . --framework terraform,kubernetes,dockerfile --skip-download",
@@ -60,8 +50,8 @@ const stages = [
     description: "Multi-stack compilation with automated SonarQube API Quality Gate verification & static code security analysis.",
     logs: [
       "mvn clean package -DskipTests=false (or dotnet build / npm run build)",
-      "sonar-scanner -Dsonar.projectKey=app-service -Dsonar.sources=src",
-      "curl -s https://sonarqube.axa.com/api/qualitygates/project_status",
+      "sonar-scanner -Dsonar.projectKey=service-app -Dsonar.sources=src",
+      "curl -s https://sonarqube.internal/api/qualitygates/project_status",
       "[QUALITY GATE] Status: OK | Vulnerabilities: 0 | Bugs: 0 | Code Smells: 0",
       "snyk code test --severity-threshold=high",
       "[SUCCESS] Snyk Code SAST: 0 critical vulnerabilities detected."
@@ -76,15 +66,15 @@ const stages = [
     color: "from-fuchsia-500 to-pink-500",
     borderColor: "border-fuchsia-500/50",
     glowColor: "rgba(217, 70, 239, 0.4)",
-    tools: ["Snyk OpenSource", "Trivy FS", "CycloneDX SBOM", "JFrog Artifactory"],
-    metrics: "SBOM: CycloneDX v1.5 • Artifactory Verified",
+    tools: ["Snyk OpenSource", "Trivy FS", "CycloneDX SBOM", "Artifactory"],
+    metrics: "SBOM: CycloneDX v1.5 • Repository Verified",
     description: "Dependency vulnerability scanning, automated CycloneDX SBOM inventory generation, and binary artifact publishing.",
     logs: [
       "snyk test --all-subprojects --json-file-output=snyk-report.json",
       "trivy fs --security-checks vuln,secret,config .",
       "cyclonedx-py --format json --output sbom.cdx.json",
       "[SBOM] Generated CycloneDX Software Bill of Materials manifest.",
-      "jfrog rt upload app-v1.4.0.zip generic-release-local/app-service/",
+      "jfrog rt upload release-v1.4.0.zip generic-release-local/service-app/",
       "[ARTIFACTORY] Published immutable binary package & Build Info."
     ]
   },
@@ -97,18 +87,18 @@ const stages = [
     color: "from-emerald-500 to-teal-500",
     borderColor: "border-emerald-500/50",
     glowColor: "rgba(16, 185, 129, 0.4)",
-    tools: ["Playwright E2E", "OpenShift CD", "Sigstore Cosign v3", "OWASP ZAP DAST"],
-    metrics: "Cosign Signed • OpenShift SHA256 Pinned",
-    description: "Playwright E2E regression, OpenShift BuildConfig rollout, Sigstore Cosign v3 offline image signing, and OWASP ZAP DAST.",
+    tools: ["Playwright E2E", "Container CD", "Sigstore Cosign v3", "OWASP ZAP DAST"],
+    metrics: "Cosign Signed • Container SHA256 Pinned",
+    description: "Playwright E2E regression, container build rollout, Sigstore Cosign v3 offline image signing, and OWASP ZAP DAST.",
     logs: [
-      "npx playwright test --config=playwright.config.js (Artifactory mirror)",
-      "oc start-build app-service --follow --commit=HEAD",
-      "RESOLVED IMAGE SHA256: sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "cosign sign --key k8s://openshift-ingress/cosign-key --tlog-upload=false sha256:e3b0c...",
-      "[COSIGN] Signed OpenShift container digest. Generated local .sig bundle.",
-      "kubectl port-forward svc/app-service 8080:80 & zap-baseline.py -t http://localhost:8080",
+      "npx playwright test --config=playwright.config.js (Artifact Mirror)",
+      "oc start-build service-app --follow --commit=HEAD",
+      "RESOLVED IMAGE SHA256: sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b9...",
+      "cosign sign --key k8s://cluster-ingress/cosign-key --tlog-upload=false sha256:e3b0c...",
+      "[COSIGN] Signed container digest. Generated local .sig bundle.",
+      "kubectl port-forward svc/service-app 8080:80 & zap-baseline.py -t http://localhost:8080",
       "[SUCCESS] OWASP ZAP DAST Scan: Passed 0 High/Critical alerts.",
-      "[RELEASE] GitHub Enterprise Release v1.4.0 created successfully!"
+      "[RELEASE] Release v1.4.0 created successfully!"
     ]
   }
 ];
@@ -170,7 +160,7 @@ export const SSDLCFlowAnimation = () => {
             <Sparkles className="w-5 h-5 text-amber-400 animate-pulse" />
           </h3>
           <p className="text-xs sm:text-sm text-slate-400 mt-1">
-            Simulated end-to-end zero-trust CI/CD workflow implemented at AXA Insurance Indonesia
+            Generic end-to-end zero-trust CI/CD pipeline reference architecture
           </p>
         </div>
 
@@ -344,7 +334,7 @@ export const SSDLCFlowAnimation = () => {
 
             <div className="pt-4 mt-4 border-t border-slate-900 flex items-center justify-between text-xs text-slate-400">
               <span>Status: <strong className="text-emerald-400">100% SSDLC Compliant</strong></span>
-              <span>Target: <strong className="text-white">OpenShift SaaS &amp; On-Prem</strong></span>
+              <span>Target: <strong className="text-white">Cloud Container Platform &amp; On-Prem</strong></span>
             </div>
           </div>
 
