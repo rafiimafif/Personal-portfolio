@@ -13,7 +13,7 @@
   <img src="https://skillicons.dev/icons?i=jenkins,kubernetes,docker,aws,bash,linux,git,github,nodejs" alt="Tech Stack Icons" />
 </p>
 
-### DevSecOps Engineer · Platform & Cloud Infrastructure Specialist · Bandung, West Java, Indonesia
+### DevSecOps Engineer · Platform & Cloud Infrastructure Specialist · Jakarta, Indonesia
 
 [🌐 View Live Website](https://rafii-afif.vercel.app) · [💼 LinkedIn Profile](https://linkedin.com/in/rafii-muhammad-afif) · [📧 Contact Email](mailto:rafii.afif@gmail.com)
 

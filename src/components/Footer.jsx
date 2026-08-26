@@ -32,7 +32,7 @@ const Footer = () => {
               <span className={`text-xl font-bold ${isLight ? 'text-slate-900' : 'text-white'}`}>Rafii Afif</span>
             </Link>
             <p className={`text-sm ${isLight ? 'text-slate-600' : 'text-gray-400'}`}>
-              DevSecOps Engineer based in Bandung, West Java, Indonesia.
+              DevSecOps Engineer based in Jakarta, Indonesia.
             </p>
           </div>
 

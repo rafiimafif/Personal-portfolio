@@ -79,7 +79,7 @@ const About = () => {
     {
       title: "DevSecOps Engineer",
       company: "AXA Insurance Indonesia",
-      location: "Bandung, West Java",
+      location: "Jakarta, Indonesia",
       period: "05/2026 - Present",
       type: "Full-time",
       description: [
@@ -97,7 +97,7 @@ const About = () => {
     {
       title: "DevOps Engineer",
       company: "AXA Insurance Indonesia",
-      location: "Bandung, West Java",
+      location: "Jakarta, Indonesia",
       period: "05/2025 - 05/2026",
       type: "Full-time",
       description: [
@@ -121,7 +121,7 @@ const About = () => {
     {
       title: "IT Operations",
       company: "Great Eastern General Insurance",
-      location: "Bandung, West Java",
+      location: "Jakarta, Indonesia",
       period: "12/2024 - 05/2025",
       type: "Full-time",
       description: [
@@ -135,7 +135,7 @@ const About = () => {
     {
       title: "IT Support Engineer II",
       company: "Accelbyte",
-      location: "Bandung, West Java",
+      location: "Jakarta, Indonesia",
       period: "01/2023 - 11/2024",
       type: "Full-time",
       description: [
@@ -150,7 +150,7 @@ const About = () => {
     {
       title: "Business Operations Associate",
       company: "Hubster Indonesia",
-      location: "Bandung, West Java",
+      location: "Jakarta, Indonesia",
       period: "04/2021 - 12/2022",
       type: "Full-time",
       description: [
@@ -164,7 +164,7 @@ const About = () => {
     {
       title: "Full Stack Developer",
       company: "PT. Cemara Agung Mandiri",
-      location: "Bandung, West Java",
+      location: "Jakarta, Indonesia",
       period: "01/2020 - 06/2020",
       type: "Full-time",
       description: [
@@ -248,7 +248,7 @@ const About = () => {
   const educationData = [
     {
       school: 'Universitas Jenderal Achmad Yani',
-      location: 'Bandung, West Java',
+      location: 'Cimahi / Jakarta, Indonesia',
       duration: 'Sept 2016 - Oct 2020',
       degree: 'Bachelor of Informatics Engineering',
       grade: 'GPA: 3.41 / 4.00',
@@ -336,7 +336,7 @@ const About = () => {
             <ul className="list-none space-y-3">
               {[
                 "DevSecOps Engineer at AXA Insurance Indonesia",
-                "Based in Bandung, West Java",
+                "Based in Jakarta, Indonesia",
                 "B.Sc. in Informatics Engineering (GPA: 3.41)",
                 "4+ Years IT & Cloud Experience",
               ].map((fact) => (

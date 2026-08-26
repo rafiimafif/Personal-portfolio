@@ -38,7 +38,7 @@ const Contact = () => {
   const contactInfo = [
     { icon: <Mail className="w-5 h-5" />, label: 'Email', value: 'rafii.afif@gmail.com', link: 'mailto:rafii.afif@gmail.com' },
     { icon: <Phone className="w-5 h-5" />, label: 'Phone', value: '+6285155103214', link: 'tel:+6285155103214' },
-    { icon: <MapPin className="w-5 h-5" />, label: 'Location', value: 'Bandung, Jawa Barat, Indonesia' },
+    { icon: <MapPin className="w-5 h-5" />, label: 'Location', value: 'Jakarta, Indonesia' },
     { icon: <Clock className="w-5 h-5" />, label: 'Time Zone', value: 'WIB (UTC+7)' },
   ]
 
