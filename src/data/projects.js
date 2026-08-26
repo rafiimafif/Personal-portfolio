@@ -6,17 +6,8 @@ import project9 from "@/assets/projects_img/project-9-ai.png";
 import project10 from "@/assets/projects_img/project-10-scrapelab.png";
 import project11 from "@/assets/projects_img/project-11-traffic.png";
 import project12 from "@/assets/projects_img/project-12-cyberops.png";
-import project13 from "@/assets/projects_img/project-13-jenkins-ssdlc.svg";
 
 export const projects = [
-  {
-    title: "Jenkins Shared Library — Enterprise SSDLC DevSecOps Framework",
-    description:
-      "A modernized, security-first Jenkins Shared Library & SSDLC (Secure Software Development Life Cycle) framework designed to automate and standardize build, test, quality gate, security scanning, container signing, and deployment workflows across multi-stack environments (Java Maven, .NET Core, Legacy VB.NET, Node.js Frontend, PHP Symfony/Pimcore). Enforces 100% security gate compliance featuring SAST (SonarQube, Snyk Code, Checkmarx), SCA (Snyk Open Source, Trivy FS, DependencyCheck), Secret Detection (Gitleaks), IaC Security (Checkov with smart Python venv fallback), DAST (OWASP ZAP with K8s API port-forwarding), SBOM (CycloneDX), Container Image Signing (Sigstore Cosign v3 offline bundle), E2E Regression (Playwright with Artifactory browser mirroring), JFrog Artifactory binary publishing, and OpenShift rolling deployment.",
-    image: project13,
-    github: "https://github.com/rafiimafif/jenkins-shared-library",
-    tags: ["Jenkins Shared Library", "Groovy", "SSDLC", "DevSecOps", "SonarQube", "Snyk", "Trivy", "Gitleaks", "Checkov (IaC)", "OWASP ZAP (DAST)", "CycloneDX (SBOM)", "Cosign (Signing)", "Playwright E2E", "JFrog Artifactory", "OpenShift", "Multi-Stack"],
-  },
   {
     title: "CyberOps AIO — Security Operations Center (SOC) Platform",
     description:
