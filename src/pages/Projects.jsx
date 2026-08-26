@@ -4,39 +4,46 @@ import { projects } from "@/data/projects";
 
 const axaHighlights = [
   {
-    title: "DevSecOps & Vulnerability Scanning",
+    title: "SSDLC Framework & Zero-Trust Governance",
     label: "Security Engineering",
     description:
-      "Integrated SAST, SCA, DAST, Gitleaks secret detection, Trivy, Snyk, Checkmarx, and OWASP ZAP into Jenkins pipelines to shift security left and enforce quality gates.",
-    tags: ["SAST/DAST", "Snyk", "Trivy", "Gitleaks", "OWASP ZAP", "SonarQube"],
+      "Engineered an enterprise SSDLC framework embedding 100% security gate compliance, branch-based environment routing (master/release/* vs development), PR checks, and non-blocking warning handling.",
+    tags: ["SSDLC", "Zero-Trust", "Shift-Left", "Security Gates", "Branch Policy"],
   },
   {
-    title: "CycloneDX SBOM Generation",
-    label: "Supply Chain Security",
-    description:
-      "Standardized SBOM (Software Bill of Materials) generation using CycloneDX across CI/CD pipelines, establishing clear visibility into third-party dependencies.",
-    tags: ["CycloneDX", "SBOM", "Supply Chain", "Governance", "Security"],
-  },
-  {
-    title: "Jenkins Shared Library Platform",
+    title: "Jenkins Shared Library Modernization",
     label: "Platform Engineering",
     description:
-      "Created reusable Jenkins Shared Libraries standardizing build, test, vulnerability scanning, SonarQube analysis, and deployment flows across multiple application teams.",
-    tags: ["Jenkins", "Shared Library", "Groovy", "CI/CD", "Automation"],
+      "Created zero-boilerplate Groovy shared library orchestrators (templatePipelineOnprem, pipelineTemplate, legacyDotnetPipeline) standardizing build, SAST, SCA, and deployment flows across Java, .NET, Node.js, and PHP.",
+    tags: ["Jenkins", "Groovy", "Shared Library", "Multi-Stack", "Automation"],
   },
   {
-    title: "OpenShift & Kubernetes Management",
+    title: "Multi-Tool SAST, SCA, DAST & Secrets",
+    label: "Vulnerability Auditing",
+    description:
+      "Orchestrated SAST (SonarQube, Snyk Code, Checkmarx), SCA (Snyk, Trivy FS, DepCheck), Gitleaks secret detection, Checkov IaC security, and OWASP ZAP DAST with K8s API port-forwarding.",
+    tags: ["SonarQube", "Snyk", "Trivy", "Gitleaks", "Checkov", "OWASP ZAP"],
+  },
+  {
+    title: "Supply Chain & Container Attestation",
+    label: "Image Signing & SBOM",
+    description:
+      "Standardized CycloneDX Software Bill of Materials (SBOM) generation and Sigstore Cosign v3 offline container image signing using OpenShift SHA256 digests and local .sig bundles.",
+    tags: ["CycloneDX", "SBOM", "Cosign", "Image Signing", "Supply Chain"],
+  },
+  {
+    title: "Playwright E2E & Browser Mirroring",
+    label: "Quality Assurance",
+    description:
+      "Automated Playwright E2E browser regression testing inside Jenkins CI, resolving air-gapped environment constraints by mirroring multi-part browser runtimes from JFrog Artifactory.",
+    tags: ["Playwright", "E2E Testing", "Browser Mirroring", "Artifactory", "QA"],
+  },
+  {
+    title: "OpenShift Cloud & Observability",
     label: "Cloud & Infrastructure",
     description:
-      "Managed Deployments, Services, ConfigMaps, Secrets, Ingress, and Routes in OpenShift with zero-downtime rolling updates, Pod Disruption Budgets, and CronJobs.",
-    tags: ["OpenShift", "Kubernetes", "Rolling Updates", "PDB", "CronJobs"],
-  },
-  {
-    title: "Artifact Management & Monitoring",
-    label: "Observability & Registry",
-    description:
-      "Configured JFrog Artifactory for centralized package & container storage, alongside comprehensive Grafana monitoring dashboards for real-time system visibility.",
-    tags: ["JFrog Artifactory", "Grafana", "Monitoring", "Dashboards", "Metrics"],
+      "Managed OpenShift BuildConfigs, zero-downtime rolling updates, Pod Disruption Budgets, and JFrog Artifactory package storage alongside real-time Grafana metrics dashboards.",
+    tags: ["OpenShift", "Kubernetes", "JFrog Artifactory", "Grafana", "Rolling Deploy"],
   },
 ];
 

@@ -54,11 +54,11 @@ A modern, high-performance personal portfolio website built with **React 18 + Vi
 
 | Category | Technologies & Tools |
 |----------|----------------------|
-| **DevSecOps & Security** | Snyk, Trivy, SonarQube, Gitleaks, Checkmarx, OWASP ZAP, CycloneDX (SBOM) |
-| **CI/CD & Orchestration** | Jenkins, Jenkins Shared Libraries, GitHub Actions, Git, GitOps |
+| **DevSecOps & SSDLC** | SSDLC Framework, SonarQube, Snyk Code/OpenSource, Trivy FS, Gitleaks, Checkov (IaC), Cosign (Signing), OWASP ZAP (DAST), Checkmarx, CycloneDX (SBOM) |
+| **CI/CD & Orchestration** | Jenkins, Jenkins Shared Library (Groovy), Playwright E2E, GitHub Enterprise, Git, GitOps |
 | **Containers & Cloud** | Docker, OpenShift, Kubernetes, AWS |
 | **Observability & Artifacts** | Grafana, JFrog Artifactory |
-| **Scripting & OS** | Bash, Shell Scripting, Node.js, PHP, Linux, Windows |
+| **Scripting & OS** | Groovy, Bash, Shell Scripting, Node.js, PHP, Linux, Windows |
 | **ITSM & Operations** | ServiceNow, Active Directory, LANDesk, Jira, Confluence, Teams |
 | **Web Tech** | React 18, Vite, Tailwind CSS, Framer Motion, Lucide Icons |
 
@@ -72,7 +72,7 @@ A modern, high-performance personal portfolio website built with **React 18 + Vi
 
 | Role | Company | Period | Focus |
 |------|---------|--------|-------|
-| **DevSecOps Engineer** | AXA Insurance Indonesia | 05/2026 – Present | SAST/SCA/DAST integration, Jenkins security gates, CycloneDX SBOM, Snyk/Trivy/Gitleaks scanning |
+| **DevSecOps Engineer** | AXA Insurance Indonesia | 05/2026 – Present | Enterprise SSDLC framework, Jenkins Shared Library modernization, SAST/SCA/DAST, Checkov IaC, Cosign signing, Gitleaks, CycloneDX SBOM, Playwright E2E |
 | **DevOps Engineer** | AXA Insurance Indonesia | 05/2025 – 05/2026 | Reusable Jenkins Shared Libraries, OpenShift & Kubernetes resources, JFrog Artifactory, Grafana |
 | **IT Operations** | Great Eastern General Insurance | 12/2024 – 05/2025 | Active Directory, ServiceNow ticketing, data security protocols, LANDesk remote support |
 | **IT Support Engineer II** | Accelbyte | 01/2023 – 11/2024 | Jira & NinjaRMM automation, system migrations, Confluence workflow documentation |

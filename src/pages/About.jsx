@@ -80,15 +80,15 @@ const About = () => {
       period: "05/2026 - Present",
       type: "Full-time",
       description: [
-        "Integrated SAST, SCA, DAST, and container security into CI/CD pipelines, enabling early detection of vulnerabilities and shifting security left in the development lifecycle.",
-        "Implemented security gates in Jenkins pipelines to prevent insecure code and unauthorized vulnerabilities from reaching production.",
-        "Standardized SBOM generation using CycloneDX, providing complete visibility into third-party dependencies and protecting against supply chain vulnerabilities.",
-        "Automated vulnerability scanning using Trivy, Snyk, Checkmarx, and OWASP ZAP.",
-        "Implemented secret detection using Gitleaks, proactively protecting sensitive company credentials and preventing data exposure in public/private repositories.",
-        "Collaborated closely with development teams to remediate security findings, fostering a security-first culture and streamlining the path to secure releases.",
-        "Integrated SonarQube Quality Gates to enforce code quality and security standards.",
-        "Standardized security scanning across multiple applications to improve DevSecOps maturity.",
-        "Supported secure release processes by embedding automated security controls into the CI/CD lifecycle."
+        "Successfully implemented an end-to-end SSDLC (Secure Software Development Life Cycle) framework across enterprise application pipelines, embedding 100% security gate compliance from source code check-in through production release.",
+        "Integrated SAST (SonarQube, Snyk Code, Checkmarx), SCA (Snyk Open Source, Trivy FS, DependencyCheck), DAST (OWASP ZAP), and IaC Scanning (Checkov) into automated CI/CD workflows, shifting security left.",
+        "Engineered Sigstore Cosign v3 offline container image signing using OpenShift SHA256 digests and local .sig bundles to ensure artifact authenticity and container supply chain security.",
+        "Automated OWASP ZAP DAST scanning with Kubernetes API port-forwarding tunnels and reachability auto-detection to assess deployed staging and pre-prod endpoints.",
+        "Enforced Gitleaks secret detection across git commit histories, preventing plain-text credentials and private key exposures.",
+        "Standardized SBOM (Software Bill of Materials) generation using CycloneDX across Java, Node.js, and PHP projects for complete supply chain transparency.",
+        "Implemented SonarQube Quality Gates with automated API verification to enforce strict code quality, security coverage, and build gating rules.",
+        "Modernized zero-boilerplate Jenkins Shared Libraries, enabling multi-stack development teams (Java Maven, .NET, Node.js, PHP Symfony/Pimcore) to adopt standardized DevSecOps controls effortlessly.",
+        "Established non-blocking warning stage handling and automated weekly workspace maintenance to maintain pipeline resilience and clean CI environment hygiene."
       ],
     },
     {
@@ -176,11 +176,14 @@ const About = () => {
       category: "DevSecOps & Security",
       icon: <Wrench className="w-6 h-6" />,
       items: [
+        { name: "SSDLC Framework", icon: <Wrench className="w-4 h-4" /> },
+        { name: "SonarQube", icon: <Wrench className="w-4 h-4" /> },
         { name: "Snyk", icon: <Wrench className="w-4 h-4" /> },
         { name: "Trivy", icon: <Wrench className="w-4 h-4" /> },
-        { name: "SonarQube", icon: <Wrench className="w-4 h-4" /> },
         { name: "Gitleaks", icon: <Wrench className="w-4 h-4" /> },
-        { name: "OWASP ZAP", icon: <Wrench className="w-4 h-4" /> },
+        { name: "Checkov (IaC)", icon: <Wrench className="w-4 h-4" /> },
+        { name: "Cosign (Signing)", icon: <Wrench className="w-4 h-4" /> },
+        { name: "OWASP ZAP (DAST)", icon: <Wrench className="w-4 h-4" /> },
         { name: "Checkmarx", icon: <Wrench className="w-4 h-4" /> },
         { name: "CycloneDX (SBOM)", icon: <Wrench className="w-4 h-4" /> },
       ],
@@ -191,7 +194,8 @@ const About = () => {
       items: [
         { name: "Jenkins", icon: <Wrench className="w-4 h-4" /> },
         { name: "Jenkins Shared Library", icon: <Code2 className="w-4 h-4" /> },
-        { name: "GitHub", icon: <GitLogo /> },
+        { name: "Playwright E2E", icon: <Wrench className="w-4 h-4" /> },
+        { name: "GitHub Enterprise", icon: <GitLogo /> },
         { name: "GitOps", icon: <GitLogo /> },
       ],
     },
@@ -209,6 +213,7 @@ const About = () => {
       category: "Scripting & Automation",
       icon: <Code2 className="w-6 h-6" />,
       items: [
+        { name: "Groovy", icon: <Code2 className="w-4 h-4" /> },
         { name: "Bash", icon: <BashLogo /> },
         { name: "Node.js", icon: <NodeLogo /> },
         { name: "Shell Scripting", icon: <Terminal className="w-4 h-4" /> },
@@ -253,26 +258,26 @@ const About = () => {
   ];
 
   const interests = [
-    "DevSecOps & Shift-Left Security",
-    "CI/CD Pipelines & Shared Libraries",
-    "Containerization & Kubernetes",
-    "Cloud Architecture (AWS & OpenShift)",
-    "Infrastructure as Code & Automation",
-    "Observability & Monitoring (Grafana)",
+    "Enterprise SSDLC Framework Implementation",
+    "DevSecOps & Shift-Left Security Controls",
+    "Jenkins Shared Libraries & Groovy Macro Pipeline Design",
+    "Container Attestation (Sigstore Cosign) & IaC Security (Checkov)",
+    "Containerization & Kubernetes / OpenShift Cloud Platforms",
+    "Observability & Monitoring (Grafana Dashboards)",
   ];
 
   const axaHighlights = [
     {
-      title: "DevSecOps Security Controls",
+      title: "Enterprise SSDLC Framework",
       icon: <Wrench className="w-6 h-6" />,
       description:
-        "Integrated SAST, SCA, DAST, secret scanning (Gitleaks), container security, and CycloneDX SBOM generation into CI/CD pipelines with automated security gates.",
+        "Implemented a 100% compliant SSDLC framework embedding automated security gates, SAST (SonarQube, Snyk Code, Checkmarx), SCA (Snyk, Trivy), Gitleaks secret detection, Checkov IaC, Cosign image signing, OWASP ZAP DAST, and CycloneDX SBOM.",
     },
     {
       title: "Reusable Jenkins Shared Library",
       icon: <Server className="w-6 h-6" />,
       description:
-        "Centralized pipeline logic in a shared library so application teams can reuse standardized build, test, security scanning, and deployment steps without rebuilding Jenkinsfiles.",
+        "Modernized modular Groovy pipeline orchestrators (templatePipelineOnprem, pipelineTemplate, legacyDotnetPipeline) allowing multi-stack teams (Java, .NET, Node.js, PHP) to consume standard DevSecOps logic with zero boilerplate.",
     },
     {
       title: "OpenShift & Kubernetes Management",
@@ -284,7 +289,7 @@ const About = () => {
       title: "SonarQube & Grafana Observability",
       icon: <Layout className="w-6 h-6" />,
       description:
-        "Enforced Quality Gates with SonarQube and built real-time Grafana dashboards for proactive incident management and system anomaly tracking.",
+        "Enforced Quality Gates with SonarQube API verification and built real-time Grafana dashboards for proactive incident management and system anomaly tracking.",
     },
   ];
 
