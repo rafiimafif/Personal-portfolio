@@ -47,7 +47,7 @@ import {
   LinuxLogo,
 } from "@/components/TechLogos";
 import profileImg from "@/assets/profile/profile.jpg";
-import cvPdf from "@/assets/files/cv_pdf/Rafii Muhammad Afif - DevOps Engineer - CV.pdf";
+import cvPdf from "@/assets/files/cv_pdf/DevSecOps_RafiiMuhammadAfif_CV.pdf";
 import collegeImg from "@/assets/education/college_img.jpg";
 import bTechPdf from "@/assets/files/education_pdf/Transkrip Nilai.pdf";
 import virtualboxLogo from "@/assets/profile/Virtualbox_logo.png";
