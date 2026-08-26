@@ -25,6 +25,7 @@ import {
   Users,
 } from "lucide-react";
 import { ScrollAnimation } from "@/components/ScrollAnimation";
+import { useTheme } from "../context/ThemeContext";
 import {
   JavaScriptLogo,
   ReactLogo,
@@ -54,6 +55,8 @@ import virtualboxLogo from "@/assets/profile/Virtualbox_logo.png";
 import kaliLogo from "@/assets/profile/kali_logo.png";
 
 const About = () => {
+  const { theme } = useTheme();
+  const isLight = theme === "light";
   const achievements = [
     {
       icon: <Briefcase className="w-6 h-6" />,
@@ -297,7 +300,7 @@ const About = () => {
     <div className="min-h-screen pt-28 sm:pt-32 px-4 max-w-6xl mx-auto pb-20 overflow-x-hidden">
       {/* Profile Section */}
       <ScrollAnimation>
-        <motion.h2 className="text-4xl font-bold mb-8 gradient-text">
+        <motion.h2 className={`text-4xl font-bold mb-8 ${isLight ? "text-slate-900" : "gradient-text"}`}>
           About Me
         </motion.h2>
       </ScrollAnimation>
@@ -315,19 +318,19 @@ const About = () => {
 
         <ScrollAnimation className="space-y-6">
           <div className="space-y-4">
-            <p className="text-gray-300 leading-relaxed">
+            <p className={`leading-relaxed ${isLight ? "text-slate-600" : "text-gray-300"}`}>
               Hi! I'm Rafii Muhammad Afif, a DevSecOps Engineer at AXA Insurance Indonesia with 4+ years of hands-on experience across DevOps, platform engineering, DevSecOps, and enterprise IT operations. Passionate about automating software delivery while embedding security, reliability, and developer productivity into every stage of the lifecycle.
             </p>
-            <p className="text-gray-300 leading-relaxed">
+            <p className={`leading-relaxed ${isLight ? "text-slate-600" : "text-gray-300"}`}>
               With a solid foundation spanning full-stack development, IT operations, and cloud infrastructure, I bridge the gap between development, security, and operations. My work focuses on building secure CI/CD pipelines, standardizing release automation, and implementing shift-left security practices.
             </p>
-            <p className="text-gray-300 leading-relaxed">
+            <p className={`leading-relaxed ${isLight ? "text-slate-600" : "text-gray-300"}`}>
               I specialize in tools like Jenkins, OpenShift, Kubernetes, Docker, SonarQube, Snyk, Trivy, Gitleaks, Checkmarx, OWASP ZAP, CycloneDX, and JFrog Artifactory to construct resilient, enterprise-grade delivery pipelines.
             </p>
           </div>
 
           <div className="pt-4">
-            <h3 className="text-2xl font-semibold mb-4 gradient-text">
+            <h3 className={`text-2xl font-semibold mb-4 ${isLight ? "text-slate-900" : "gradient-text"}`}>
               Quick Facts
             </h3>
             <ul className="list-none space-y-3">
@@ -339,9 +342,9 @@ const About = () => {
               ].map((fact) => (
                 <motion.li
                   key={fact}
-                  className="flex items-center space-x-2 text-gray-300"
+                  className={`flex items-center space-x-2 ${isLight ? "text-slate-700 font-medium" : "text-gray-300"}`}
                 >
-                  <span className="w-2 h-2 bg-white rounded-full" />
+                  <span className={`w-2 h-2 rounded-full ${isLight ? "bg-slate-900" : "bg-white"}`} />
                   <span>{fact}</span>
                 </motion.li>
               ))}
@@ -353,7 +356,11 @@ const About = () => {
               href="/DevSecOps_RafiiMuhammadAfif_CV.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 bg-white/10 border border-white/10 text-white rounded-full font-medium hover:bg-white/20 transition-all flex items-center gap-2 backdrop-blur-md"
+              className={`px-6 py-3 rounded-full font-medium transition-all flex items-center gap-2 backdrop-blur-md border ${
+                isLight
+                  ? "bg-slate-100 border-slate-300 text-slate-800 hover:bg-slate-200"
+                  : "bg-white/10 border-white/10 text-white hover:bg-white/20"
+              }`}
             >
               <Eye className="w-5 h-5" aria-hidden="true" />
               View CV
@@ -363,7 +370,11 @@ const About = () => {
               download="DevSecOps_RafiiMuhammadAfif_CV.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 bg-white text-black rounded-full font-medium hover:bg-gray-100 transition-all flex items-center gap-2 shadow-lg"
+              className={`px-6 py-3 rounded-full font-medium transition-all flex items-center gap-2 shadow-lg ${
+                isLight
+                  ? "bg-slate-900 text-white hover:bg-slate-800"
+                  : "bg-white text-black hover:bg-gray-100"
+              }`}
             >
               <FileDown className="w-5 h-5" aria-hidden="true" />
               Download CV
@@ -375,27 +386,31 @@ const About = () => {
       {/* AXA Platform Highlights */}
       <ScrollAnimation>
         <div className="mt-16 mb-20">
-          <h3 className="text-3xl sm:text-4xl font-bold mb-4 gradient-text flex items-center gap-3">
+          <h3 className={`text-3xl sm:text-4xl font-bold mb-4 flex items-center gap-3 ${isLight ? "text-slate-900" : "gradient-text"}`}>
             <Server className="w-7 h-7 sm:w-8 sm:h-8" />
             AXA DevOps Platform Highlights
           </h3>
-          <p className="text-gray-400 max-w-3xl mb-8 leading-relaxed">
+          <p className={`max-w-3xl mb-8 leading-relaxed ${isLight ? "text-slate-600" : "text-gray-400"}`}>
             A closer look at the delivery platform work I help maintain at AXA Insurance Indonesia. The focus is on reusable automation, consistent release controls, and a smoother path from commit to OpenShift.
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">
             {axaHighlights.map((item) => (
               <ScrollAnimation key={item.title}>
-                <div className="bg-gray-800/50 p-6 rounded-xl backdrop-blur-sm border border-white/5 h-full hover:bg-gray-800/70 transition-all">
+                <div className={`p-6 rounded-xl backdrop-blur-sm border transition-all h-full ${
+                  isLight
+                    ? "bg-white/90 border-slate-200 shadow-sm hover:border-slate-300"
+                    : "bg-gray-800/50 border-white/5 hover:bg-gray-800/70"
+                }`}>
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="p-2 bg-white/10 rounded-lg text-white">
+                    <div className={`p-2 rounded-lg ${isLight ? "bg-slate-100 text-slate-900 border border-slate-200" : "bg-white/10 text-white"}`}>
                       {item.icon}
                     </div>
-                    <h4 className="text-lg sm:text-xl font-semibold">
+                    <h4 className={`text-lg sm:text-xl font-semibold ${isLight ? "text-slate-900" : "text-white"}`}>
                       {item.title}
                     </h4>
                   </div>
-                  <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
+                  <p className={`leading-relaxed text-sm sm:text-base ${isLight ? "text-slate-600" : "text-gray-300"}`}>
                     {item.description}
                   </p>
                 </div>
@@ -408,30 +423,40 @@ const About = () => {
       {/* Experience Section */}
       <ScrollAnimation>
         <div className="mt-16 mb-20">
-          <h3 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 gradient-text flex items-center gap-3">
+          <h3 className={`text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 flex items-center gap-3 ${isLight ? "text-slate-900" : "gradient-text"}`}>
             <Briefcase className="w-7 h-7 sm:w-8 sm:h-8" />
             Professional Experience
           </h3>
           <div className="space-y-8 sm:space-y-12">
             {experiences.map((exp) => (
               <ScrollAnimation key={exp.title}>
-                <div className="group relative bg-gray-800/50 rounded-xl sm:rounded-2xl overflow-hidden backdrop-blur-sm hover:bg-gray-800/70 transition-all border border-white/5">
+                <div className={`group relative rounded-xl sm:rounded-2xl overflow-hidden backdrop-blur-sm transition-all border ${
+                  isLight
+                    ? "bg-white/90 border-slate-200 shadow-sm hover:border-slate-300"
+                    : "bg-gray-800/50 border-white/5 hover:bg-gray-800/70"
+                }`}>
                   <div className="p-6 sm:p-8">
                     <div className="flex items-center gap-3 mb-4 sm:mb-6">
-                      <div className="p-2 sm:p-3 bg-white/10 rounded-lg sm:rounded-xl group-hover:bg-white/20 transition-colors">
+                      <div className={`p-2 sm:p-3 rounded-lg sm:rounded-xl transition-colors ${
+                        isLight
+                          ? "bg-slate-100 border border-slate-200 text-slate-900"
+                          : "bg-white/10 group-hover:bg-white/20 text-white"
+                      }`}>
                         <Building2 className="w-6 h-6 sm:w-7 sm:h-7" />
                       </div>
                       <div>
-                        <h4 className="text-xl sm:text-2xl font-bold mb-1">
+                        <h4 className={`text-xl sm:text-2xl font-bold mb-1 ${isLight ? "text-slate-900" : "text-white"}`}>
                           {exp.title}
                         </h4>
-                        <p className="text-gray-400 text-base sm:text-lg">
+                        <p className={`text-base sm:text-lg ${isLight ? "text-slate-600 font-medium" : "text-gray-400"}`}>
                           {exp.company}
                         </p>
                       </div>
                     </div>
 
-                    <div className="flex flex-wrap items-center gap-2 text-gray-300 mb-4 sm:mb-6 text-sm sm:text-base">
+                    <div className={`flex flex-wrap items-center gap-2 mb-4 sm:mb-6 text-sm sm:text-base ${
+                      isLight ? "text-slate-600" : "text-gray-300"
+                    }`}>
                       <MapPin className="w-4 h-4" />
                       <span>{exp.location}</span>
                       <span>•</span>
@@ -442,9 +467,11 @@ const About = () => {
                       {exp.description.map((item, i) => (
                         <li
                           key={i}
-                          className="flex items-start gap-3 text-gray-300 text-sm sm:text-base"
+                          className={`flex items-start gap-3 text-sm sm:text-base ${
+                            isLight ? "text-slate-700" : "text-gray-300"
+                          }`}
                         >
-                          <ArrowRight className="w-5 h-5 mt-0.5 text-gray-400 flex-shrink-0" />
+                          <ArrowRight className={`w-5 h-5 mt-0.5 flex-shrink-0 ${isLight ? "text-slate-500" : "text-gray-400"}`} />
                           <span className="leading-relaxed">{item}</span>
                         </li>
                       ))}
@@ -460,33 +487,41 @@ const About = () => {
       {/* Skills Section */}
       <ScrollAnimation>
         <div className="mt-16 mb-20">
-          <h3 className="text-3xl sm:text-4xl font-bold mb-8 gradient-text flex items-center gap-3">
+          <h3 className={`text-3xl sm:text-4xl font-bold mb-8 flex items-center gap-3 ${isLight ? "text-slate-900" : "gradient-text"}`}>
             <Code2 className="w-7 h-7 sm:w-8 sm:h-8" />
             Technical Skills
           </h3>
-          <p className="text-gray-400 mb-12 max-w-2xl">
+          <p className={`mb-12 max-w-2xl ${isLight ? "text-slate-600" : "text-gray-400"}`}>
             A comprehensive overview of my technical expertise and tools I work with
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {skills.map((skillGroup) => (
               <ScrollAnimation key={skillGroup.category}>
-                <div className="bg-gray-800/50 p-6 rounded-lg backdrop-blur-sm hover:bg-gray-800/70 transition-all border border-white/5 h-full">
+                <div className={`p-6 rounded-lg backdrop-blur-sm transition-all border h-full ${
+                  isLight
+                    ? "bg-white/90 border-slate-200 shadow-sm hover:border-slate-300"
+                    : "bg-gray-800/50 border-white/5 hover:bg-gray-800/70"
+                }`}>
                   <div className="flex items-center space-x-3 mb-6">
-                    <div className="p-2 bg-white/10 rounded-lg">
+                    <div className={`p-2 rounded-lg ${isLight ? "bg-slate-100 text-slate-900 border border-slate-200" : "bg-white/10 text-white"}`}>
                       {skillGroup.icon}
                     </div>
-                    <h4 className="text-lg font-semibold">{skillGroup.category}</h4>
+                    <h4 className={`text-lg font-semibold ${isLight ? "text-slate-900" : "text-white"}`}>{skillGroup.category}</h4>
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     {skillGroup.items.map((skill) => (
                       <div
                         key={skill.name}
-                        className="bg-gray-700/50 px-4 py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-white/10 transition-all group"
+                        className={`px-4 py-3 rounded-lg flex items-center justify-center gap-2 transition-all group border ${
+                          isLight
+                            ? "bg-slate-50 border-slate-200 hover:bg-slate-100"
+                            : "bg-gray-700/50 border-transparent hover:bg-white/10"
+                        }`}
                       >
-                        <div className="text-gray-400 group-hover:text-white transition-colors">
+                        <div className={isLight ? "text-slate-600 group-hover:text-slate-900" : "text-gray-400 group-hover:text-white"}>
                           {skill.icon}
                         </div>
-                        <span className="text-gray-400 group-hover:text-white transition-colors text-sm">
+                        <span className={`text-sm font-medium ${isLight ? "text-slate-800 group-hover:text-slate-900" : "text-gray-400 group-hover:text-white"}`}>
                           {skill.name}
                         </span>
                       </div>
@@ -502,17 +537,25 @@ const About = () => {
       {/* Education Section */}
       <ScrollAnimation>
         <div className="mt-16 mb-20">
-          <h3 className="text-3xl sm:text-4xl font-bold mb-12 gradient-text flex items-center gap-3">
+          <h3 className={`text-3xl sm:text-4xl font-bold mb-12 flex items-center gap-3 ${isLight ? "text-slate-900" : "gradient-text"}`}>
             <GraduationCap className="w-7 h-7 sm:w-8 sm:h-8" />
             Education
           </h3>
           <div className="space-y-12">
             {educationData.map((edu, index) => (
               <ScrollAnimation key={edu.school}>
-                <div className="relative bg-gray-800/50 rounded-xl overflow-hidden backdrop-blur-sm hover:bg-gray-800/70 transition-all border border-white/5">
-                  <div className="absolute top-0 right-0 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-bl-xl flex items-center gap-2 z-10">
-                    <Calendar className="w-4 h-4 text-gray-300" />
-                    <span className="text-gray-300">{edu.duration}</span>
+                <div className={`relative rounded-xl overflow-hidden backdrop-blur-sm transition-all border ${
+                  isLight
+                    ? "bg-white/90 border-slate-200 shadow-sm"
+                    : "bg-gray-800/50 border-white/5 hover:bg-gray-800/70"
+                }`}>
+                  <div className={`absolute top-0 right-0 px-4 py-2 rounded-bl-xl flex items-center gap-2 z-10 border-l border-b ${
+                    isLight
+                      ? "bg-slate-100/90 text-slate-800 border-slate-200"
+                      : "bg-white/10 text-gray-300 border-white/10"
+                  }`}>
+                    <Calendar className="w-4 h-4" />
+                    <span>{edu.duration}</span>
                   </div>
 
                   <div className="grid md:grid-cols-[300px,1fr]">
@@ -524,7 +567,7 @@ const About = () => {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end">
                         <div className="p-6">
-                          <h4 className="text-xl font-bold mb-2">{edu.school}</h4>
+                          <h4 className="text-xl font-bold mb-2 text-white">{edu.school}</h4>
                           <div className="flex items-center gap-2 text-gray-300 mb-1">
                             <MapPin className="w-4 h-4" />
                             <span className="text-sm">{edu.location}</span>
@@ -539,17 +582,21 @@ const About = () => {
 
                     <div className="p-6">
                       <div className="flex items-center gap-2 mb-4">
-                        <BookOpen className="w-5 h-5 text-gray-400" />
-                        <h4 className="text-lg font-semibold">{edu.degree}</h4>
+                        <BookOpen className={`w-5 h-5 ${isLight ? "text-slate-600" : "text-gray-400"}`} />
+                        <h4 className={`text-lg font-semibold ${isLight ? "text-slate-900" : "text-white"}`}>{edu.degree}</h4>
                       </div>
 
-                      <p className="text-sm text-gray-300 leading-relaxed mb-6">
+                      <p className={`text-sm leading-relaxed mb-6 ${isLight ? "text-slate-600" : "text-gray-300"}`}>
                         {edu.description}
                       </p>
 
                       <div className="flex flex-wrap gap-2 mb-6">
                         {(edu.coursework || edu.subjects).map((item) => (
-                          <span key={item} className="px-3 py-1 bg-white/10 rounded-full text-xs text-gray-300">
+                          <span key={item} className={`px-3 py-1 rounded-full text-xs font-medium border ${
+                            isLight
+                              ? "bg-slate-100 text-slate-700 border-slate-200"
+                              : "bg-white/10 text-gray-300 border-white/5"
+                          }`}>
                             {item}
                           </span>
                         ))}
@@ -560,7 +607,11 @@ const About = () => {
                           href={edu.resultUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 px-6 py-2.5 bg-white/10 hover:bg-white/20 rounded-lg transition-all text-sm font-medium"
+                          className={`inline-flex items-center gap-2 px-6 py-2.5 rounded-lg transition-all text-sm font-medium border ${
+                            isLight
+                              ? "bg-slate-100 text-slate-800 hover:bg-slate-200 border-slate-200"
+                              : "bg-white/10 hover:bg-white/20 text-white border-white/10"
+                          }`}
                           whileHover={{ scale: 1.02 }}
                         >
                           View Result
@@ -579,18 +630,22 @@ const About = () => {
       {/* Achievements Grid (Keep from original About) */}
       <ScrollAnimation>
         <div className="mt-16">
-          <h3 className="text-2xl font-semibold mb-8 gradient-text">
+          <h3 className={`text-2xl font-semibold mb-8 ${isLight ? "text-slate-900" : "gradient-text"}`}>
             Key Achievements
           </h3>
           <div className="grid md:grid-cols-3 gap-6">
             {achievements.map((achievement) => (
               <ScrollAnimation key={achievement.title}>
-                <div className="bg-white/5 p-6 rounded-xl backdrop-blur-sm h-full flex flex-col items-center text-center">
-                  <div className="text-white mb-4">{achievement.icon}</div>
-                  <h4 className="text-xl font-semibold mb-2">
+                <div className={`p-6 rounded-xl backdrop-blur-sm h-full flex flex-col items-center text-center border ${
+                  isLight
+                    ? "bg-white/90 border-slate-200 shadow-sm text-slate-900"
+                    : "bg-white/5 border-white/5 text-white"
+                }`}>
+                  <div className={`mb-4 ${isLight ? "text-slate-800" : "text-white"}`}>{achievement.icon}</div>
+                  <h4 className={`text-xl font-semibold mb-2 ${isLight ? "text-slate-900" : "text-white"}`}>
                     {achievement.title}
                   </h4>
-                  <p className="text-gray-400 text-sm">{achievement.description}</p>
+                  <p className={`text-sm ${isLight ? "text-slate-600" : "text-gray-400"}`}>{achievement.description}</p>
                 </div>
               </ScrollAnimation>
             ))}
@@ -601,15 +656,19 @@ const About = () => {
       {/* Interests (Keep from original About) */}
       <ScrollAnimation>
         <div className="mt-16">
-          <h3 className="text-2xl font-semibold mb-8 gradient-text">
+          <h3 className={`text-2xl font-semibold mb-8 ${isLight ? "text-slate-900" : "gradient-text"}`}>
             Areas of Interest
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {interests.map((interest) => (
               <ScrollAnimation key={interest}>
-                <div className="bg-white/5 p-4 rounded-xl backdrop-blur-sm flex items-center gap-3">
-                  <Globe className="w-5 h-5 text-gray-400" />
-                  <span className="text-gray-300 text-sm">{interest}</span>
+                <div className={`p-4 rounded-xl backdrop-blur-sm flex items-center gap-3 border ${
+                  isLight
+                    ? "bg-white/90 border-slate-200 shadow-sm"
+                    : "bg-white/5 border-white/5"
+                }`}>
+                  <Globe className={`w-5 h-5 ${isLight ? "text-slate-600" : "text-gray-400"}`} />
+                  <span className={`text-sm font-medium ${isLight ? "text-slate-800" : "text-gray-300"}`}>{interest}</span>
                 </div>
               </ScrollAnimation>
             ))}

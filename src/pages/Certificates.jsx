@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Award, Calendar, ExternalLink } from "lucide-react";
 import { ScrollAnimation } from "@/components/ScrollAnimation";
+import { useTheme } from "../context/ThemeContext";
 import typescriptPdf from "@/assets/files/certificates_pdf/Learn Jira with real world Example.pdf";
 import awsEcsPdf from "@/assets/files/certificates_pdf/Network Admin _ IT Support.pdf";
 import cybersecurityPdf from "@/assets/files/certificates_pdf/Cisco CCNA Course.pdf";
@@ -46,6 +47,9 @@ const certificates = [
 ];
 
 const Certificates = () => {
+  const { theme } = useTheme();
+  const isLight = theme === "light";
+
   return (
     <div className="min-h-screen pt-28 sm:pt-32 px-4 max-w-6xl mx-auto pb-20">
       <ScrollAnimation>
@@ -55,8 +59,10 @@ const Certificates = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <Award className="w-8 h-8" />
-          <h2 className="text-4xl font-bold gradient-text">Certificates</h2>
+          <Award className={`w-8 h-8 ${isLight ? "text-slate-900" : "text-white"}`} />
+          <h2 className={`text-4xl font-bold ${isLight ? "text-slate-900" : "gradient-text"}`}>
+            Certificates
+          </h2>
         </motion.div>
       </ScrollAnimation>
 
@@ -67,23 +73,33 @@ const Certificates = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="bg-gray-800/50 p-6 rounded-lg backdrop-blur-sm hover:bg-gray-800/70 transition-all group border border-white/5"
+              className={`p-6 rounded-xl backdrop-blur-sm transition-all group border ${
+                isLight
+                  ? "bg-white/90 border-slate-200 shadow-sm hover:border-slate-300"
+                  : "bg-gray-800/50 border-white/5 hover:bg-gray-800/70"
+              }`}
             >
-              <h3 className="text-xl font-semibold mb-2">{cert.title}</h3>
-              <div className="text-gray-400 space-y-2">
+              <h3 className={`text-xl font-semibold mb-2 ${isLight ? "text-slate-900" : "text-white"}`}>
+                {cert.title}
+              </h3>
+              <div className={`space-y-2 ${isLight ? "text-slate-600" : "text-gray-400"}`}>
                 <div className="flex items-center justify-between">
-                  <span className="text-lg">{cert.issuer}</span>
-                  <div className="flex items-center gap-2">
+                  <span className={`text-lg font-medium ${isLight ? "text-slate-700" : "text-gray-300"}`}>{cert.issuer}</span>
+                  <div className="flex items-center gap-2 text-sm">
                     <Calendar className="w-4 h-4" />
                     <span>{cert.date}</span>
                   </div>
                 </div>
-                <p className="text-gray-300 line-clamp-2">{cert.description}</p>
+                <p className={`line-clamp-2 text-sm ${isLight ? "text-slate-600" : "text-gray-300"}`}>{cert.description}</p>
                 <div className="flex flex-wrap gap-2 mt-4">
                   {cert.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-2 py-1 text-sm bg-white/10 rounded-full"
+                      className={`px-2.5 py-1 text-xs rounded-full font-medium ${
+                        isLight
+                          ? "bg-slate-100 text-slate-700 border border-slate-200"
+                          : "bg-white/10 text-gray-300"
+                      }`}
                     >
                       {skill}
                     </span>
@@ -93,7 +109,9 @@ const Certificates = () => {
                   href={cert.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 mt-4 group-hover:translate-x-2 transition-transform"
+                  className={`inline-flex items-center gap-2 mt-4 group-hover:translate-x-2 transition-transform font-medium ${
+                    isLight ? "text-blue-600 hover:text-blue-700" : "text-blue-400 hover:text-blue-300"
+                  }`}
                   whileHover={{ scale: 1.05 }}
                 >
                   View Certificate

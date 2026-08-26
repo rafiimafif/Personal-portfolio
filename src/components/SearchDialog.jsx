@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Search, Command, ArrowRight } from 'lucide-react'
+import { useTheme } from '../context/ThemeContext'
 
 const searchData = [
   {
@@ -59,6 +60,8 @@ const SearchDialog = () => {
   const [results, setResults] = useState(searchData)
   const [selectedIndex, setSelectedIndex] = useState(0)
   const navigate = useNavigate()
+  const { theme } = useTheme()
+  const isLight = theme === 'light'
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -112,11 +115,17 @@ const SearchDialog = () => {
     return (
       <button
         onClick={() => setIsOpen(true)}
-        className="flex items-center space-x-2 px-3 py-1.5 text-gray-400 hover:text-white transition-colors bg-white/15 rounded-lg hover:bg-white/10"
+        className={`flex items-center space-x-2 px-3 py-1.5 transition-colors rounded-lg border ${
+          isLight
+            ? "bg-slate-200/80 text-slate-700 hover:bg-slate-300 hover:text-slate-900 border-slate-300"
+            : "bg-white/15 text-gray-400 hover:bg-white/10 hover:text-white border-white/10"
+        }`}
       >
         <Search className="w-4 h-4" />
         <span className="text-sm hidden sm:block">Search ...</span>
-        <span className="hidden md:flex items-center space-x-1 px-1.5 py-0.5 text-xs bg-white/10 rounded">
+        <span className={`hidden md:flex items-center space-x-1 px-1.5 py-0.5 text-xs rounded ${
+          isLight ? "bg-slate-300 text-slate-700" : "bg-white/10 text-gray-400"
+        }`}>
           <Command className="w-3 h-3" />
           <span>K</span>
         </span>
@@ -132,32 +141,48 @@ const SearchDialog = () => {
           onClick={() => setIsOpen(false)}
         />
         <div className="inline-block w-full max-w-2xl mt-24 text-left align-middle transition-all transform">
-          <div className="relative bg-gray-900 rounded-xl shadow-2xl">
-            <div className="flex items-center px-4 border-b border-white/10">
-              <Search className="w-5 h-5 text-gray-400" />
+          <div className={`relative rounded-xl shadow-2xl border ${
+            isLight
+              ? "bg-white text-slate-900 border-slate-200"
+              : "bg-gray-900 text-white border-white/10"
+          }`}>
+            <div className={`flex items-center px-4 border-b ${
+              isLight ? "border-slate-200" : "border-white/10"
+            }`}>
+              <Search className={`w-5 h-5 ${isLight ? "text-slate-400" : "text-gray-400"}`} />
               <input
                 type="text"
                 placeholder="Search pages..."
-                className="w-full px-4 py-4 text-white bg-transparent border-0 focus:outline-none focus:ring-0"
+                className={`w-full px-4 py-4 bg-transparent border-0 focus:outline-none focus:ring-0 ${
+                  isLight ? "text-slate-900 placeholder:text-slate-400" : "text-white placeholder:text-gray-400"
+                }`}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 autoFocus
               />
-              <div className="flex items-center space-x-1 px-1.5 py-0.5 text-xs text-gray-400 bg-white/10 rounded">
+              <div className={`flex items-center space-x-1 px-1.5 py-0.5 text-xs rounded ${
+                isLight ? "bg-slate-100 text-slate-500 border border-slate-200" : "bg-white/10 text-gray-400"
+              }`}>
                 <span>Esc</span>
               </div>
             </div>
 
             <div className="max-h-[60vh] overflow-y-auto">
               {results.length === 0 ? (
-                <div className="p-4 text-sm text-gray-400">No results found.</div>
+                <div className={`p-4 text-sm ${isLight ? "text-slate-500" : "text-gray-400"}`}>No results found.</div>
               ) : (
                 <div className="py-2">
                   {results.map((result, index) => (
                     <button
                       key={result.path}
-                      className={`w-full px-4 py-3 text-left hover:bg-white/5 flex items-center justify-between ${
-                        index === selectedIndex ? 'bg-white/10' : ''
+                      className={`w-full px-4 py-3 text-left flex items-center justify-between transition-colors ${
+                        index === selectedIndex
+                          ? isLight
+                            ? 'bg-slate-100'
+                            : 'bg-white/10'
+                          : isLight
+                          ? 'hover:bg-slate-50'
+                          : 'hover:bg-white/5'
                       }`}
                       onClick={() => {
                         navigate(result.path)
@@ -165,11 +190,11 @@ const SearchDialog = () => {
                       }}
                     >
                       <div>
-                        <div className="text-white font-medium">{result.title}</div>
-                        <div className="text-sm text-gray-400">{result.description}</div>
+                        <div className={`font-medium ${isLight ? "text-slate-900" : "text-white"}`}>{result.title}</div>
+                        <div className={`text-sm ${isLight ? "text-slate-500" : "text-gray-400"}`}>{result.description}</div>
                       </div>
                       <ArrowRight
-                        className={`w-4 h-4 text-gray-400 ${
+                        className={`w-4 h-4 ${isLight ? "text-slate-500" : "text-gray-400"} ${
                           index === selectedIndex ? 'opacity-100' : 'opacity-0'
                         }`}
                       />
