@@ -351,6 +351,7 @@ const About = () => {
           <div className="flex justify-start space-x-4">
             <a
               href={cvPdf}
+              download="DevSecOps_RafiiMuhammadAfif_CV.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 bg-white text-black rounded-full font-medium hover:bg-gray-100 transition-colors"

@@ -13,7 +13,7 @@ import {
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { projects } from "@/data/projects";
-import cvPdf from "@/assets/files/cv_pdf/Rafii Muhammad Afif - DevOps Engineer - CV.pdf";
+import cvPdf from "@/assets/files/cv_pdf/DevSecOps_RafiiMuhammadAfif_CV.pdf";
 
 const Home = () => {
   const [copied, setCopied] = useState(false);
@@ -98,6 +98,7 @@ const Home = () => {
           <div className="flex justify-center space-x-3 sm:space-x-4">
             <a
               href={cvPdf}
+              download="DevSecOps_RafiiMuhammadAfif_CV.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-5 sm:px-6 py-2.5 sm:py-3 bg-white text-black rounded-full text-sm sm:text-base font-semibold hover:bg-gray-100 transition-all hover:scale-105 flex items-center gap-2 shadow-lg"
