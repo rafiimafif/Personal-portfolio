@@ -43,6 +43,8 @@ import {
   AWSLogo,
   RenderLogo,
   PostmanLogo,
+  BashLogo,
+  WindowsLogo,
   LinuxLogo,
 } from "@/components/TechLogos";
 import profileImg from "@/assets/profile/profile.jpg";
