@@ -14,6 +14,7 @@ import {
   Box,
   Check
 } from "lucide-react";
+import { useTheme } from "../context/ThemeContext";
 
 const stages = [
   {
@@ -108,6 +109,8 @@ export const SSDLCFlowAnimation = () => {
   const [isPlaying, setIsPlaying] = useState(true);
   const [speedMultiplier, setSpeedMultiplier] = useState(1);
   const [selectedStage, setSelectedStage] = useState(0);
+  const { theme } = useTheme();
+  const isLight = theme === "light";
 
   // Auto pipeline stage loop
   useEffect(() => {
@@ -138,37 +141,61 @@ export const SSDLCFlowAnimation = () => {
   const currentStageObj = stages[selectedStage];
 
   return (
-    <div className="w-full bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 border border-slate-800 rounded-3xl p-5 sm:p-8 backdrop-blur-xl shadow-2xl overflow-hidden relative my-8">
+    <div
+      className={`w-full border rounded-3xl p-5 sm:p-8 backdrop-blur-xl shadow-2xl overflow-hidden relative my-8 transition-colors duration-300 ${
+        isLight
+          ? "bg-gradient-to-br from-slate-50 via-white to-slate-100 border-slate-200 text-slate-900 shadow-slate-200/50"
+          : "bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 border-slate-800 text-white"
+      }`}
+    >
       {/* Background ambient glow */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl pointer-events-none" />
 
       {/* Header Bar */}
-      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-8 pb-6 border-b border-slate-800">
+      <div
+        className={`flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-8 pb-6 border-b ${
+          isLight ? "border-slate-200" : "border-slate-800"
+        }`}
+      >
         <div>
           <div className="flex items-center gap-2.5 mb-1.5">
             <span className="relative flex h-3 w-3">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
             </span>
-            <span className="text-xs uppercase tracking-[0.25em] font-semibold text-emerald-400">
+            <span className="text-xs uppercase tracking-[0.25em] font-semibold text-emerald-500 dark:text-emerald-400">
               Live Pipeline Orchestration
             </span>
           </div>
-          <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight flex items-center gap-2">
+          <h3
+            className={`text-2xl sm:text-3xl font-extrabold tracking-tight flex items-center gap-2 ${
+              isLight ? "text-slate-900" : "text-white"
+            }`}
+          >
             Enterprise SSDLC DevSecOps Flow
-            <Sparkles className="w-5 h-5 text-amber-400 animate-pulse" />
+            <Sparkles className="w-5 h-5 text-amber-500 animate-pulse" />
           </h3>
-          <p className="text-xs sm:text-sm text-slate-400 mt-1">
+          <p
+            className={`text-xs sm:text-sm mt-1 ${
+              isLight ? "text-slate-600" : "text-slate-400"
+            }`}
+          >
             Generic end-to-end zero-trust CI/CD pipeline reference architecture
           </p>
         </div>
 
         {/* Playback Controls */}
-        <div className="flex items-center gap-2.5 self-start lg:self-auto bg-slate-900/80 p-2 rounded-2xl border border-slate-800 backdrop-blur-md">
+        <div
+          className={`flex items-center gap-2.5 self-start lg:self-auto p-2 rounded-2xl border backdrop-blur-md ${
+            isLight
+              ? "bg-slate-100/90 border-slate-200"
+              : "bg-slate-900/80 border-slate-800"
+          }`}
+        >
           <button
             onClick={() => setIsPlaying(!isPlaying)}
-            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-semibold hover:bg-cyan-500/20 transition-all"
+            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-600 dark:text-cyan-400 text-xs font-semibold hover:bg-cyan-500/20 transition-all"
           >
             {isPlaying ? (
               <>
@@ -183,7 +210,11 @@ export const SSDLCFlowAnimation = () => {
 
           <button
             onClick={handleReset}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-semibold hover:bg-slate-700 transition-all"
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition-all ${
+              isLight
+                ? "bg-slate-200 text-slate-700 hover:bg-slate-300"
+                : "bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white"
+            }`}
             title="Re-run pipeline from Stage 1"
           >
             <RotateCcw className="w-3.5 h-3.5" /> Run Pipeline
@@ -191,7 +222,11 @@ export const SSDLCFlowAnimation = () => {
 
           <button
             onClick={() => setSpeedMultiplier(speedMultiplier === 1 ? 2 : 1)}
-            className="px-2.5 py-1.5 rounded-xl bg-slate-800 text-slate-400 hover:text-white text-xs font-mono font-semibold transition-all"
+            className={`px-2.5 py-1.5 rounded-xl text-xs font-mono font-semibold transition-all ${
+              isLight
+                ? "bg-slate-200 text-slate-700 hover:bg-slate-300"
+                : "bg-slate-800 text-slate-400 hover:text-white"
+            }`}
           >
             {speedMultiplier}x
           </button>
@@ -203,7 +238,8 @@ export const SSDLCFlowAnimation = () => {
         {stages.map((stage, idx) => {
           const isActive = activeStageIndex === idx;
           const isSelected = selectedStage === idx;
-          const isPassed = activeStageIndex > idx || (activeStageIndex === 3 && idx === 3);
+          const isPassed =
+            activeStageIndex > idx || (activeStageIndex === 3 && idx === 3);
 
           return (
             <motion.div
@@ -213,7 +249,11 @@ export const SSDLCFlowAnimation = () => {
               whileTap={{ scale: 0.98 }}
               className={`cursor-pointer relative rounded-2xl p-4 transition-all duration-300 border flex flex-col justify-between min-h-[180px] ${
                 isSelected
-                  ? `bg-slate-900/90 ${stage.borderColor} shadow-lg shadow-${stage.glowColor}`
+                  ? isLight
+                    ? `bg-white ${stage.borderColor} shadow-lg`
+                    : `bg-slate-900/90 ${stage.borderColor}`
+                  : isLight
+                  ? "bg-slate-100/80 border-slate-200 hover:border-slate-300"
                   : "bg-slate-950/60 border-slate-800/80 hover:border-slate-700"
               }`}
               style={{
@@ -226,7 +266,11 @@ export const SSDLCFlowAnimation = () => {
                   <div className="relative flex items-center justify-center w-4">
                     <ArrowRight
                       className={`w-4 h-4 ${
-                        isPassed ? "text-emerald-400" : "text-slate-700"
+                        isPassed
+                          ? "text-emerald-500"
+                          : isLight
+                          ? "text-slate-300"
+                          : "text-slate-700"
                       }`}
                     />
                   </div>
@@ -243,15 +287,21 @@ export const SSDLCFlowAnimation = () => {
 
                 <div className="flex items-center gap-1.5">
                   {isPassed ? (
-                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
                       <Check className="w-3 h-3" /> PASSED
                     </span>
                   ) : isActive ? (
-                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 animate-pulse">
+                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-cyan-500/20 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30 animate-pulse">
                       <Activity className="w-3 h-3 animate-spin" /> RUNNING
                     </span>
                   ) : (
-                    <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-slate-800 text-slate-400 border border-slate-700">
+                    <span
+                      className={`px-2 py-0.5 rounded-full text-[10px] font-bold border ${
+                        isLight
+                          ? "bg-slate-200 text-slate-600 border-slate-300"
+                          : "bg-slate-800 text-slate-400 border-slate-700"
+                      }`}
+                    >
                       PENDING
                     </span>
                   )}
@@ -260,16 +310,28 @@ export const SSDLCFlowAnimation = () => {
 
               {/* Stage Name & Tools */}
               <div>
-                <h4 className="text-sm font-bold text-white mb-1 flex items-center gap-1.5">
+                <h4
+                  className={`text-sm font-bold mb-1 flex items-center gap-1.5 ${
+                    isLight ? "text-slate-900" : "text-white"
+                  }`}
+                >
                   {stage.shortName}
                 </h4>
-                <p className="text-[11px] text-slate-400 leading-tight mb-3">
+                <p
+                  className={`text-[11px] leading-tight mb-3 ${
+                    isLight ? "text-slate-600" : "text-slate-400"
+                  }`}
+                >
                   {stage.tools.join(" • ")}
                 </p>
               </div>
 
               {/* Bottom Active Progress Bar */}
-              <div className="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden mt-2">
+              <div
+                className={`w-full h-1.5 rounded-full overflow-hidden mt-2 ${
+                  isLight ? "bg-slate-200" : "bg-slate-800"
+                }`}
+              >
                 <motion.div
                   className={`h-full bg-gradient-to-r ${stage.color}`}
                   initial={{ width: "0%" }}
@@ -292,39 +354,69 @@ export const SSDLCFlowAnimation = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.3 }}
-          className="grid lg:grid-cols-12 gap-6 bg-slate-950/80 rounded-2xl p-5 border border-slate-800"
+          className={`grid lg:grid-cols-12 gap-6 rounded-2xl p-5 border ${
+            isLight
+              ? "bg-white/90 border-slate-200 shadow-sm"
+              : "bg-slate-950/80 border-slate-800"
+          }`}
         >
           {/* Left: Stage Overview & Security Checks */}
           <div className="lg:col-span-5 flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-2 mb-2">
-                <span className="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold tracking-wider bg-slate-800 text-cyan-400 border border-slate-700">
+                <span
+                  className={`px-2.5 py-0.5 rounded-full text-[10px] font-extrabold tracking-wider border ${
+                    isLight
+                      ? "bg-slate-100 text-cyan-600 border-slate-200"
+                      : "bg-slate-800 text-cyan-400 border-slate-700"
+                  }`}
+                >
                   STAGE {currentStageObj.id} OF 4
                 </span>
-                <span className="text-xs text-slate-400 font-mono">
+                <span
+                  className={`text-xs font-mono ${
+                    isLight ? "text-slate-600" : "text-slate-400"
+                  }`}
+                >
                   {currentStageObj.metrics}
                 </span>
               </div>
 
-              <h4 className="text-xl font-bold text-white mb-2 flex items-center gap-2">
+              <h4
+                className={`text-xl font-bold mb-2 flex items-center gap-2 ${
+                  isLight ? "text-slate-900" : "text-white"
+                }`}
+              >
                 {currentStageObj.name}
               </h4>
 
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+              <p
+                className={`text-xs sm:text-sm leading-relaxed mb-4 ${
+                  isLight ? "text-slate-600" : "text-slate-300"
+                }`}
+              >
                 {currentStageObj.description}
               </p>
 
               <div className="space-y-2">
-                <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
+                <p
+                  className={`text-xs font-semibold uppercase tracking-wider ${
+                    isLight ? "text-slate-500" : "text-slate-400"
+                  }`}
+                >
                   Automated Security Controls Active:
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {currentStageObj.tools.map((tool) => (
                     <span
                       key={tool}
-                      className="px-2.5 py-1 text-xs font-medium bg-slate-900 text-slate-200 rounded-lg border border-slate-800 flex items-center gap-1.5"
+                      className={`px-2.5 py-1 text-xs font-medium rounded-lg border flex items-center gap-1.5 ${
+                        isLight
+                          ? "bg-slate-100 text-slate-800 border-slate-200"
+                          : "bg-slate-900 text-slate-200 border-slate-800"
+                      }`}
                     >
-                      <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+                      <ShieldCheck className="w-3.5 h-3.5 text-emerald-500" />
                       {tool}
                     </span>
                   ))}
@@ -332,14 +424,32 @@ export const SSDLCFlowAnimation = () => {
               </div>
             </div>
 
-            <div className="pt-4 mt-4 border-t border-slate-900 flex items-center justify-between text-xs text-slate-400">
-              <span>Status: <strong className="text-emerald-400">100% SSDLC Compliant</strong></span>
-              <span>Target: <strong className="text-white">Cloud Container Platform &amp; On-Prem</strong></span>
+            <div
+              className={`pt-4 mt-4 border-t flex items-center justify-between text-xs ${
+                isLight
+                  ? "border-slate-200 text-slate-600"
+                  : "border-slate-900 text-slate-400"
+              }`}
+            >
+              <span>
+                Status:{" "}
+                <strong className="text-emerald-500 font-semibold">
+                  100% SSDLC Compliant
+                </strong>
+              </span>
+              <span>
+                Target:{" "}
+                <strong
+                  className={isLight ? "text-slate-900" : "text-white"}
+                >
+                  Cloud Container Platform &amp; On-Prem
+                </strong>
+              </span>
             </div>
           </div>
 
           {/* Right: Live Groovy Terminal Log Ticker */}
-          <div className="lg:col-span-7 bg-slate-900/90 rounded-xl p-4 border border-slate-800 font-mono text-xs overflow-hidden flex flex-col">
+          <div className="lg:col-span-7 bg-slate-950 rounded-xl p-4 border border-slate-800 font-mono text-xs overflow-hidden flex flex-col shadow-inner">
             <div className="flex items-center justify-between pb-2 mb-3 border-b border-slate-800 text-slate-400 text-[11px]">
               <div className="flex items-center gap-2">
                 <Terminal className="w-4 h-4 text-cyan-400" />
@@ -356,9 +466,18 @@ export const SSDLCFlowAnimation = () => {
                 <div
                   key={i}
                   className={`leading-relaxed ${
-                    log.includes("[SUCCESS]") || log.includes("[QUALITY GATE]") || log.includes("[SBOM]") || log.includes("[COSIGN]") || log.includes("[RELEASE]")
+                    log.includes("[SUCCESS]") ||
+                    log.includes("[QUALITY GATE]") ||
+                    log.includes("[SBOM]") ||
+                    log.includes("[COSIGN]") ||
+                    log.includes("[RELEASE]")
                       ? "text-emerald-400 font-semibold"
-                      : log.includes("git") || log.includes("checkov") || log.includes("mvn") || log.includes("snyk") || log.includes("trivy") || log.includes("oc")
+                      : log.includes("git") ||
+                        log.includes("checkov") ||
+                        log.includes("mvn") ||
+                        log.includes("snyk") ||
+                        log.includes("trivy") ||
+                        log.includes("oc")
                       ? "text-cyan-300"
                       : "text-slate-400"
                   }`}
