@@ -250,10 +250,10 @@ export const SSDLCFlowAnimation = () => {
               className={`cursor-pointer relative rounded-2xl p-4 transition-all duration-300 border flex flex-col justify-between min-h-[180px] ${
                 isSelected
                   ? isLight
-                    ? `bg-white ${stage.borderColor} shadow-lg`
+                    ? `bg-white ${stage.borderColor} shadow-lg ring-2 ring-cyan-500/20`
                     : `bg-slate-900/90 ${stage.borderColor}`
                   : isLight
-                  ? "bg-slate-100/80 border-slate-200 hover:border-slate-300"
+                  ? "bg-slate-100/90 border-slate-200 hover:border-slate-300"
                   : "bg-slate-950/60 border-slate-800/80 hover:border-slate-700"
               }`}
               style={{
@@ -287,11 +287,19 @@ export const SSDLCFlowAnimation = () => {
 
                 <div className="flex items-center gap-1.5">
                   {isPassed ? (
-                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
+                    <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold border ${
+                      isLight
+                        ? "bg-emerald-100 text-emerald-700 border-emerald-300"
+                        : "bg-emerald-500/20 text-emerald-400 border-emerald-500/30"
+                    }`}>
                       <Check className="w-3 h-3" /> PASSED
                     </span>
                   ) : isActive ? (
-                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-cyan-500/20 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30 animate-pulse">
+                    <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold border animate-pulse ${
+                      isLight
+                        ? "bg-cyan-100 text-cyan-700 border-cyan-300"
+                        : "bg-cyan-500/20 text-cyan-400 border-cyan-500/30"
+                    }`}>
                       <Activity className="w-3 h-3 animate-spin" /> RUNNING
                     </span>
                   ) : (
