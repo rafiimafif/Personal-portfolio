@@ -6,8 +6,13 @@
   color-scheme: dark;
 }
 
+html.light {
+  color-scheme: light;
+}
+
 * {
   font-family: 'Inter', sans-serif;
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
 }
 
 body {
@@ -15,12 +20,24 @@ body {
   overflow-x: hidden;
 }
 
+html.light body {
+  @apply bg-slate-50 text-slate-900;
+}
+
 .gradient-text {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500;
 }
 
+html.light .gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-600;
+}
+
 .nav-link {
   @apply relative px-3 py-2 text-sm text-gray-400 hover:text-white transition-colors rounded-lg hover:bg-white/[0.05];
+}
+
+html.light .nav-link {
+  @apply text-slate-600 hover:text-slate-900 hover:bg-slate-200/60;
 }
 
 .canvas-container {
@@ -30,12 +47,22 @@ body {
       rgba(0, 0, 0, 0.8) 45%);
 }
 
+html.light .canvas-container {
+  opacity: 0.15;
+}
+
 .gradient-grid {
   background-image:
     linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
   background-size: 60px 60px;
   mask-image: radial-gradient(circle at 50% 0%, white 20%, transparent 70%);
+}
+
+html.light .gradient-grid {
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
 }
 
 .spotlight {
@@ -54,10 +81,17 @@ body {
       transparent 100%);
 }
 
+html.light .spotlight {
+  opacity: 0.2;
+}
+
 .cursor-copy {
   cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2'></path><rect x='8' y='2' width='8' height='4' rx='1' ry='1'></rect></svg>") 12 12, pointer;
 }
 
+html.light .cursor-copy {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2'></path><rect x='8' y='2' width='8' height='4' rx='1' ry='1'></rect></svg>") 12 12, pointer;
+}
 
 .light-rays-container {
 	position: absolute;
@@ -67,4 +101,63 @@ body {
 	pointer-events: none;
 	z-index: -1;
 	overflow: hidden;
+}
+
+html.light .light-rays-container {
+  opacity: 0.35;
+}
+
+/* Light mode utility component overrides */
+html.light .bg-black\/50 {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+}
+
+html.light .bg-gray-800\/50,
+html.light .bg-gray-800\/70,
+html.light .bg-white\/5,
+html.light .bg-white\/10 {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+html.light .bg-gray-700\/50 {
+  background-color: rgba(241, 245, 249, 0.9) !important;
+}
+
+html.light .text-gray-300,
+html.light .text-gray-400 {
+  color: #475569 !important;
+}
+
+html.light .text-gray-500 {
+  color: #64748b !important;
+}
+
+html.light .text-white {
+  color: #0f172a !important;
+}
+
+html.light .border-white\/5,
+html.light .border-white\/10,
+html.light .border-white\/15,
+html.light .border-white\/20 {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+html.light .bg-white {
+  background-color: #0f172a !important;
+  color: #ffffff !important;
+}
+
+html.light .text-black {
+  color: #ffffff !important;
+}
+
+html.light .hover\:bg-gray-100:hover {
+  background-color: #1e293b !important;
+}
+
+html.light footer {
+  border-top-color: rgba(0, 0, 0, 0.1) !important;
 }

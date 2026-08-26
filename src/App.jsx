@@ -4,6 +4,7 @@ import Background3D from "./components/Background3D";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Loading from "./components/Loading";
+import { ThemeProvider } from "./context/ThemeContext";
 
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
@@ -83,26 +84,28 @@ function SEOUpdater() {
 
 function App() {
   return (
-    <BrowserRouter>
-      <SEOUpdater />
-      <div className="min-h-screen flex flex-col">
-        <Background3D />
-        <Navbar />
-        <main className="flex-grow">
-          <Suspense fallback={<Loading />}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/projects" element={<Projects />} />
-              <Route path="/certificates" element={<Certificates />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Suspense>
-        </main>
-        <Footer />
-      </div>
-    </BrowserRouter>
+    <ThemeProvider>
+      <BrowserRouter>
+        <SEOUpdater />
+        <div className="min-h-screen flex flex-col">
+          <Background3D />
+          <Navbar />
+          <main className="flex-grow">
+            <Suspense fallback={<Loading />}>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/projects" element={<Projects />} />
+                <Route path="/certificates" element={<Certificates />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Suspense>
+          </main>
+          <Footer />
+        </div>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 

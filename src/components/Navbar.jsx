@@ -1,13 +1,15 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Code2, Menu, X } from 'lucide-react'
+import { Code2, Menu, X, Sun, Moon } from 'lucide-react'
 import SearchDialog from './SearchDialog'
+import { useTheme } from '../context/ThemeContext'
 import logo from '../assets/logo.png'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const location = useLocation()
+  const { theme, toggleTheme } = useTheme()
 
   const navLinks = [
     { path: '/', label: 'Home' },
@@ -47,11 +49,41 @@ const Navbar = () => {
                   {link.label}
                 </Link>
               ))}
+
+              {/* Desktop Theme Toggle Button */}
+              <motion.button
+                onClick={toggleTheme}
+                whileTap={{ scale: 0.9 }}
+                className="p-2 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white transition-all backdrop-blur-md"
+                aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+                title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+              >
+                {theme === 'dark' ? (
+                  <Sun className="w-5 h-5 text-amber-400" />
+                ) : (
+                  <Moon className="w-5 h-5 text-indigo-400" />
+                )}
+              </motion.button>
             </div>
 
             {/* Mobile header right section */}
             <div className="flex md:hidden items-center space-x-2">
               <SearchDialog />
+
+              {/* Mobile Theme Toggle Button */}
+              <motion.button
+                onClick={toggleTheme}
+                whileTap={{ scale: 0.9 }}
+                className="p-2 rounded-full border border-white/10 bg-white/5 text-gray-300 transition-all"
+                aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+              >
+                {theme === 'dark' ? (
+                  <Sun className="w-5 h-5 text-amber-400" />
+                ) : (
+                  <Moon className="w-5 h-5 text-indigo-400" />
+                )}
+              </motion.button>
+
               <button
                 className="p-2 text-gray-400 hover:text-white transition-colors"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
