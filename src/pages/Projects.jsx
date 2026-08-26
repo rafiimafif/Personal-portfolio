@@ -1,6 +1,7 @@
 import { Github, ExternalLink } from "lucide-react";
 import { ScrollAnimation } from "@/components/ScrollAnimation";
 import { projects } from "@/data/projects";
+import { SSDLCFlowAnimation } from "@/components/SSDLCFlowAnimation";
 
 const axaHighlights = [
   {
@@ -80,9 +81,12 @@ const Projects = () => {
               What this covers
             </p>
             <p className="text-gray-400 leading-relaxed">
-              These are the platform and automation outcomes I help deliver at AXA Insurance Indonesia. I keep the code and configuration private here, so the section focuses on the systems and delivery patterns rather than internal source links.
+              These are the platform, security, and automation outcomes I help deliver at AXA Insurance Indonesia. I keep the private source repository secure, while presenting the live pipeline flow architecture and key delivery pillars below.
             </p>
           </div>
+
+          {/* Interactive Live SSDLC Pipeline Animation */}
+          <SSDLCFlowAnimation />
 
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
             {axaHighlights.map((item) => (
