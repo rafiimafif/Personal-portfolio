@@ -1,8 +1,6 @@
 import { useRef, useEffect, useState } from "react";
 import { Renderer, Program, Triangle, Mesh } from "ogl";
-// import "./index.css";
-
-const DEFAULT_COLOR = "#ffffff";
+import { useTheme } from "../context/ThemeContext";
 
 const hexToRgb = (hex) => {
   const m = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -39,7 +37,7 @@ const getAnchorAndDir = (origin, w, h) => {
 
 const Background3D = ({
   raysOrigin = "top-center",
-  raysColor = DEFAULT_COLOR,
+  raysColor: customRaysColor,
   raysSpeed = 1,
   lightSpread = 1,
   rayLength = 2,
@@ -52,6 +50,9 @@ const Background3D = ({
   distortion = 0.0,
   className = "",
 }) => {
+  const { theme } = useTheme();
+  const isLight = theme === "light";
+  const raysColor = customRaysColor || (isLight ? "#334155" : "#ffffff");
   const containerRef = useRef(null);
   const uniformsRef = useRef(null);
   const rendererRef = useRef(null);
