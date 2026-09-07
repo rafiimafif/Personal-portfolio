@@ -1,10 +1,6 @@
-import project5 from "@/assets/projects_img/project-5.png";
-import project6 from "@/assets/projects_img/project-6.png";
 import project7 from "@/assets/projects_img/project-7-sync.png";
 import project8 from "@/assets/projects_img/project-8-erp.png";
 import project9 from "@/assets/projects_img/project-9-ai.png";
-import project10 from "@/assets/projects_img/project-10-scrapelab.png";
-import project11 from "@/assets/projects_img/project-11-traffic.png";
 import project12 from "@/assets/projects_img/project-12-cyberops.png";
 
 export const projects = [
@@ -15,22 +11,6 @@ export const projects = [
     image: project12,
     github: "https://github.com/rafiimafif/aio-soc-platform",
     tags: ["React 18", "Express.js", "PostgreSQL", "TailwindCSS", "Recharts", "WebCrypto", "MITRE ATT&CK", "STIX Feed", "VirusTotal API", "Docker", "Kanban Board", "SOC Platform"],
-  },
-  {
-    title: "AI Smart Traffic System — Computer Vision & Adaptive Control",
-    description:
-      "A production-grade, real-time traffic optimization platform powered by custom YOLOv8 computer vision. Features automated emergency vehicle prioritization using HSV color filtration, dynamically adjusting signal queues, multi-intersection 'green wave' coordination, and a premium dark-themed live Socket.IO monitoring dashboard.",
-    image: project11,
-    github: "https://github.com/rafiimafif/automateTraffic",
-    tags: ["Python", "YOLOv8", "OpenCV", "Flask", "Socket.IO", "MQTT", "Docker Compose", "PyTest", "Adaptive Control", "Computer Vision"],
-  },
-  {
-    title: "ScrapeLab — Advanced Data Engineering & Monitoring",
-    description:
-      "A Python-powered end-to-end data engineering platform featuring an automated Data Watchdog for drift detection and anomaly alerts. Orchestrated with Docker, it integrates a dual-engine scraper, a robust Pandas-based cleaning pipeline, and a premium Dash dashboard. Engineered for reliability with automated scheduling and production-grade code quality monitored by SonarQube.",
-    image: project10,
-    github: "https://github.com/rafiimafif/scrapelab",
-    tags: ["Python", "Dash", "Docker", "Pandas", "Selenium", "BeautifulSoup", "APScheduler", "SonarQube", "Data Engineering", "Automation"],
   },
   {
     title: "Production AI System",
@@ -55,21 +35,5 @@ export const projects = [
     image: project7,
     github: "https://github.com/rafiimafif/automatecrm-cicd-pipeline",
     tags: ["Laravel", "Vue.js", "Google Sheets", "Apps Script", "Docker", "Jenkins", "SonarCloud", "Terraform", "AWS", "Redis"],
-  },
-  {
-    title: "ASP.NET Core MVC Web Application with CI/CD",
-    description:
-      "A comprehensive DevOps infrastructure showcase transforming a .NET application using multi-stage Docker builds, Terraform for AWS, and GitHub Actions CI/CD with SonarCloud & Trivy.",
-    image: project6,
-    github: "https://github.com/rafiimafif/aspnet-core-mvc",
-    tags: [".NET Core", "Docker", "Nginx", "GitHub Actions", "GHCR", "SonarCloud", "Trivy", "Terraform"],
-  },
-  {
-    title: "Android CI/CD Pipeline",
-    description:
-      "A zero-cost automated CI/CD pipeline for Android apps using GitHub Actions, SonarCloud, and Firebase App Distribution.",
-    image: project5,
-    github: "https://github.com/rafiimafif/cicd-pipeline-android-apps-with-github-actions",
-    tags: ["Android", "CI/CD", "GitHub Actions", "Firebase", "SonarCloud", "Automation"],
   },
 ];
