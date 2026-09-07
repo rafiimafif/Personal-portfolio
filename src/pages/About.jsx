@@ -60,7 +60,7 @@ const About = () => {
   const achievements = [
     {
       icon: <Briefcase className="w-6 h-6" />,
-      title: "4+ Years",
+      title: "5+ Years",
       description: "DevOps, DevSecOps & IT Experience",
     },
     {
@@ -319,7 +319,7 @@ const About = () => {
         <ScrollAnimation className="space-y-6">
           <div className="space-y-4">
             <p className={`leading-relaxed ${isLight ? "text-slate-600" : "text-gray-300"}`}>
-              Hi! I'm Rafii Muhammad Afif, a DevSecOps Engineer at AXA Insurance Indonesia with 4+ years of hands-on experience across DevOps, platform engineering, DevSecOps, and enterprise IT operations. Passionate about automating software delivery while embedding security, reliability, and developer productivity into every stage of the lifecycle.
+              Hi! I'm Rafii Muhammad Afif, a DevSecOps Engineer at AXA Insurance Indonesia with 5+ years of hands-on experience across DevOps, platform engineering, DevSecOps, and enterprise IT operations. Passionate about automating software delivery while embedding security, reliability, and developer productivity into every stage of the lifecycle.
             </p>
             <p className={`leading-relaxed ${isLight ? "text-slate-600" : "text-gray-300"}`}>
               With a solid foundation spanning full-stack development, IT operations, and cloud infrastructure, I bridge the gap between development, security, and operations. My work focuses on building secure CI/CD pipelines, standardizing release automation, and implementing shift-left security practices.
@@ -338,7 +338,7 @@ const About = () => {
                 "DevSecOps Engineer at AXA Insurance Indonesia",
                 "Based in Jakarta, Indonesia",
                 "B.Sc. in Informatics Engineering (GPA: 3.41)",
-                "4+ Years IT & Cloud Experience",
+                "5+ Years IT & Cloud Experience",
               ].map((fact) => (
                 <motion.li
                   key={fact}

@@ -23,7 +23,7 @@ const pageMeta = {
   "/about": {
     title: "About - Rafii Afif | AXA DevSecOps Engineer",
     description:
-      "Learn about Rafii Afif — DevSecOps Engineer at AXA Insurance Indonesia with 4+ years of experience across DevOps, DevSecOps, platform engineering, and enterprise IT operations.",
+      "Learn about Rafii Afif — DevSecOps Engineer at AXA Insurance Indonesia with 5+ years of experience across DevOps, DevSecOps, platform engineering, and enterprise IT operations.",
   },
   "/projects": {
     title: "Projects - Rafii Afif | DevSecOps & Platform Highlights",
