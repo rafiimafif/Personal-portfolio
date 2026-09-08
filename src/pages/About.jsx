@@ -310,7 +310,7 @@ const About = () => {
           <div className="aspect-square overflow-hidden rounded-2xl">
             <img
               src={profileImg}
-              alt="Rafii Muhammad Afif"
+              alt="Rafii Afif"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
             />
           </div>
