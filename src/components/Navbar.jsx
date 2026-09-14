@@ -53,8 +53,8 @@ const Navbar = () => {
               {/* Desktop Theme Toggle Button */}
               <motion.button
                 onClick={toggleTheme}
-                whileTap={{ scale: 0.9 }}
-                className="p-2 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white transition-all backdrop-blur-md"
+                whileTap={{ scale: 0.95 }}
+                className="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg border border-slate-700/50 bg-slate-800/40 hover:bg-slate-800 text-slate-300 hover:text-white transition-colors"
                 aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
                 title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
               >
@@ -73,8 +73,8 @@ const Navbar = () => {
               {/* Mobile Theme Toggle Button */}
               <motion.button
                 onClick={toggleTheme}
-                whileTap={{ scale: 0.9 }}
-                className="p-2 rounded-full border border-white/10 bg-white/5 text-gray-300 transition-all"
+                whileTap={{ scale: 0.95 }}
+                className="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg border border-slate-700/50 bg-slate-800/40 text-slate-300 transition-colors"
                 aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
               >
                 {theme === 'dark' ? (
@@ -85,7 +85,7 @@ const Navbar = () => {
               </motion.button>
 
               <button
-                className="p-2 text-gray-400 hover:text-white transition-colors"
+                className="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg text-slate-400 hover:text-white transition-colors"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
                 aria-expanded={isMenuOpen}
@@ -103,7 +103,7 @@ const Navbar = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <motion.div
-            className="md:hidden absolute top-full left-0 right-0 bg-black/50 backdrop-blur-xl"
+            className="md:hidden absolute top-full left-0 right-0 bg-slate-900/95 dark:bg-black/95 backdrop-blur-xl border-b border-slate-800"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.2 }}
@@ -113,9 +113,9 @@ const Navbar = () => {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`block px-3 py-2 text-gray-400 hover:text-white transition-colors ${
+                  className={`flex items-center min-h-[44px] px-3 py-2 rounded-md text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors ${
                     location.pathname === link.path
-                      ? 'bg-white/10 backdrop-blur-sm text-white'
+                      ? 'bg-slate-800 text-white font-medium'
                       : ''
                   }`}
                   onClick={() => setIsMenuOpen(false)}

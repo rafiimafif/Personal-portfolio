@@ -116,13 +116,15 @@ const Footer = () => {
           {/* Social */}
           <div className="space-y-4">
             <h3 className={`text-sm font-semibold ${isLight ? 'text-slate-900' : 'text-white'}`}>Social</h3>
-            <div className="flex space-x-4">
+            <div className="flex space-x-3">
               <a
                 href="https://github.com/rafiimafif"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`transition-colors ${
-                  isLight ? 'text-slate-600 hover:text-slate-900' : 'text-gray-400 hover:text-white'
+                className={`w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg border transition-colors ${
+                  isLight
+                    ? 'border-slate-300 bg-slate-50 text-slate-700 hover:bg-slate-100 hover:text-slate-900'
+                    : 'border-slate-800 bg-slate-900/60 text-slate-400 hover:bg-slate-800 hover:text-white'
                 }`}
                 aria-label="GitHub profile"
               >
@@ -132,8 +134,10 @@ const Footer = () => {
                 href="https://linkedin.com/in/rafii-muhammad-afif"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`transition-colors ${
-                  isLight ? 'text-slate-600 hover:text-slate-900' : 'text-gray-400 hover:text-white'
+                className={`w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg border transition-colors ${
+                  isLight
+                    ? 'border-slate-300 bg-slate-50 text-slate-700 hover:bg-slate-100 hover:text-slate-900'
+                    : 'border-slate-800 bg-slate-900/60 text-slate-400 hover:bg-slate-800 hover:text-white'
                 }`}
                 aria-label="LinkedIn profile"
               >
@@ -141,8 +145,10 @@ const Footer = () => {
               </a>
               <a
                 href="mailto:rafii.afif@gmail.com"
-                className={`transition-colors ${
-                  isLight ? 'text-slate-600 hover:text-slate-900' : 'text-gray-400 hover:text-white'
+                className={`w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg border transition-colors ${
+                  isLight
+                    ? 'border-slate-300 bg-slate-50 text-slate-700 hover:bg-slate-100 hover:text-slate-900'
+                    : 'border-slate-800 bg-slate-900/60 text-slate-400 hover:bg-slate-800 hover:text-white'
                 }`}
                 aria-label="Email"
               >
@@ -153,17 +159,15 @@ const Footer = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className={`border-t py-6 ${isLight ? 'border-slate-200' : 'border-white/10'}`}>
+        <div className={`border-t py-6 ${isLight ? 'border-slate-200' : 'border-slate-800'}`}>
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className={`text-sm ${isLight ? 'text-slate-600' : 'text-gray-400'}`}>
-              © {currentYear} Rafii Afif. All rights reserved.
+            <p className={`text-sm ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+              &copy; {currentYear} Rafii Muhammad Afif. DevSecOps &amp; Platform Engineering.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <span className={`text-sm flex items-center gap-2 ${isLight ? 'text-slate-600' : 'text-gray-400'}`}>
-                <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
-                  <path d="M12 1L24 22H0L12 1Z" />
-                </svg>
-                Rafii's Portfolio
+              <span className={`text-xs font-mono flex items-center gap-1.5 ${isLight ? 'text-slate-500' : 'text-slate-500'}`}>
+                <span className="w-2 h-2 rounded-full bg-emerald-500 inline-block" />
+                Enterprise SSDLC Compliant
               </span>
             </div>
           </div>

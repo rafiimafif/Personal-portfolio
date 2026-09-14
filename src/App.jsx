@@ -18,12 +18,12 @@ const pageMeta = {
   "/": {
     title: "Rafii Afif - DevSecOps Engineer | Security, OpenShift & CI/CD",
     description:
-      "Rafii Afif — DevSecOps Engineer at AXA Insurance Indonesia specializing in secure CI/CD pipelines, Snyk, Trivy, SonarQube, Jenkins shared libraries, and OpenShift/Kubernetes infrastructure.",
+      "Rafii Afif: DevSecOps Engineer at AXA Insurance Indonesia specializing in secure CI/CD pipelines, Snyk, Trivy, SonarQube, Jenkins shared libraries, and OpenShift/Kubernetes infrastructure.",
   },
   "/about": {
     title: "About - Rafii Afif | AXA DevSecOps Engineer",
     description:
-      "Learn about Rafii Afif — DevSecOps Engineer at AXA Insurance Indonesia with 5+ years of experience across DevOps, DevSecOps, platform engineering, and enterprise IT operations.",
+      "Learn about Rafii Afif: DevSecOps Engineer at AXA Insurance Indonesia with 5+ years of experience across DevOps, DevSecOps, platform engineering, and enterprise IT operations.",
   },
   "/projects": {
     title: "Projects - Rafii Afif | DevSecOps & Platform Highlights",
@@ -50,7 +50,7 @@ function SEOUpdater() {
     const meta = pageMeta[location.pathname] || {
       title: "Rafii Afif - DevSecOps Engineer",
       description:
-        "Portfolio of Rafii Afif — DevSecOps Engineer specializing in Jenkins, OpenShift, Kubernetes, security scanning, and CI/CD automation.",
+        "Portfolio of Rafii Afif: DevSecOps Engineer specializing in Jenkins, OpenShift, Kubernetes, security scanning, and CI/CD automation.",
     };
 
     document.title = meta.title;

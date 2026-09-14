@@ -31,3 +31,10 @@ dist-ssr
 *.sw?
 *.vsix
 Vscode/
+
+# Anti-slop agent files & skills
+.agents/
+AGENTS.md
+DESIGN.md
+antislop.md
+skills/

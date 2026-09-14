@@ -10,79 +10,47 @@ html.light {
   color-scheme: light;
 }
 
-* {
-  font-family: 'Inter', sans-serif;
-  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
-}
-
 body {
-  @apply bg-black text-gray-100;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
+  @apply bg-[#0b0f17] text-slate-100;
   overflow-x: hidden;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 html.light body {
-  @apply bg-slate-50 text-slate-900;
+  @apply bg-[#f8fafc] text-slate-900;
 }
 
+/* Accessibility: Visible focus outline for keyboard navigation (R-human) */
+:focus-visible {
+  outline: 2px solid #10b981;
+  outline-offset: 2px;
+}
+
+/* Crisp technical typography replacing generic washed-out AI gradient text */
 .gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500;
+  @apply text-white font-extrabold tracking-tight;
 }
 
 html.light .gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-600;
+  @apply text-slate-900 font-extrabold tracking-tight;
 }
 
 .nav-link {
-  @apply relative px-3 py-2 text-sm text-gray-400 hover:text-white transition-colors rounded-lg hover:bg-white/[0.05];
+  @apply relative px-3 py-2 text-sm text-slate-400 hover:text-white transition-colors rounded-md hover:bg-white/[0.06];
 }
 
 html.light .nav-link {
-  @apply text-slate-600 hover:text-slate-900 hover:bg-slate-200/60;
+  @apply text-slate-600 hover:text-slate-900 hover:bg-slate-200/70;
 }
 
 .canvas-container {
   @apply fixed top-0 left-0 w-full h-full -z-10;
-  background: radial-gradient(circle at 50% 0%,
-      rgba(0, 0, 0, 0) 6%,
-      rgba(0, 0, 0, 0.8) 45%);
+  background: radial-gradient(circle at 50% 0%, rgba(11, 15, 23, 0.2) 0%, rgba(11, 15, 23, 0.95) 75%);
 }
 
 html.light .canvas-container {
-  opacity: 0.15;
-}
-
-.gradient-grid {
-  background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  background-size: 60px 60px;
-  mask-image: radial-gradient(circle at 50% 0%, white 20%, transparent 70%);
-}
-
-html.light .gradient-grid {
-  background-image:
-    linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
-}
-
-.spotlight {
-  pointer-events: none;
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  --size: 600px;
-  --spotlight: radial-gradient(var(--size) var(--size) at center,
-      rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 1) 100%);
-  mask-image: var(--spotlight);
-  -webkit-mask-image: var(--spotlight);
-  background: radial-gradient(300px 300px at center,
-      rgba(255, 255, 255, 0.05),
-      transparent 100%);
-}
-
-html.light .spotlight {
-  opacity: 0.2;
+  opacity: 0.12;
 }
 
 .cursor-copy {
@@ -94,40 +62,40 @@ html.light .cursor-copy {
 }
 
 .light-rays-container {
-	position: absolute;
-	inset: 0;
-	width: 100%;
-	height: 100%;
-	pointer-events: none;
-	z-index: -1;
-	overflow: hidden;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
 }
 
 html.light .light-rays-container {
-  opacity: 0.55;
+  opacity: 0.45;
 }
 
-/* Light mode utility component overrides */
+/* Refined container tokens for light mode */
 html.light .bg-black\/50 {
-  background-color: rgba(255, 255, 255, 0.85) !important;
+  background-color: rgba(255, 255, 255, 0.92) !important;
 }
 
 html.light .bg-gray-800\/50,
 html.light .bg-gray-800\/70,
 html.light .bg-white\/5,
 html.light .bg-white\/10 {
-  background-color: rgba(255, 255, 255, 0.85) !important;
-  border-color: rgba(0, 0, 0, 0.08) !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  border-color: rgba(203, 213, 225, 0.8) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 html.light .bg-gray-700\/50 {
-  background-color: rgba(241, 245, 249, 0.9) !important;
+  background-color: rgba(241, 245, 249, 0.95) !important;
 }
 
 html.light .text-gray-300,
 html.light .text-gray-400 {
-  color: #475569 !important;
+  color: #334155 !important;
 }
 
 html.light .text-gray-500 {
@@ -135,5 +103,5 @@ html.light .text-gray-500 {
 }
 
 html.light footer {
-  border-top-color: rgba(0, 0, 0, 0.1) !important;
+  border-top-color: rgba(226, 232, 240, 1) !important;
 }

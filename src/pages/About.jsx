@@ -356,10 +356,10 @@ const About = () => {
               href="/DevSecOps_RafiiMuhammadAfif_CV.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className={`px-6 py-3 rounded-full font-medium transition-all flex items-center gap-2 backdrop-blur-md border ${
+              className={`px-5 sm:px-6 py-2.5 sm:py-3 min-h-[44px] rounded-lg font-medium transition-colors flex items-center gap-2 border ${
                 isLight
-                  ? "bg-slate-100 border-slate-300 text-slate-800 hover:bg-slate-200"
-                  : "bg-white/10 border-white/10 text-white hover:bg-white/20"
+                  ? "bg-white border-slate-300 text-slate-800 hover:bg-slate-100"
+                  : "bg-slate-900 border-slate-700 text-slate-100 hover:bg-slate-800"
               }`}
             >
               <Eye className="w-5 h-5" aria-hidden="true" />
@@ -370,10 +370,10 @@ const About = () => {
               download="DevSecOps_RafiiMuhammadAfif_CV.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className={`px-6 py-3 rounded-full font-medium transition-all flex items-center gap-2 shadow-lg ${
+              className={`px-5 sm:px-6 py-2.5 sm:py-3 min-h-[44px] rounded-lg font-medium transition-colors flex items-center gap-2 border ${
                 isLight
-                  ? "bg-slate-900 text-white hover:bg-slate-800"
-                  : "bg-white text-black hover:bg-gray-100"
+                  ? "bg-slate-900 border-slate-900 text-white hover:bg-slate-800"
+                  : "bg-emerald-600 border-emerald-600 text-white hover:bg-emerald-500"
               }`}
             >
               <FileDown className="w-5 h-5" aria-hidden="true" />
