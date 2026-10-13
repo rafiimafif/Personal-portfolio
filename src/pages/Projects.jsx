@@ -1,4 +1,5 @@
-import { Github, ExternalLink } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Github, ExternalLink, Maximize2, X } from "lucide-react";
 import { ScrollAnimation } from "@/components/ScrollAnimation";
 import { projects } from "@/data/projects";
 import { SSDLCFlowAnimation } from "@/components/SSDLCFlowAnimation";
@@ -52,6 +53,25 @@ const axaHighlights = [
 const Projects = () => {
   const { theme } = useTheme();
   const isLight = theme === "light";
+  const [activeModalProject, setActiveModalProject] = useState(null);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setActiveModalProject(null);
+      }
+    };
+    if (activeModalProject) {
+      document.body.style.overflow = "hidden";
+      window.addEventListener("keydown", handleKeyDown);
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [activeModalProject]);
 
   return (
     <div className="min-h-screen pt-28 sm:pt-32 px-4 max-w-6xl mx-auto pb-20">
@@ -153,34 +173,101 @@ const Projects = () => {
               ? "border-slate-300 bg-slate-100 text-slate-700"
               : "border-slate-700 bg-slate-800/80 text-slate-300"
           }`}>
-            Lab Work
+            Live Lab Deployments
           </span>
         </div>
       </ScrollAnimation>
 
-      <div className="flex flex-col gap-8">
+      {/* Responsive 2-column grid preserving natural 16:10 widescreen screenshots with zero cropping */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
         {projects.map((project) => (
-          <ScrollAnimation key={project.title}>
-            <div className={`rounded-xl overflow-hidden border h-full flex flex-col md:flex-row transition-colors ${
+          <ScrollAnimation key={project.title} className="h-full">
+            <div className={`rounded-xl overflow-hidden border h-full flex flex-col transition-colors ${
               isLight
                 ? "bg-white border-slate-200 shadow-sm hover:border-slate-300"
                 : "bg-slate-900/80 border-slate-800 hover:border-slate-700"
             }`}>
-              <div className="w-full md:w-1/3 min-h-[220px] md:min-h-full flex-shrink-0 overflow-hidden bg-slate-950 relative">
+              {/* Window Frame Bar */}
+              <div className={`px-4 py-2.5 border-b flex items-center justify-between font-mono text-xs select-none ${
+                isLight
+                  ? "bg-slate-100/90 border-slate-200 text-slate-600"
+                  : "bg-slate-950/80 border-slate-800 text-slate-400"
+              }`}>
+                <div className="flex items-center gap-2 min-w-0 pr-2">
+                  <div className="flex items-center gap-1.5 flex-shrink-0" aria-hidden="true">
+                    <span className="w-2.5 h-2.5 rounded-full bg-slate-300 dark:bg-slate-700" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-slate-300 dark:bg-slate-700" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-slate-300 dark:bg-slate-700" />
+                  </div>
+                  <span className="ml-2 font-medium truncate text-slate-600 dark:text-slate-400">
+                    {project.systemId || "system.local"}
+                  </span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setActiveModalProject(project)}
+                  className={`flex items-center gap-1.5 text-[11px] px-2 py-1 rounded transition-colors flex-shrink-0 ${
+                    isLight
+                      ? "hover:bg-slate-200 text-slate-600"
+                      : "hover:bg-slate-800 text-slate-300"
+                  }`}
+                  aria-label={`Inspect full capture for ${project.title}`}
+                >
+                  <Maximize2 className="w-3.5 h-3.5" aria-hidden="true" />
+                  <span className="font-mono">Inspect</span>
+                </button>
+              </div>
+
+              {/* Screenshot Frame (Exact 16:10 Ratio, No Cropping) */}
+              <div
+                role="button"
+                tabIndex={0}
+                onClick={() => setActiveModalProject(project)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setActiveModalProject(project);
+                  }
+                }}
+                className="relative w-full aspect-[16/10] bg-slate-950 overflow-hidden cursor-pointer group focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                aria-label={`Click to expand screenshot of ${project.title}`}
+              >
                 <img
                   src={project.image}
-                  alt={project.title}
-                  className="absolute inset-0 w-full h-full object-cover opacity-95 transition-opacity"
+                  alt={`${project.title} live interface capture`}
+                  className="w-full h-full object-contain bg-slate-950 transition-transform duration-300 group-hover:scale-[1.01]"
+                  loading="lazy"
                 />
+                <div className="absolute inset-0 bg-slate-950/0 group-hover:bg-slate-950/20 transition-colors flex items-center justify-center pointer-events-none">
+                  <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-slate-900/95 text-slate-100 text-xs font-mono px-3 py-1.5 rounded-md border border-slate-700 shadow-md flex items-center gap-1.5">
+                    <Maximize2 className="w-3.5 h-3.5 text-emerald-400" aria-hidden="true" />
+                    View Full 1440x900 Capture
+                  </span>
+                </div>
               </div>
-              <div className="p-6 md:p-8 flex flex-col flex-grow">
-                <h3 className={`text-xl md:text-2xl font-bold mb-3 tracking-tight ${isLight ? "text-slate-900" : "text-white"}`}>
+
+              {/* Card Body */}
+              <div className="p-6 md:p-7 flex flex-col flex-grow">
+                <div className="flex items-center justify-between gap-2 mb-2">
+                  <span className={`text-[11px] uppercase tracking-wider font-mono font-medium ${
+                    isLight ? "text-emerald-700" : "text-emerald-400"
+                  }`}>
+                    {project.systemType || "Production System"}
+                  </span>
+                  <span className="text-[11px] font-mono text-slate-500">
+                    16:10 Capture
+                  </span>
+                </div>
+
+                <h3 className={`text-xl font-bold mb-3 tracking-tight ${isLight ? "text-slate-900" : "text-white"}`}>
                   {project.title}
                 </h3>
-                <p className={`mb-6 flex-grow text-sm md:text-base leading-relaxed ${isLight ? "text-slate-600" : "text-slate-400"}`}>
+
+                <p className={`mb-6 flex-grow text-sm leading-relaxed ${isLight ? "text-slate-600" : "text-slate-400"}`}>
                   {project.description}
                 </p>
-                <div className="flex flex-wrap gap-2 mb-6">
+
+                <div className="flex flex-wrap gap-1.5 mb-6">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
@@ -194,7 +281,8 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
-                <div className={`flex items-center space-x-4 pt-4 border-t ${isLight ? "border-slate-200" : "border-slate-800"}`}>
+
+                <div className={`flex items-center space-x-3 pt-4 border-t mt-auto ${isLight ? "border-slate-200" : "border-slate-800"}`}>
                   <a
                     href={project.github}
                     target="_blank"
@@ -223,12 +311,101 @@ const Projects = () => {
                       <span>Live Demo</span>
                     </a>
                   )}
+                  <button
+                    type="button"
+                    onClick={() => setActiveModalProject(project)}
+                    className={`min-h-[44px] px-3 py-2 rounded-lg border flex items-center space-x-1.5 text-xs font-mono ml-auto transition-colors ${
+                      isLight
+                        ? "border-slate-200 text-slate-600 hover:bg-slate-100"
+                        : "border-slate-800 text-slate-400 hover:bg-slate-800 hover:text-slate-200"
+                    }`}
+                    aria-label={`View full screenshot of ${project.title}`}
+                  >
+                    <Maximize2 className="w-3.5 h-3.5" aria-hidden="true" />
+                    <span>Screenshot</span>
+                  </button>
                 </div>
               </div>
             </div>
           </ScrollAnimation>
         ))}
       </div>
+
+      {/* Screenshot Lightbox Modal */}
+      {activeModalProject && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-950/80 backdrop-blur-sm"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="screenshot-modal-title"
+          onClick={() => setActiveModalProject(null)}
+        >
+          <div
+            className={`relative max-w-5xl w-full max-h-[92vh] rounded-xl overflow-hidden border shadow-2xl flex flex-col ${
+              isLight
+                ? "bg-white border-slate-300 text-slate-900"
+                : "bg-slate-900 border-slate-700 text-white"
+            }`}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className={`px-4 sm:px-6 py-3 border-b flex items-center justify-between font-mono text-xs sm:text-sm ${
+              isLight
+                ? "bg-slate-100 border-slate-200 text-slate-800"
+                : "bg-slate-950 border-slate-800 text-slate-200"
+            }`}>
+              <div className="flex items-center gap-2.5 truncate pr-4">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 flex-shrink-0" aria-hidden="true" />
+                <span id="screenshot-modal-title" className="font-semibold truncate">
+                  {activeModalProject.title}
+                </span>
+                <span className="hidden sm:inline text-xs text-slate-400 font-normal">
+                  [{activeModalProject.systemId}]
+                </span>
+              </div>
+              <button
+                type="button"
+                onClick={() => setActiveModalProject(null)}
+                className={`p-2 rounded-lg border transition-colors min-h-[36px] min-w-[36px] flex items-center justify-center ${
+                  isLight
+                    ? "border-slate-300 bg-white text-slate-700 hover:bg-slate-100"
+                    : "border-slate-700 bg-slate-800 text-slate-300 hover:bg-slate-700"
+                }`}
+                aria-label="Close screenshot preview"
+              >
+                <X className="w-4 h-4" aria-hidden="true" />
+              </button>
+            </div>
+
+            {/* Modal Image Display */}
+            <div className="p-2 sm:p-4 bg-slate-950 flex items-center justify-center overflow-auto max-h-[78vh]">
+              <img
+                src={activeModalProject.image}
+                alt={`${activeModalProject.title} full high-resolution capture`}
+                className="w-full h-auto max-h-[74vh] object-contain rounded border border-slate-800 shadow-inner"
+              />
+            </div>
+
+            {/* Modal Footer */}
+            <div className={`px-4 sm:px-6 py-2.5 border-t text-xs font-mono flex items-center justify-between flex-wrap gap-2 ${
+              isLight
+                ? "bg-slate-50 border-slate-200 text-slate-600"
+                : "bg-slate-950/80 border-slate-800 text-slate-400"
+            }`}>
+              <span>Captured Live Environment &bull; 1440x900 Native Aspect</span>
+              <a
+                href={activeModalProject.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-emerald-500 hover:underline flex items-center gap-1 font-medium min-h-[32px]"
+              >
+                <span>Inspect Repository</span>
+                <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
