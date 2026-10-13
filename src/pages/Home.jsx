@@ -24,19 +24,19 @@ const keyMetrics = [
     detail: "Enterprise IT & platform delivery",
   },
   {
+    value: "Production",
+    label: "Freelance & Client Delivery",
+    detail: "Full-stack ERP, CRM & cloud pipelines",
+  },
+  {
     value: "100%",
     label: "Gate Compliance",
     detail: "Zero-trust SSDLC gating policy",
   },
   {
     value: "Multi-Stack",
-    label: "Pipeline Coverage",
-    detail: "Java, .NET, Node.js, and PHP",
-  },
-  {
-    value: "Zero-Trust",
-    label: "Supply Chain Security",
-    detail: "Cosign v3 signing & CycloneDX SBOM",
+    label: "Engineering Stack",
+    detail: "React, Django, Laravel, Jenkins & K8s",
   },
 ];
 
@@ -92,7 +92,7 @@ const Home = () => {
           </div>
 
           <div
-            className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md border text-xs sm:text-sm font-medium tracking-wide shadow-sm ${
+            className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md border text-xs sm:text-sm font-medium tracking-wide shadow-sm flex-wrap justify-center ${
               isLight
                 ? "bg-white border-slate-300 text-slate-800"
                 : "bg-slate-900/90 border-slate-800 text-slate-200"
@@ -100,6 +100,12 @@ const Home = () => {
           >
             <span className="flex h-2 w-2 rounded-full bg-emerald-500" />
             <span>DevSecOps Engineer &middot; AXA Insurance Indonesia</span>
+            <span className="text-slate-400 dark:text-slate-600 hidden sm:inline">&bull;</span>
+            <span className={`px-2 py-0.5 rounded text-[11px] font-mono font-semibold uppercase tracking-wider ${
+              isLight ? "bg-emerald-100 text-emerald-800 border border-emerald-300" : "bg-emerald-950/60 text-emerald-400 border border-emerald-800/60"
+            }`}>
+              Freelance Software Engineer
+            </span>
           </div>
         </motion.div>
 
@@ -124,7 +130,7 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Automating release pipelines, embedding DevSecOps gates, and engineering resilient cloud platforms
+          DevSecOps Engineer &amp; Freelance Software Engineer building zero-trust release pipelines, enterprise automation, and custom web systems
         </motion.h2>
 
         {/* Summary Description */}
@@ -136,7 +142,7 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          DevSecOps Engineer with 5+ years of experience in enterprise SSDLC governance, Jenkins Shared Library modernization, and multi-stack CI/CD automation. Hands-on with SonarQube, Snyk, Trivy, Gitleaks, Checkov, Cosign, OWASP ZAP, CycloneDX, OpenShift, and Artifactory.
+          DevSecOps Engineer at AXA Insurance Indonesia with 5+ years of enterprise experience in SSDLC governance and CI/CD security. Also delivering freelance full-stack systems, custom ERP/CRM architectures, and automated cloud sync pipelines for clients.
         </motion.p>
 
         {/* Action Buttons & Terminal Email */}

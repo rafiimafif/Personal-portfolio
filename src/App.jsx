@@ -16,9 +16,9 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 // Per-page SEO metadata
 const pageMeta = {
   "/": {
-    title: "Rafii Afif - DevSecOps Engineer | Security, OpenShift & CI/CD",
+    title: "Rafii Afif - DevSecOps & Freelance Software Engineer",
     description:
-      "Rafii Afif: DevSecOps Engineer at AXA Insurance Indonesia specializing in secure CI/CD pipelines, Snyk, Trivy, SonarQube, Jenkins shared libraries, and OpenShift/Kubernetes infrastructure.",
+      "Rafii Afif: DevSecOps Engineer at AXA Insurance Indonesia & Freelance Software Engineer delivering secure CI/CD pipelines, enterprise automation, and custom full-stack web platforms.",
   },
   "/about": {
     title: "About - Rafii Afif | AXA DevSecOps Engineer",
