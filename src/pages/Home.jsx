@@ -13,6 +13,8 @@ import {
   Boxes,
   User,
   ArrowUpRight,
+  ShieldCheck,
+  Server,
 } from "lucide-react";
 import { projects } from "@/data/projects";
 import { useTheme } from "../context/ThemeContext";
@@ -75,54 +77,106 @@ const Home = () => {
   return (
     <div className="min-h-[calc(100vh-4rem)] pt-28 sm:pt-32 md:pt-36 pb-20 px-4 sm:px-6 flex flex-col justify-center items-center">
       <div className="max-w-4xl mx-auto text-center relative z-10 w-full">
-        {/* 1. Centered Portrait & Status Badge */}
+        {/* 1. Centered Hero Portrait Crest & Overlapping Role Pill */}
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col items-center justify-center gap-5 mb-7"
+          className="flex flex-col items-center justify-center mb-7"
         >
-          {/* Portrait Pedestal */}
-          <div className="relative group">
+          {/* Architectural Portrait Medallion with Flanking Telemetry Chips */}
+          <div className="relative flex items-center justify-center">
+            {/* Subtle Concentric Architectural Rings Behind Portrait */}
             <div
-              className={`p-1.5 rounded-[26px] border transition-transform duration-300 group-hover:scale-[1.02] ${
+              className={`absolute w-48 h-48 sm:w-60 sm:h-60 rounded-full border pointer-events-none ${
                 isLight
-                  ? "bg-white/90 border-slate-200/90 shadow-[0_12px_32px_-8px_rgba(15,23,42,0.12)]"
-                  : "bg-slate-900/80 border-slate-700/70 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.12),0_16px_40px_-10px_rgba(0,0,0,0.75)]"
+                  ? "border-slate-200/80"
+                  : "border-slate-800/70"
+              }`}
+              aria-hidden="true"
+            />
+            <div
+              className={`absolute w-60 h-60 sm:w-72 sm:h-72 rounded-full border border-dashed pointer-events-none ${
+                isLight
+                  ? "border-slate-200/60"
+                  : "border-slate-800/40"
+              }`}
+              aria-hidden="true"
+            />
+
+            {/* Left Floating Domain Chip (Desktop) */}
+            <div
+              className={`hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs font-mono mr-5 z-10 ${
+                isLight
+                  ? "bg-white/95 border-slate-200 text-slate-700 shadow-sm"
+                  : "bg-slate-900/90 border-slate-800 text-slate-300 shadow-lg"
               }`}
             >
-              <img
-                src={profileImg}
-                alt="Rafii Afif"
-                className="w-24 h-24 sm:w-28 sm:h-28 rounded-[20px] object-cover object-top"
-              />
+              <ShieldCheck className="w-3.5 h-3.5 text-emerald-500" aria-hidden="true" />
+              <span>Zero-Trust SSDLC</span>
             </div>
-            <span
-              className={`absolute -bottom-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-emerald-500 ring-4 ${
-                isLight ? "ring-[#f8fafc]" : "ring-[#090d16]"
+
+            {/* Main Portrait Pedestal */}
+            <div className="relative group z-10">
+              {/* Outer machined frame */}
+              <div
+                className={`p-2 rounded-[32px] border transition-transform duration-300 group-hover:scale-[1.02] ${
+                  isLight
+                    ? "bg-white border-slate-200/90 shadow-[0_20px_50px_-12px_rgba(15,23,42,0.16)]"
+                    : "bg-gradient-to-b from-slate-800/90 to-slate-950/95 border-slate-700/80 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.15),0_24px_54px_-12px_rgba(0,0,0,0.85)]"
+                }`}
+              >
+                <div className="relative w-32 h-36 sm:w-40 sm:h-44 rounded-[24px] overflow-hidden">
+                  <img
+                    src={profileImg}
+                    alt="Rafii Afif"
+                    className="w-full h-full object-cover object-[50%_14%] scale-[1.12] transition-transform duration-500 group-hover:scale-[1.16]"
+                  />
+                  {/* Subtle bottom vignette to blend studio backdrop into dark/light theme */}
+                  <div
+                    className={`absolute inset-0 pointer-events-none ${
+                      isLight
+                        ? "ring-1 ring-inset ring-slate-900/10 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent"
+                        : "ring-1 ring-inset ring-white/15 bg-gradient-to-t from-[#090d16]/75 via-transparent to-[#090d16]/10"
+                    }`}
+                    aria-hidden="true"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Right Floating Domain Chip (Desktop) */}
+            <div
+              className={`hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-full border text-xs font-mono ml-5 z-10 ${
+                isLight
+                  ? "bg-white/95 border-slate-200 text-slate-700 shadow-sm"
+                  : "bg-slate-900/90 border-slate-800 text-slate-300 shadow-lg"
               }`}
-              title="Active & Ready for collaboration"
             >
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-            </span>
+              <Server className="w-3.5 h-3.5 text-emerald-500" aria-hidden="true" />
+              <span>OpenShift &amp; Full-Stack</span>
+            </div>
           </div>
 
-          {/* Role Status Pill */}
+          {/* Overlapping Role Status Pill (Docked cleanly to bottom of Portrait Frame) */}
           <div
-            className={`inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border text-xs sm:text-sm font-medium tracking-wide flex-wrap justify-center ${
+            className={`relative z-20 -mt-3.5 inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border text-xs sm:text-sm font-medium tracking-wide flex-wrap justify-center backdrop-blur-md ${
               isLight
-                ? "bg-white/95 border-slate-200/90 text-slate-800 shadow-sm"
-                : "bg-slate-900/85 border-slate-800/90 text-slate-200 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]"
+                ? "bg-white/95 border-slate-200/95 text-slate-800 shadow-[0_8px_20px_-4px_rgba(15,23,42,0.1)]"
+                : "bg-[#0d1422]/95 border-slate-700/90 text-slate-200 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1),0_10px_24px_-4px_rgba(0,0,0,0.7)]"
             }`}
           >
-            <span className="flex h-2 w-2 rounded-full bg-emerald-500" />
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
+            </span>
             <span>DevSecOps Engineer &middot; AXA Insurance Indonesia</span>
             <span className="text-slate-400 dark:text-slate-600 hidden sm:inline">&bull;</span>
             <span
               className={`px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold uppercase tracking-wider ${
                 isLight
                   ? "bg-emerald-50 text-emerald-800 border border-emerald-200"
-                  : "bg-emerald-950/70 text-emerald-400 border border-emerald-800/60"
+                  : "bg-emerald-950/80 text-emerald-400 border border-emerald-800/60"
               }`}
             >
               Freelance Software Engineer
@@ -268,7 +322,7 @@ const Home = () => {
           </button>
         </motion.div>
 
-        {/* 4. Centered 4-Card Key Metrics Grid (Properly proportioned so titles never wrap) */}
+        {/* 4. Centered 4-Card Key Metrics Grid */}
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
