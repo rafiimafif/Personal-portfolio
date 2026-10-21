@@ -13,7 +13,6 @@ const Certificates = lazy(() => import("./pages/Certificates"));
 const Contact = lazy(() => import("./pages/Contact"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
-// Per-page SEO metadata
 const pageMeta = {
   "/": {
     title: "Rafii Afif - DevSecOps & Freelance Software Engineer",
@@ -42,7 +41,6 @@ const pageMeta = {
   },
 };
 
-// Hook to update document title + meta description on route change
 function SEOUpdater() {
   const location = useLocation();
 
@@ -87,8 +85,12 @@ function App() {
     <ThemeProvider>
       <BrowserRouter>
         <SEOUpdater />
-        <div className="min-h-screen flex flex-col">
+        <div className="min-h-screen flex flex-col relative">
           <Background3D />
+          <div
+            className="fixed inset-0 pointer-events-none architectural-grid -z-[5]"
+            aria-hidden="true"
+          />
           <Navbar />
           <main className="flex-grow">
             <Suspense fallback={<Loading />}>
