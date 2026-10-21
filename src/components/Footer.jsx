@@ -5,7 +5,8 @@ import { useTheme } from '../context/ThemeContext'
 
 const COUNTER_NAMESPACE = 'rafii-afif.web.id'
 const COUNTER_KEY = 'visits'
-const SESSION_STORAGE_KEY = 'rafii_portfolio_visit_counted'
+const VISITED_STORAGE_KEY = 'rafii_portfolio_visit_counted'
+const OWNER_STORAGE_KEY = 'rafii_portfolio_owner'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -20,15 +21,42 @@ const Footer = () => {
 
     const fetchVisitorCount = async () => {
       try {
-        const alreadyCounted = sessionStorage.getItem(SESSION_STORAGE_KEY) === 'true'
-        const action = alreadyCounted ? 'get' : 'hit'
+        const params = new URLSearchParams(window.location.search)
+        const ownerParam = params.get('owner')
+        if (ownerParam === 'true') {
+          localStorage.setItem(OWNER_STORAGE_KEY, 'true')
+          params.delete('owner')
+          const cleanSearch = params.toString()
+          const cleanUrl = `${window.location.pathname}${cleanSearch ? `?${cleanSearch}` : ''}${window.location.hash}`
+          window.history.replaceState({}, '', cleanUrl)
+        } else if (ownerParam === 'false') {
+          localStorage.removeItem(OWNER_STORAGE_KEY)
+        }
+
+        const hostname = window.location.hostname
+        const isLocalDev =
+          hostname === 'localhost' ||
+          hostname === '127.0.0.1' ||
+          hostname === '::1' ||
+          hostname.endsWith('.local')
+        const isOwner = localStorage.getItem(OWNER_STORAGE_KEY) === 'true'
+        const alreadyCounted = localStorage.getItem(VISITED_STORAGE_KEY) === 'true'
+
+        const shouldSkipIncrement = isLocalDev || isOwner || alreadyCounted
+        const action = shouldSkipIncrement ? 'get' : 'hit'
+
         let response = await fetch(
           `https://abacus.jasoncameron.dev/${action}/${COUNTER_NAMESPACE}/${COUNTER_KEY}`,
           { signal: controller.signal }
         )
 
-        // If 'get' returns 404 before the very first hit initializes the key, fall back to 'hit'
-        if (!response.ok && action === 'get') {
+        if (response.status === 404) {
+          if (isLocalDev || isOwner) {
+            if (isMounted) {
+              setCounterStatus('empty')
+            }
+            return
+          }
           response = await fetch(
             `https://abacus.jasoncameron.dev/hit/${COUNTER_NAMESPACE}/${COUNTER_KEY}`,
             { signal: controller.signal }
@@ -42,7 +70,9 @@ const Footer = () => {
         const data = await response.json()
         if (isMounted) {
           if (typeof data?.value === 'number' && data.value >= 0) {
-            sessionStorage.setItem(SESSION_STORAGE_KEY, 'true')
+            if (!isLocalDev && !isOwner) {
+              localStorage.setItem(VISITED_STORAGE_KEY, 'true')
+            }
             setVisitorCount(data.value)
             setCounterStatus('ready')
           } else {
@@ -203,7 +233,7 @@ const Footer = () => {
                     : 'border-slate-800 bg-slate-900 text-slate-300'
                 }`}
                 aria-live="polite"
-                title="Unique session visits to rafii-afif.web.id"
+                title="Unique visitors to rafii-afif.web.id"
               >
                 <Eye className="w-3.5 h-3.5 text-emerald-500 shrink-0" aria-hidden="true" />
                 {counterStatus === 'loading' && (
