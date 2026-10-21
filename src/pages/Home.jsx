@@ -17,7 +17,6 @@ import {
 import { projects } from "@/data/projects";
 import { useTheme } from "../context/ThemeContext";
 import { CONTACT_INFO } from "../config/contact";
-import profileImg from "@/assets/profile/profile.jpg";
 
 const keyMetrics = [
   {
@@ -71,37 +70,13 @@ const Home = () => {
   return (
     <div className="min-h-[calc(100vh-4rem)] pt-28 sm:pt-32 md:pt-36 pb-20 px-4 sm:px-6 flex flex-col justify-center items-center">
       <div className="max-w-4xl mx-auto text-center relative z-10 w-full">
-        {/* 1. Clean Circular Portrait & Role Pill */}
+        {/* 1. Top Role Status Pill */}
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col items-center justify-center gap-4 mb-6"
+          className="flex justify-center mb-6"
         >
-          <div className="relative">
-            <div
-              className={`w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border-2 transition-transform duration-300 hover:scale-[1.03] ${
-                isLight
-                  ? "border-slate-200 shadow-[0_12px_30px_-8px_rgba(15,23,42,0.15)]"
-                  : "border-white/15 shadow-[0_16px_40px_-10px_rgba(0,0,0,0.8)]"
-              }`}
-            >
-              <img
-                src={profileImg}
-                alt="Rafii Afif"
-                className="w-full h-full object-cover object-[50%_12%] scale-125"
-              />
-            </div>
-            <span
-              className={`absolute bottom-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-emerald-500 ring-4 ${
-                isLight ? "ring-[#f8fafc]" : "ring-[#090d16]"
-              }`}
-              title="Active & Ready for collaboration"
-            >
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-            </span>
-          </div>
-
           <div
             className={`inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border text-xs sm:text-sm font-medium tracking-wide flex-wrap justify-center ${
               isLight
@@ -109,7 +84,10 @@ const Home = () => {
                 : "bg-slate-900/70 border-white/10 text-slate-200 backdrop-blur-md"
             }`}
           >
-            <span className="flex h-2 w-2 rounded-full bg-emerald-500" />
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+            </span>
             <span>DevSecOps Engineer &middot; AXA Insurance Indonesia</span>
             <span className="text-slate-400 dark:text-slate-600 hidden sm:inline">&bull;</span>
             <span
@@ -124,9 +102,9 @@ const Home = () => {
           </div>
         </motion.div>
 
-        {/* 2. Centered Name & Headlines */}
+        {/* 2. Commanding Editorial Display Name & Headlines */}
         <motion.h1
-          className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-[-0.03em] mb-4 gradient-text"
+          className="text-5xl sm:text-7xl md:text-8xl font-extrabold tracking-[-0.04em] leading-[1.04] mb-5 gradient-text"
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.08 }}
@@ -261,7 +239,7 @@ const Home = () => {
           </button>
         </motion.div>
 
-        {/* 4. Single Unified Smooth Metrics Strip (Replaces 4 separate rectangles) */}
+        {/* 4. Single Unified Smooth Metrics Strip */}
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
@@ -300,7 +278,7 @@ const Home = () => {
           ))}
         </motion.div>
 
-        {/* 5. Clean Minimal Pill Social Links (Replaces 3 separate square boxes) */}
+        {/* 5. Clean Minimal Pill Social Links */}
         <motion.div
           className="flex flex-wrap items-center justify-center gap-3"
           initial={{ opacity: 0, y: 10 }}
