@@ -68,14 +68,14 @@ function SEOUpdater() {
     if (ogUrl)
       ogUrl.setAttribute(
         "content",
-        `https://rafii-afif.vercel.app${location.pathname}`,
+        `https://rafii-afif.web.id${location.pathname}`,
       );
 
     const canonical = document.querySelector('link[rel="canonical"]');
     if (canonical)
       canonical.setAttribute(
         "href",
-        `https://rafii-afif.vercel.app${location.pathname}`,
+        `https://rafii-afif.web.id${location.pathname}`,
       );
   }, [location]);
 
