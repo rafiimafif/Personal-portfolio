@@ -111,7 +111,7 @@ const Projects = () => {
           </div>
 
           <div className="max-w-3xl mb-8">
-            <p className={`text-xs uppercase tracking-widest font-mono font-medium mb-1 ${isLight ? "text-slate-500" : "text-slate-500"}`}>
+            <p className="text-xs uppercase tracking-widest font-mono font-medium mb-1 text-slate-500">
               Scope &amp; Governance
             </p>
             <p className={`leading-relaxed text-sm sm:text-base ${isLight ? "text-slate-600" : "text-slate-400"}`}>
@@ -119,7 +119,6 @@ const Projects = () => {
             </p>
           </div>
 
-          {/* Interactive Live SSDLC Pipeline Animation */}
           <SSDLCFlowAnimation />
 
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -186,7 +185,6 @@ const Projects = () => {
           Verified software ecosystems delivered for client contracts alongside end-to-end engineered platforms. All previews captured from live running deployments.
         </p>
 
-        {/* Filter Pills */}
         <div className="flex flex-wrap gap-2.5 mb-8">
           <button
             type="button"
@@ -249,8 +247,7 @@ const Projects = () => {
                 ? "bg-white border-slate-200 shadow-sm hover:border-slate-300"
                 : "bg-slate-900/80 border-slate-800 hover:border-slate-700"
             }`}>
-              {/* Window Frame Bar */}
-              <div className={`px-4 py-2.5 border-b flex items-center justify-between font-mono text-xs select-none ${
+              <div className={`px-4 py-2 border-b flex items-center justify-between font-mono text-xs select-none ${
                 isLight
                   ? "bg-slate-100/90 border-slate-200 text-slate-600"
                   : "bg-slate-950/80 border-slate-800 text-slate-400"
@@ -268,9 +265,9 @@ const Projects = () => {
                 <button
                   type="button"
                   onClick={() => setActiveModalProject(project)}
-                  className={`flex items-center gap-1.5 text-[11px] px-2 py-1 rounded transition-colors flex-shrink-0 ${
+                  className={`flex items-center gap-1.5 text-[11px] px-2.5 py-1.5 min-h-[36px] rounded transition-colors flex-shrink-0 ${
                     isLight
-                      ? "hover:bg-slate-200 text-slate-600"
+                      ? "hover:bg-slate-200 text-slate-700"
                       : "hover:bg-slate-800 text-slate-300"
                   }`}
                   aria-label={`Inspect full capture for ${project.title}`}
@@ -280,7 +277,6 @@ const Projects = () => {
                 </button>
               </div>
 
-              {/* Screenshot Frame (Exact 16:10 Ratio, No Cropping) */}
               <div
                 role="button"
                 tabIndex={0}
@@ -308,7 +304,6 @@ const Projects = () => {
                 </div>
               </div>
 
-              {/* Card Body */}
               <div className="p-6 md:p-7 flex flex-col flex-grow">
                 <div className="flex items-center justify-between gap-2 mb-2 flex-wrap">
                   <span className={`text-[11px] uppercase tracking-wider font-mono font-medium ${
@@ -333,7 +328,6 @@ const Projects = () => {
                   {project.title}
                 </h3>
 
-                {/* Freelance Engagement Highlights Box */}
                 {project.category === "freelance" && (
                   <div className={`mb-4 p-3.5 rounded-lg border text-xs font-mono leading-relaxed space-y-1.5 ${
                     isLight
@@ -422,7 +416,6 @@ const Projects = () => {
         ))}
       </div>
 
-      {/* Screenshot Lightbox Modal */}
       {activeModalProject && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-950/80 backdrop-blur-sm"
@@ -439,7 +432,6 @@ const Projects = () => {
             }`}
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Modal Header */}
             <div className={`px-4 sm:px-6 py-3 border-b flex items-center justify-between font-mono text-xs sm:text-sm ${
               isLight
                 ? "bg-slate-100 border-slate-200 text-slate-800"
@@ -464,7 +456,7 @@ const Projects = () => {
               <button
                 type="button"
                 onClick={() => setActiveModalProject(null)}
-                className={`p-2 rounded-lg border transition-colors min-h-[36px] min-w-[36px] flex items-center justify-center ${
+                className={`p-2 rounded-lg border transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center ${
                   isLight
                     ? "border-slate-300 bg-white text-slate-700 hover:bg-slate-100"
                     : "border-slate-700 bg-slate-800 text-slate-300 hover:bg-slate-700"
@@ -475,7 +467,6 @@ const Projects = () => {
               </button>
             </div>
 
-            {/* Modal Image Display */}
             <div className="p-2 sm:p-4 bg-slate-950 flex items-center justify-center overflow-auto max-h-[78vh]">
               <img
                 src={activeModalProject.image}
@@ -484,7 +475,6 @@ const Projects = () => {
               />
             </div>
 
-            {/* Modal Footer */}
             <div className={`px-4 sm:px-6 py-2.5 border-t text-xs font-mono flex items-center justify-between flex-wrap gap-2 ${
               isLight
                 ? "bg-slate-50 border-slate-200 text-slate-600"
@@ -502,7 +492,7 @@ const Projects = () => {
                 href={activeModalProject.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-emerald-500 hover:underline flex items-center gap-1 font-medium min-h-[32px]"
+                className="text-emerald-500 hover:underline inline-flex items-center gap-1 font-medium min-h-[44px] px-2"
               >
                 <span>Inspect Repository</span>
                 <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />

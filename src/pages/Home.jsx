@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { projects } from "@/data/projects";
 import { useTheme } from "../context/ThemeContext";
+import { CONTACT_INFO } from "../config/contact";
 import profileImg from "@/assets/profile/profile.jpg";
 
 const keyMetrics = [
@@ -44,8 +45,7 @@ const Home = () => {
   const [copied, setCopied] = useState(false);
   const { theme } = useTheme();
   const isLight = theme === "light";
-  const email = "rafii.afif@gmail.com";
-  const whatsappNumber = "+6285155103214";
+  const email = CONTACT_INFO.email;
   const displayRepos = projects.length.toString();
 
   const copyToClipboard = async () => {
@@ -53,14 +53,14 @@ const Home = () => {
       await navigator.clipboard.writeText(email);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
-      console.error("Failed to copy:", err);
+    } catch {
+      window.location.href = `mailto:${email}`;
     }
   };
 
   const handleEmailClick = (e) => {
     if (window.innerWidth <= 640) {
-      window.location.href = "mailto:" + email;
+      window.location.href = `mailto:${email}`;
       e.preventDefault();
     } else {
       copyToClipboard();
@@ -70,7 +70,6 @@ const Home = () => {
   return (
     <div className="min-h-[calc(100vh-4rem)] pt-24 sm:pt-28 md:pt-32 pb-16 px-4 flex flex-col justify-center items-center">
       <div className="max-w-4xl mx-auto text-center relative z-10 w-full">
-        {/* Profile Avatar + Active Status Badge */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
@@ -109,7 +108,6 @@ const Home = () => {
           </div>
         </motion.div>
 
-        {/* Main Name Heading */}
         <motion.h1
           className={`text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-4 ${
             isLight ? "text-slate-900" : "text-white"
@@ -121,7 +119,6 @@ const Home = () => {
           Rafii Afif
         </motion.h1>
 
-        {/* Hero Tagline */}
         <motion.h2
           className={`text-xl sm:text-2xl md:text-3xl font-semibold mb-6 tracking-tight max-w-3xl leading-snug mx-auto ${
             isLight ? "text-slate-700" : "text-slate-300"
@@ -133,7 +130,6 @@ const Home = () => {
           DevSecOps Engineer &amp; Freelance Software Engineer building zero-trust release pipelines, enterprise automation, and custom web systems
         </motion.h2>
 
-        {/* Summary Description */}
         <motion.p
           className={`text-sm sm:text-base md:text-lg mb-8 max-w-2xl mx-auto leading-relaxed px-2 ${
             isLight ? "text-slate-600" : "text-slate-400"
@@ -145,7 +141,6 @@ const Home = () => {
           DevSecOps Engineer at AXA Insurance Indonesia with 5+ years of enterprise experience in SSDLC governance and CI/CD security. Also delivering freelance full-stack systems, custom ERP/CRM architectures, and automated cloud sync pipelines for clients.
         </motion.p>
 
-        {/* Action Buttons & Terminal Email */}
         <motion.div
           className="flex flex-col items-center gap-5 sm:gap-6 mb-10"
           initial={{ opacity: 0, y: 15 }}
@@ -204,7 +199,6 @@ const Home = () => {
             </Link>
           </div>
 
-          {/* Terminal Email Command */}
           <button
             onClick={handleEmailClick}
             className={`group relative flex items-center gap-2 py-2.5 px-4 min-h-[44px] rounded-lg transition-colors cursor-copy sm:cursor-pointer border ${
@@ -212,7 +206,7 @@ const Home = () => {
                 ? "bg-white border-slate-300 text-slate-800 hover:border-slate-400 shadow-sm"
                 : "bg-slate-900/90 border-slate-800 text-slate-300 hover:border-slate-700"
             }`}
-            aria-label={`Email: ${email}`}
+            aria-label={`Copy email address ${email}`}
           >
             <div className="flex items-center gap-2">
               <Terminal className={`w-4 h-4 ${isLight ? "text-slate-600" : "text-emerald-400"}`} aria-hidden="true" />
@@ -234,7 +228,6 @@ const Home = () => {
           </button>
         </motion.div>
 
-        {/* Key Metrics / Evidence Bar */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
@@ -267,7 +260,6 @@ const Home = () => {
           ))}
         </motion.div>
 
-        {/* Quick Social & Connect */}
         <motion.div
           className="grid grid-cols-3 justify-items-center gap-3 sm:gap-4 max-w-xs sm:max-w-md mx-auto"
           initial={{ opacity: 0 }}
@@ -275,7 +267,7 @@ const Home = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           <a
-            href="https://github.com/rafiimafif"
+            href={CONTACT_INFO.github}
             target="_blank"
             rel="noopener noreferrer"
             className={`flex flex-col items-center group w-full p-3 min-h-[44px] rounded-lg border transition-colors ${
@@ -287,7 +279,7 @@ const Home = () => {
           >
             <Github className={`w-5 h-5 mb-1.5 transition-colors ${
               isLight ? "text-slate-700 group-hover:text-slate-900" : "text-slate-400 group-hover:text-white"
-            }`} />
+            }`} aria-hidden="true" />
             <span className={`text-sm sm:text-base font-semibold ${isLight ? "text-slate-900" : "text-white"}`}>
               {displayRepos}
             </span>
@@ -297,7 +289,7 @@ const Home = () => {
           </a>
 
           <a
-            href="https://www.linkedin.com/in/rafii-muhammad-afif/"
+            href={CONTACT_INFO.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             className={`flex flex-col items-center group w-full p-3 min-h-[44px] rounded-lg border transition-colors ${
@@ -309,7 +301,7 @@ const Home = () => {
           >
             <Linkedin className={`w-5 h-5 mb-1.5 transition-colors ${
               isLight ? "text-slate-700 group-hover:text-slate-900" : "text-slate-400 group-hover:text-white"
-            }`} />
+            }`} aria-hidden="true" />
             <span className={`text-sm sm:text-base font-semibold ${isLight ? "text-slate-900" : "text-white"}`}>Connect</span>
             <span className={`text-[11px] sm:text-xs ${isLight ? "text-slate-500" : "text-slate-400"}`}>
               LinkedIn
@@ -317,7 +309,7 @@ const Home = () => {
           </a>
 
           <a
-            href={`https://wa.me/${whatsappNumber}`}
+            href={CONTACT_INFO.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
             className={`flex flex-col items-center group w-full p-3 min-h-[44px] rounded-lg border transition-colors ${
@@ -329,7 +321,7 @@ const Home = () => {
           >
             <MessageCircle className={`w-5 h-5 mb-1.5 transition-colors ${
               isLight ? "text-slate-700 group-hover:text-slate-900" : "text-slate-400 group-hover:text-white"
-            }`} />
+            }`} aria-hidden="true" />
             <span className={`text-sm sm:text-base font-semibold ${isLight ? "text-slate-900" : "text-white"}`}>Direct</span>
             <span className={`text-[11px] sm:text-xs ${isLight ? "text-slate-500" : "text-slate-400"}`}>
               WhatsApp

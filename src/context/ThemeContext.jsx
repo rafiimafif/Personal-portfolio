@@ -2,10 +2,18 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 const ThemeContext = createContext();
 
+const VALID_THEMES = new Set(["light", "dark"]);
+
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(() => {
-    const saved = localStorage.getItem("theme");
-    if (saved) return saved;
+    try {
+      const saved = localStorage.getItem("theme");
+      if (saved && VALID_THEMES.has(saved)) {
+        return saved;
+      }
+    } catch {
+      // Ignore storage access errors in restricted browsing contexts
+    }
     return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
   });
 
@@ -18,7 +26,11 @@ export const ThemeProvider = ({ children }) => {
       root.classList.remove("light");
       root.classList.add("dark");
     }
-    localStorage.setItem("theme", theme);
+    try {
+      localStorage.setItem("theme", theme);
+    } catch {
+      // Ignore storage quota or privacy-mode errors
+    }
   }, [theme]);
 
   const toggleTheme = () => {

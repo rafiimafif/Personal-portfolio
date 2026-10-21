@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Code2, Eye, Github, Linkedin, Mail, Phone } from 'lucide-react'
 import { useTheme } from '../context/ThemeContext'
+import { CONTACT_INFO } from '../config/contact'
 
 const COUNTER_NAMESPACE = 'rafii-afif.web.id'
 const COUNTER_KEY = 'visits'
@@ -18,6 +19,7 @@ const Footer = () => {
   useEffect(() => {
     let isMounted = true
     const controller = new AbortController()
+    const timeoutId = setTimeout(() => controller.abort(), 8000)
 
     const fetchVisitorCount = async () => {
       try {
@@ -83,6 +85,8 @@ const Footer = () => {
         if (err.name !== 'AbortError' && isMounted) {
           setCounterStatus('error')
         }
+      } finally {
+        clearTimeout(timeoutId)
       }
     }
 
@@ -90,6 +94,7 @@ const Footer = () => {
 
     return () => {
       isMounted = false
+      clearTimeout(timeoutId)
       controller.abort()
     }
   }, [])
@@ -125,7 +130,7 @@ const Footer = () => {
               <span className={`text-xl font-bold ${isLight ? 'text-slate-900' : 'text-white'}`}>Rafii Afif</span>
             </Link>
             <p className={`text-sm ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
-              DevSecOps Engineer based in Jakarta, Indonesia.
+              DevSecOps Engineer based in {CONTACT_INFO.location}.
             </p>
           </div>
 
@@ -134,26 +139,26 @@ const Footer = () => {
             <ul className="space-y-1">
               <li>
                 <a
-                  href="mailto:rafii.afif@gmail.com"
+                  href={`mailto:${CONTACT_INFO.email}`}
                   className={`text-sm transition-colors inline-flex items-center gap-2 min-h-[44px] ${focusRingClass} ${
                     isLight ? 'text-slate-600 hover:text-slate-900' : 'text-slate-300 hover:text-white'
                   }`}
                   aria-label="Email Rafii Afif"
                 >
                   <Mail className="w-4 h-4 shrink-0" aria-hidden="true" />
-                  <span>rafii.afif@gmail.com</span>
+                  <span>{CONTACT_INFO.email}</span>
                 </a>
               </li>
               <li>
                 <a
-                  href="tel:+6285155103214"
+                  href={`tel:${CONTACT_INFO.phone}`}
                   className={`text-sm transition-colors inline-flex items-center gap-2 min-h-[44px] ${focusRingClass} ${
                     isLight ? 'text-slate-600 hover:text-slate-900' : 'text-slate-300 hover:text-white'
                   }`}
                   aria-label="Call Rafii Afif"
                 >
                   <Phone className="w-4 h-4 shrink-0" aria-hidden="true" />
-                  <span>+6285155103214</span>
+                  <span>{CONTACT_INFO.phone}</span>
                 </a>
               </li>
             </ul>
@@ -180,7 +185,7 @@ const Footer = () => {
             <h3 className={`text-sm font-semibold ${isLight ? 'text-slate-900' : 'text-white'}`}>Social</h3>
             <div className="flex space-x-3">
               <a
-                href="https://github.com/rafiimafif"
+                href={CONTACT_INFO.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg border transition-colors ${focusRingClass} ${
@@ -193,7 +198,7 @@ const Footer = () => {
                 <Github className="w-5 h-5" aria-hidden="true" />
               </a>
               <a
-                href="https://linkedin.com/in/rafii-muhammad-afif"
+                href={CONTACT_INFO.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg border transition-colors ${focusRingClass} ${
@@ -206,7 +211,7 @@ const Footer = () => {
                 <Linkedin className="w-5 h-5" aria-hidden="true" />
               </a>
               <a
-                href="mailto:rafii.afif@gmail.com"
+                href={`mailto:${CONTACT_INFO.email}`}
                 className={`w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg border transition-colors ${focusRingClass} ${
                   isLight
                     ? 'border-slate-300 bg-white text-slate-700 hover:bg-slate-100 hover:text-slate-900'
