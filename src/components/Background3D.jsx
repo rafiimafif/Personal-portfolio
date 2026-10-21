@@ -30,7 +30,7 @@ const getAnchorAndDir = (origin, w, h) => {
       return { anchor: [0.5 * w, (1 + outside) * h], dir: [0, -1] };
     case "bottom-right":
       return { anchor: [w, (1 + outside) * h], dir: [0, -1] };
-    default: // "top-center"
+    default:
       return { anchor: [0.5 * w, -outside * h], dir: [0, 1] };
   }
 };
@@ -52,7 +52,7 @@ const Background3D = ({
 }) => {
   const { theme } = useTheme();
   const isLight = theme === "light";
-  const raysColor = customRaysColor || (isLight ? "#334155" : "#ffffff");
+  const raysColor = customRaysColor || "#ffffff";
   const containerRef = useRef(null);
   const uniformsRef = useRef(null);
   const rendererRef = useRef(null);
@@ -72,7 +72,7 @@ const Background3D = ({
         const entry = entries[0];
         setIsVisible(entry.isIntersecting);
       },
-      { threshold: 0.1 },
+      { threshold: 0.05 },
     );
 
     observerRef.current.observe(containerRef.current);
@@ -86,7 +86,14 @@ const Background3D = ({
   }, []);
 
   useEffect(() => {
-    if (!isVisible || !containerRef.current) return;
+    // In light mode, skip dark WebGL rays so the page stays a uniform clean light background
+    if (isLight || !isVisible || !containerRef.current) {
+      if (cleanupFunctionRef.current) {
+        cleanupFunctionRef.current();
+        cleanupFunctionRef.current = null;
+      }
+      return;
+    }
 
     if (cleanupFunctionRef.current) {
       cleanupFunctionRef.current();
@@ -98,11 +105,12 @@ const Background3D = ({
 
       await new Promise((resolve) => setTimeout(resolve, 10));
 
-      if (!containerRef.current) return;
+      if (!containerRef.current || isLight) return;
 
       const renderer = new Renderer({
         dpr: Math.min(window.devicePixelRatio, 2),
         alpha: true,
+        premultipliedAlpha: false,
       });
       rendererRef.current = renderer;
 
@@ -162,7 +170,7 @@ float rayStrength(vec2 raySource, vec2 rayRefDirection, vec2 coord,
   float maxDistance = iResolution.x * rayLength;
   float lengthFalloff = clamp((maxDistance - distance) / maxDistance, 0.0, 1.0);
 
-  float fadeFalloff = clamp((iResolution.x * fadeDistance - distance) / (iResolution.x * fadeDistance), 0.5, 1.0);
+  float fadeFalloff = clamp((iResolution.x * fadeDistance - distance) / (iResolution.x * fadeDistance), 0.0, 1.0);
   float pulse = pulsating > 0.5 ? (0.8 + 0.2 * sin(iTime * speed * 3.0)) : 1.0;
 
   float baseStrength = clamp(
@@ -209,12 +217,13 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
   }
 
   fragColor.rgb *= raysColor;
+  fragColor.a *= clamp(brightness, 0.0, 1.0);
 }
 
 void main() {
   vec4 color;
   mainImage(color, gl_FragCoord.xy);
-  gl_FragColor  = color;
+  gl_FragColor = color;
 }`;
 
       const uniforms = {
@@ -292,8 +301,7 @@ void main() {
         try {
           renderer.render({ scene: mesh });
           animationIdRef.current = requestAnimationFrame(loop);
-        } catch (error) {
-          console.warn("WebGL rendering error:", error);
+        } catch {
           return;
         }
       };
@@ -322,8 +330,8 @@ void main() {
             if (canvas && canvas.parentNode) {
               canvas.parentNode.removeChild(canvas);
             }
-          } catch (error) {
-            console.warn("Error during WebGL cleanup:", error);
+          } catch {
+            // Ignore cleanup errors on context loss
           }
         }
 
@@ -342,6 +350,7 @@ void main() {
       }
     };
   }, [
+    isLight,
     isVisible,
     raysOrigin,
     raysColor,
@@ -358,43 +367,6 @@ void main() {
   ]);
 
   useEffect(() => {
-    if (!uniformsRef.current || !containerRef.current || !rendererRef.current)
-      return;
-
-    const u = uniformsRef.current;
-    const renderer = rendererRef.current;
-
-    u.raysColor.value = hexToRgb(raysColor);
-    u.raysSpeed.value = raysSpeed;
-    u.lightSpread.value = lightSpread;
-    u.rayLength.value = rayLength;
-    u.pulsating.value = pulsating ? 1.0 : 0.0;
-    u.fadeDistance.value = fadeDistance;
-    u.saturation.value = saturation;
-    u.mouseInfluence.value = mouseInfluence;
-    u.noiseAmount.value = noiseAmount;
-    u.distortion.value = distortion;
-
-    const { clientWidth: wCSS, clientHeight: hCSS } = containerRef.current;
-    const dpr = renderer.dpr;
-    const { anchor, dir } = getAnchorAndDir(raysOrigin, wCSS * dpr, hCSS * dpr);
-    u.rayPos.value = anchor;
-    u.rayDir.value = dir;
-  }, [
-    raysColor,
-    raysSpeed,
-    lightSpread,
-    raysOrigin,
-    rayLength,
-    pulsating,
-    fadeDistance,
-    saturation,
-    mouseInfluence,
-    noiseAmount,
-    distortion,
-  ]);
-
-  useEffect(() => {
     const handleMouseMove = (e) => {
       if (!containerRef.current || !rendererRef.current) return;
       const rect = containerRef.current.getBoundingClientRect();
@@ -403,16 +375,17 @@ void main() {
       mouseRef.current = { x, y };
     };
 
-    if (followMouse) {
+    if (followMouse && !isLight) {
       window.addEventListener("mousemove", handleMouseMove);
       return () => window.removeEventListener("mousemove", handleMouseMove);
     }
-  }, [followMouse]);
+  }, [followMouse, isLight]);
 
   return (
     <div
       ref={containerRef}
       className={`light-rays-container ${className}`.trim()}
+      aria-hidden="true"
     />
   );
 };
