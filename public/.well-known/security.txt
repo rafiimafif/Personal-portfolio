@@ -1,0 +1,4 @@
+Contact: mailto:rafii.afif@gmail.com
+Expires: 2027-10-22T00:00:00.000Z
+Preferred-Languages: en, id
+Canonical: https://rafii-afif.web.id/.well-known/security.txt
